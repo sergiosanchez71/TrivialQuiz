@@ -16,7 +16,7 @@
 
 	if ($questionnaires) {
 		foreach ($questionnaires as $questionary) {
-			echo $questiony['id'];
+			echo $questionary['id'];
 		}
 	}
 
