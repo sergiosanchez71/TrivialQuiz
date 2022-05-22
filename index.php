@@ -14,11 +14,6 @@
 	$questionnaires_sql = "SELECT * FROM questionnaires";
 	$questionnaires = $mysqli->query($questionnaires_sql);
 
-	if ($questionnaires) {
-		foreach ($questionnaires as $questionary) {
-			echo $questionary['name'];
-		}
-	}
 
 	?>
 	<meta charset="utf-8">
@@ -31,7 +26,17 @@
 	<form>
 	<p>¿A qué cuestionario te gustaría enfrentarte?</p>
 	<select>
-		<option>Cuestionario 1</option>
+		<option>
+			<?php
+
+				if ($questionnaires) {
+					foreach ($questionnaires as $questionary) {
+						echo $questionary['name'];
+					}
+				}
+
+			?>
+		</option>
 	</select>
 	<button>Jugar</button>	
 	</form>
