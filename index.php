@@ -11,7 +11,7 @@
 	echo $mysqli->host_info . "\n";
 
 	$sql = 'SELECT id FROM questionnaires WHERE id = 1';
-	$resultado = mysql_query($sql, $mysqli);
+	$resultado = mysql_query($mysqli, $sql);
 
 	?>
 	<meta charset="utf-8">
