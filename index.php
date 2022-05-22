@@ -15,7 +15,9 @@
 	$questionnaires = $mysqli->query($questionnaires_sql);
 
 	if ($questionnaires) {
-		echo $questionnaires['id'];
+		foreach ($questionnaires as $questionary) {
+			echo $questiony['id'];
+		}
 	}
 
 	?>
