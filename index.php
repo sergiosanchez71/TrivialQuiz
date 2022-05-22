@@ -24,7 +24,7 @@
 	<form>
 	<p>¿A qué cuestionario te gustaría enfrentarte?</p>
 	<select>
-		<option>Cuestionario 1 <?php echo $resultado ?></option>
+		<option>Cuestionario 1 </option>
 	</select>
 	<button>Jugar</button>	
 	</form>
