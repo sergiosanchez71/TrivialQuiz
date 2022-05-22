@@ -11,7 +11,7 @@
 	echo $mysqli->host_info . "\n";
 
 	$sql = 'SELECT id FROM questionnaires WHERE id = 1';
-	$resultado = mysql_query($sql, $enlace);
+	$resultado = mysql_query($sql);
 
 	?>
 	<meta charset="utf-8">
@@ -24,7 +24,7 @@
 	<form>
 	<p>¿A qué cuestionario te gustaría enfrentarte?</p>
 	<select>
-		<option>Cuestionario 1 </option>
+		<option>Cuestionario 1 <?php echo $resultado ?></option>
 	</select>
 	<button>Jugar</button>	
 	</form>
