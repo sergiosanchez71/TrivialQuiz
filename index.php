@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<?php
+
+	import conexion.php;
+
+	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Trivial Quiz</title>
