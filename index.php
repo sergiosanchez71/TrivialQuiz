@@ -3,7 +3,7 @@
 <head>
 	<?php
 
-	require_once conexion.php;
+	include("conexion.php");
 
 	//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
 	$questionnaires_sql = "SELECT * FROM questionnaires";
