@@ -11,11 +11,11 @@
 	echo $mysqli->host_info . "\n";
 
 	//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
-	$sql = "SELECT * FROM questionnaires WHERE id = '1'";
-	$resultado = $mysqli->query($sql);
+	$questionnaires_sql = "SELECT id FROM questionnaires";
+	$questionnaires = $mysqli->query($questionnaires_sql);
 
-	if ($resultado) {
-		echo $resultado;
+	if ($questionnaires) {
+		echo $questionnaires;
 	}
 
 	?>
