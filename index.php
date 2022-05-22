@@ -10,8 +10,8 @@
 	}
 	echo $mysqli->host_info . "\n";
 
-	$sql = 'SELECT id FROM questionnaires WHERE id = 1';
-	$resultado = mysql_query($sql);
+	$sql = 'SELECT id FROM questionnaires WHERE id = '1'';
+	$resultado = mysql_query($sql, $mysqli);
 
 	?>
 	<meta charset="utf-8">
