@@ -3,7 +3,12 @@
 <head>
 	<?php
 
-	import conexion.php;
+	$mysqli = new mysqli("localhost", "u196455503_admin", "=e8Gl[oA6p", "u196455503_TrivialQuiz");
+
+if ($mysqli->connect_errno) {
+    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+echo $mysqli->host_info . "\n";
 
 	?>
 	<meta charset="utf-8">
