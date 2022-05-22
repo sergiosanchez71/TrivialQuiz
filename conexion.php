@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$database = "u196455503_admin";
-$username = "=e8Gl[oA6p";
-$password = "u196455503_TrivialQuiz";
+$username = "u196455503_admin";
+$password = "=e8Gl[oA6p";
+$database = "u196455503_TrivialQuiz";
 
 $mysqli = new mysqli($servername, $username, $password, $database);
 
