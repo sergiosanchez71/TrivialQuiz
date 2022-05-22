@@ -9,13 +9,13 @@
 	    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 	}
 	echo $mysqli->host_info . "\n";
-/*
+
 	$sql = 'SELECT id FROM questionnaires WHERE id = 1';
 	$resultado = mysql_query($sql);
 
 	if ($resultado) {
 		echo "1";
-	}*/
+	}
 
 	?>
 	<meta charset="utf-8">
