@@ -12,7 +12,7 @@
 
 	//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
 	$sql = "SELECT * FROM questionnaires WHERE id = '1'";
-	$resultado = $mysqli->mysql_query($sql);
+	$resultado = $mysqli->query($sql);
 
 	if ($resultado) {
 		echo "1";
