@@ -3,12 +3,7 @@
 <head>
 	<?php
 
-	$mysqli = new mysqli("localhost", "u196455503_admin", "=e8Gl[oA6p", "u196455503_TrivialQuiz");
-
-	if ($mysqli->connect_errno) {
-	    echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-	}
-	echo $mysqli->host_info . "\n";
+	include conexion.php;
 
 	//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
 	$questionnaires_sql = "SELECT * FROM questionnaires";
