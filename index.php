@@ -10,8 +10,9 @@
 	}
 	echo $mysqli->host_info . "\n";
 
-	$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
-	$resultado = mysql_query($sql);
+	//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
+	$sql = "SELECT * FROM questionnaires WHERE id = '1'";
+	$resultado = mysql_query($mysqli, $sql);
 
 	if ($resultado) {
 		echo "1";
