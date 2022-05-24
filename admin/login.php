@@ -2,7 +2,7 @@
 <head>
 
 	<script type="text/javascript">
-		$(function () {
+		/*$(function () {
 			$('#login').on('click', function () {
 				$.ajax({
 					url: 'ajax/loginProccess.php',
@@ -11,8 +11,18 @@
 						password: $("#password").val()
 					},
 					dataType : 'json'
-					success: alert('hi')
+					success: alert('hi');
 				});
+			});
+		});*/
+		$("#login").click(function(){
+			$.post("loginProccess.php",
+			{
+				name: $("#name").val(),
+				password: $("#password").val()
+			},
+			function(data, status){
+				alert("Data: " + data + "\nStatus: " + status);
 			});
 		});
 	</script>
