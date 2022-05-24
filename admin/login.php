@@ -20,8 +20,10 @@
 			return ($hash == self::hash($password));
 		}
 	}
+
 // Crear la contraseña:
 	$hash = Password::hash('micontraseña');
+	echo $hash;
 // Comprobar la contraseña introducida
 	if (Password::verify('micontraseña', $hash)) {
 		echo 'Contraseña correcta!\n';
