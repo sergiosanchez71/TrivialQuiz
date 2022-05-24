@@ -19,16 +19,8 @@
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 	<style type="text/css">
-
-		#playbutton{
-			width: 100%;
-			background: red;
-			margin: auto;
-		}
-
 		button{
-			text-align: center;
-			width: 50%;
+			width: 100%;
 		}
 	</style>
 
@@ -55,9 +47,7 @@
 						?>
 					</option>
 				</select>
-				<div id="playbutton">
-					<button class="button primary icon solid fa-comments-question">Jugar</button>					
-				</div>	
+				<button class="button primary icon solid fa-comments-question">Jugar</button>	
 			</form>
 			
 		</div>
