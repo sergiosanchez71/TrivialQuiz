@@ -11,6 +11,7 @@
 						password: $("#password").val()
 					},
 					dataType : 'json'
+					success: alert('hi')
 				});
 			});
 		});
