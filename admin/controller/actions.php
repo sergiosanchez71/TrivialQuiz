@@ -18,13 +18,17 @@ class Password {
 	switch ($action) {
 		case 'enter':
 
+		$username = $_REQUEST['username'];
+		$password = $_REQUEST['password'];
+
+		if ($username == 'admin') {
+			echo "BIEN";
+		}
+/*
 		$users_sql = "SELECT * FROM users";
 		$users = $mysqli->query($users_sql);
-		echo $users;
 
 		if ($users) {
-			$username = $_REQUEST['username'];
-			$password = $_REQUEST['password'];
 			echo $username.''.$password;
 			foreach ($users as $user) {
 				if ($username == $user['name']){
@@ -39,7 +43,7 @@ class Password {
 					echo "";
 				}
 			}
-		}
+		}*/
 		break;
 
 		default:
