@@ -27,6 +27,7 @@
 		}
 
 		button{
+			text-align: center;
 			width: 50%;
 		}
 	</style>
