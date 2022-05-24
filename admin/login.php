@@ -43,7 +43,7 @@
 				<form>
 					Usuario <input type="text" id="user">
 					Contraseña <input type="password" id="password">
-					<a onclick="login()" id="login" class="button primary icon solid fa-comments-question">Loguearme</a>
+					<a id="login" class="button primary icon solid fa-comments-question">Loguearme</a>
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
 			</div>
