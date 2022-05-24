@@ -34,7 +34,6 @@
 				<form>
 					Usuario <input type="text" name="user">
 					Contraseña <input type="text" name="password">
-					<p>¿Qué acción quiere hacer?</p>
 					<button class="button primary icon solid fa-comments-question">Loguearme</button>	
 				</form>
 			</div>
