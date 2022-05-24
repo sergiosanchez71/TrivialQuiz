@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
 
-	
+
 
 	<!-- Scripts -->
 	<script src="../assets/js/jquery.min.js"></script>
@@ -21,9 +21,9 @@
 	<script type="text/javascript">
 
 		$(document).ready(function () {
-			$("#login").click(function(){
+			/*$("#login").click(function(){
 				alert('hola');
-			});
+			});*/
 		});
 
 		/*enter(){
@@ -55,7 +55,7 @@
 				enter();
 		}
 	</script>
-	
+
 	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
 	<style type="text/css">
