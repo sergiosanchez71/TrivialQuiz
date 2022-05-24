@@ -63,7 +63,7 @@
 			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 		</ul>
 		<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
-		<p><a href="admin/index.php">¿Eres administrador?</a></p>
+		<p><a href="admin/login.php">¿Eres administrador?</a></p>
 	</footer>
 
 	<!-- Scripts -->
