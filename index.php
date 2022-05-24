@@ -22,7 +22,7 @@
 		button{
 			margin-top: 20px;
 			width: 100%;
-			height: 1000px;
+			height: 200%;
 		}
 	</style>
 
