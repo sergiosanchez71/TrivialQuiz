@@ -3,7 +3,7 @@
 include("conexion.php");
 
 
-	class Password {
+class Password {
 		/*const SALT = 'EstoEsUnSalt';
 		public static function hash($password) { //Generate password
 			return hash('sha512', self::SALT . $password);
@@ -20,6 +20,7 @@ include("conexion.php");
 
 		$users_sql = "SELECT * FROM users";
 		$users = $mysqli->query($users_sql);
+		echo $users;
 
 		if ($users) {
 			$username = $_REQUEST['username'];
