@@ -1,53 +1,21 @@
 <!DOCTYPE HTML>
 <head>
-	<?php
 
-	include("../conexion.php");
-
-	class Password {
-		/*const SALT = 'EstoEsUnSalt';
-		public static function hash($password) { //Generate password
-			return hash('sha512', self::SALT . $password);
-		}*/
-		public static function verify($password, $hash) { //Verify password
-			return ($hash == self::hash($password));
-		}
-	}
-
-
-	function login(){
-		echo "HE ENTRADO";
-	}
-
-
-	$users_sql = "SELECT * FROM users";
-	$users = $mysqli->query($users_sql);
-
-	if ($users) {
-		foreach ($users as $user) {
-			if ($_GET['name'] == $user['name']){
-				$hash = $user['password'];
-				if (Password::verify($_GET['password'], $hash)) {
-					echo 'Contraseña correcta!\n';
-				} else {
-					echo "Contraseña incorrecta!\n";
-				}
-
-			}
-		}
-	}
-
-
-
-	?>
 	<script type="text/javascript">
-		
-		function newwin() {              
-			myWindow=window.open('lead_data.php?leadid=1','myWin','width=400,height=650')
-		}
-
+		$(function () {
+			$('#login').on('click', function () {
+				$.ajax({
+					url: 'ajax/loginProccess.php',
+					data: {
+						name: $("#name").val(),
+						password: $("#password").val()
+					},
+					dataType : 'json'
+				});
+			});
+		});
 	</script>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Trivial Quiz</title>
@@ -73,9 +41,9 @@
 			<div id="login">
 				<h1>Login admin</h1>
 				<form>
-					Usuario <input type="text" name="user">
-					Contraseña <input type="password" name="password">
-					<a onclick="newwin()" class="button primary icon solid fa-comments-question">Loguearme</a>
+					Usuario <input type="text" id="user">
+					Contraseña <input type="password" id="password">
+					<a onclick="login()" id="login" class="button primary icon solid fa-comments-question">Loguearme</a>
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
 			</div>
