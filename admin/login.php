@@ -17,25 +17,26 @@
 	function login(){
 
 		echo "he entrado";
+	}
 
-		$users_sql = "SELECT * FROM users";
-		$users = $mysqli->query($users_sql);
+	$users_sql = "SELECT * FROM users";
+	$users = $mysqli->query($users_sql);
 
-		if ($users) {
-			foreach ($users as $user) {
-				if ($_GET['name'] == $user['name']){
-					$hash = $user['password'];
-					if (Password::verify($_GET['password'], $hash)) {
-						echo 'Contraseña correcta!\n';
-					} else {
-						echo "Contraseña incorrecta!\n";
-					}
-
+	if ($users) {
+		foreach ($users as $user) {
+			if ($_GET['name'] == $user['name']){
+				$hash = $user['password'];
+				if (Password::verify($_GET['password'], $hash)) {
+					echo 'Contraseña correcta!\n';
+				} else {
+					echo "Contraseña incorrecta!\n";
 				}
+
 			}
 		}
-
 	}
+
+
 
 	?>
 	<meta charset="utf-8">
