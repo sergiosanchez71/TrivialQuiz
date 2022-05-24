@@ -15,6 +15,10 @@
 				});
 			});
 		});*/
+		$("a").click(function(){
+			alert('hola');
+		});
+		
 		$("#login").click(function(){
 			$.post("loginProccess.php",
 			{
