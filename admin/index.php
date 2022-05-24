@@ -38,7 +38,6 @@
 			</form>
 			
 		</div>
-		<div class="image phone"><div class="inner"><img src="img/quiz2.png" alt="" /></div></div>
 	</header>
 
 	<!-- Footer -->
