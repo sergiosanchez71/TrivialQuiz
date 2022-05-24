@@ -34,7 +34,7 @@
 						?>
 					</option>
 				</select>
-				<button class="button icon solid fa-chevron-down scrolly">Jugar</button>	
+				<button class="button primary icon solid fa-download">Jugar</button>	
 			</form>
 			
 		</div>
