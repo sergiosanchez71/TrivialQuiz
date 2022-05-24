@@ -60,6 +60,7 @@
 		});
 
 		function enter(){
+			alert('he entrado');
 			var username = $("#username").val();
 			var password = $("#password").val();
 			var parametros = {
