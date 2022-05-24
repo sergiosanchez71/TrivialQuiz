@@ -18,16 +18,16 @@ include("conexion.php");
 	switch ($action) {
 		case 'enter':
 
-		echo "he entrado";
-
 		$users_sql = "SELECT * FROM users";
 		$users = $mysqli->query($users_sql);
 
 		if ($users) {
+			$username = $_REQUEST['username'];
+			$password = $_REQUEST['password'];
 			foreach ($users as $user) {
-				if ($_GET['name'] == $user['name']){
+				if ($username == $user['name']){
 					$hash = $user['password'];
-					if (Password::verify($_GET['password'], $hash)) {
+					if (Password::verify($password, $hash)) {
 						echo 'Contraseña correcta!\n';
 					} else {
 						echo "Contraseña incorrecta!\n";
