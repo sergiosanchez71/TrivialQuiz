@@ -17,11 +17,11 @@
 	$users_sql = "SELECT * FROM users";
 	$users = $mysqli->query($users_sql);
 
-	if ($users) {
+	/*if ($users) {
 		foreach ($users as $user) {
 			echo $user['name'];
 		}
-	}
+	}*/
 
 
 	if (Password::verify($password, $hash)) {
