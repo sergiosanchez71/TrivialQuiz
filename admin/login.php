@@ -14,21 +14,26 @@
 		}
 	}
 
-	$users_sql = "SELECT * FROM users";
-	$users = $mysqli->query($users_sql);
+	class login{
 
-	if ($users) {
-		foreach ($users as $user) {
-			if ($_GET['name'] == $user['name']){
-				$hash = $user['password'];
-				if (Password::verify($_GET['password'], $hash)) {
-					echo 'Contraseña correcta!\n';
-				} else {
-					echo "Contraseña incorrecta!\n";
+
+		$users_sql = "SELECT * FROM users";
+		$users = $mysqli->query($users_sql);
+
+		if ($users) {
+			foreach ($users as $user) {
+				if ($_GET['name'] == $user['name']){
+					$hash = $user['password'];
+					if (Password::verify($_GET['password'], $hash)) {
+						echo 'Contraseña correcta!\n';
+					} else {
+						echo "Contraseña incorrecta!\n";
+					}
+
 				}
-
 			}
 		}
+
 	}
 
 	?>
@@ -59,7 +64,7 @@
 				<form>
 					Usuario <input type="text" name="user">
 					Contraseña <input type="password" name="password">
-					<a class="button primary icon solid fa-comments-question">Loguearme</a>
+					<a onclick="<script>alert('hola')</script>" class="button primary icon solid fa-comments-question">Loguearme</a>
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
 			</div>
