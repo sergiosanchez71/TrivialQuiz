@@ -2,33 +2,41 @@
 <head>
 
 	<script type="text/javascript">
-		/*$(function () {
-			$('#login').on('click', function () {
-				$.ajax({
-					url: 'ajax/loginProccess.php',
-					data: {
-						name: $("#name").val(),
-						password: $("#password").val()
-					},
-					dataType : 'json'
-					success: alert('hi');
-				});
-			});
-		});*/
-		$("a").click(function(){
-			alert('hola');
-		});
-		
-		$("#login").click(function(){
-			$.post("loginProccess.php",
-			{
-				name: $("#name").val(),
-				password: $("#password").val()
-			},
-			function(data, status){
-				alert("Data: " + data + "\nStatus: " + status);
+
+		$(document).ready(function () {
+			$("#login").click(function(){
+				alert('hola');
 			});
 		});
+
+		/*enter(){
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+            success: function (respuesta) { //Devuelve el valor de operador
+            	if (respuesta) {
+                                if (respuesta == 1) { //Si el valor de operador es 1 entramos en la vista de operador
+                                	window.location.replace("vista/vistaOperador.php");
+                                } else if (respuesta == 0) { //Si el valor de operador es 0 entramos en la vista de usuario
+                                	window.location.replace("vista/vistaUsuario.php");
+                                } else { //En el caso que la respuesta sea distinta deberá ser porque ha surjido algún error
+                                	alert(respuesta);
+                                }
+                            }
+                        },
+                        error: function (xhr, status) {
+                            alert("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}*/
+
+		function pulsar(e) { //Al pulsar el botón de enter intentará acceder
+			var tecla = (document.all) ? e.keyCode : e.which;
+			if (tecla == 13)
+				enter();
+		}
 	</script>
 
 	<meta charset="utf-8">
@@ -62,7 +70,7 @@
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
 			</div>
-			
+
 		</div>
 	</header>
 
