@@ -4,9 +4,9 @@
 	<script type="text/javascript">
 
 		$(document).ready(function () {
-			$("#login").click(function(){
+			//$("#login").click(function(){
 				alert('hola');
-			});
+			//});
 		});
 
 		/*enter(){
