@@ -22,6 +22,7 @@
 
 		#playbutton{
 			width: 100%;
+			background: red;
 		}
 
 		button{
