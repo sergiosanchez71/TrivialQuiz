@@ -20,7 +20,8 @@
 
 	<style type="text/css">
 		button{
-			width: 100%;
+			margin: auto;
+			width: 50%;
 		}
 	</style>
 
