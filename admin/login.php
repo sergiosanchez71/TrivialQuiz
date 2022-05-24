@@ -29,7 +29,7 @@
 				<form>
 					Usuario <input type="text" id="username">
 					Contraseña <input type="password" id="password">
-					<a id="login" class="button primary icon solid fa-comments-question">Loguearme</a>
+					<a onclick="enter()" id="login" class="button primary icon solid fa-comments-question">Loguearme</a>
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
 			</div>
@@ -53,11 +53,11 @@
 
 	<script type="text/javascript">
 
-		$(document).ready(function () {
+		/*$(document).ready(function () {
 			$("#login").click(function(){
 				enter();
 			});
-		});
+		});*/
 
 		function enter(){
 			alert('he entrado');
