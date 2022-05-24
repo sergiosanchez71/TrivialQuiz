@@ -16,7 +16,7 @@
 	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
 	<style type="text/css">
-		button{
+		a{
 			margin-top: 20px;
 			width: 100%;
 		}
@@ -34,9 +34,8 @@
 				<form>
 					Usuario <input type="text" name="user">
 					Contraseña <input type="text" name="password">
-					<a class="button primary icon solid fa-comments-question">Loguearme</a>
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
-					<a href="../index.php" class="button icon solid fa-chevron-down scrolly">Learn More</a>
+					<a class="button primary icon solid fa-comments-question">Loguearme</a>
 				</form>
 			</div>
 
