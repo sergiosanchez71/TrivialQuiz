@@ -31,6 +31,8 @@ include("../conexion.php");
 						echo "Contraseña incorrecta!\n";
 					}
 
+				} else {
+					echo "";
 				}
 			}
 		}
