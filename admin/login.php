@@ -4,12 +4,12 @@
 
 	include("../conexion.php");
 
-	$hash = password_hash('micontraseña', PASSWORD_DEFAULT, [15]);
+	/*$hash = password_hash('micontraseña', PASSWORD_DEFAULT, [15]);
 	echo $hash;
 
 	if(password_verify("micontraseña", "$2y$10$uGfLgn6Znzuju3tCttgLtOnvC8D7zI825DqmnZN3h.rxOoSJ/c.HG")){
 		echo "password correcto";
-	}
+	}*/
 
 	class Password {
 		const SALT = 'EstoEsUnSalt';
