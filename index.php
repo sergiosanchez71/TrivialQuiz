@@ -17,6 +17,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<style type="text/css">
+		button{
+			width: 100%;
+		}
+	</style>
+
 </head>
 <body class="is-preload">
 
@@ -40,7 +47,7 @@
 						?>
 					</option>
 				</select>
-				<button class="icon solid solid fa-comments-question">Jugar</button>	
+				<button class="button primary icon solid fa-comments-question">Jugar</button>	
 			</form>
 			
 		</div>
