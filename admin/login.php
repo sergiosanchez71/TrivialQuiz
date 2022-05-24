@@ -17,17 +17,18 @@
 	$users_sql = "SELECT * FROM users";
 	$users = $mysqli->query($users_sql);
 
-	/*if ($users) {
+	if ($users) {
 		foreach ($users as $user) {
-			echo $user['name'];
+			if ($_GET['name'] == $user['name']){
+				$hash = $user['password'];
+				if (Password::verify($_GET['password'], $hash)) {
+					echo 'Contraseña correcta!\n';
+				} else {
+					echo "Contraseña incorrecta!\n";
+				}
+
+			}
 		}
-	}*/
-
-
-	if (Password::verify($password, $hash)) {
-		echo 'Contraseña correcta!\n';
-	} else {
-		echo "Contraseña incorrecta!\n";
 	}
 
 	?>
