@@ -1,15 +1,6 @@
 <!DOCTYPE HTML>
 <head>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Trivial Quiz</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
-
-
-
 	<!-- Scripts -->
 	<script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/jquery.scrolly.min.js"></script>
@@ -21,9 +12,9 @@
 	<script type="text/javascript">
 
 		$(document).ready(function () {
-			/*$("#login").click(function(){
-				alert('hola');
-			});*/
+			$("#login").click(function(){
+				alert('holasdaa');
+			});
 		});
 
 		/*enter(){
@@ -56,6 +47,12 @@
 		}
 	</script>
 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Trivial Quiz</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
 	<style type="text/css">
