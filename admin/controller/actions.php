@@ -3,7 +3,7 @@
 include("../conexion.php");
 
 
-class Password {
+	class Password {
 		/*const SALT = 'EstoEsUnSalt';
 		public static function hash($password) { //Generate password
 			return hash('sha512', self::SALT . $password);
@@ -15,7 +15,7 @@ class Password {
 
 	$action = $_REQUEST['action'];
 
-	switch ($accion) {
+	switch ($action) {
 		case 'enter':
 
 		$users_sql = "SELECT * FROM users";
