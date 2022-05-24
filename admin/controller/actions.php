@@ -2,8 +2,7 @@
 
 include("conexion.php");
 
-
-include 'Password.php';
+include '../../class/Password.php';
 
 $action = $_REQUEST['action'];
 
