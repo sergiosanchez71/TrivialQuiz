@@ -44,7 +44,7 @@
 			</form>
 			
 		</div>
-		<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /></div></div>
+		<div class="image phone"><div class="inner"><img src="img/quiz.jpg" alt="" /></div></div>
 	</header>
 
 	<!-- Footer -->
