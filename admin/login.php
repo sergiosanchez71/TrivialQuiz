@@ -1,5 +1,13 @@
 <!DOCTYPE HTML>
 <head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Trivial Quiz</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="../assets/css/main.css" />
+
 	
 
 	<!-- Scripts -->
@@ -13,9 +21,9 @@
 	<script type="text/javascript">
 
 		$(document).ready(function () {
-			//$("#login").click(function(){
+			$("#login").click(function(){
 				alert('hola');
-			//});
+			});
 		});
 
 		/*enter(){
@@ -47,13 +55,7 @@
 				enter();
 		}
 	</script>
-
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Trivial Quiz</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="../assets/css/main.css" />
+	
 	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
 	<style type="text/css">
