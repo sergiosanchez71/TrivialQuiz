@@ -2,16 +2,14 @@
 <head>
 
 	<script type="text/javascript">
-		$(function () {
-			$('#login').on('click', function () {
-				$.ajax({
-					url: 'ajax/loginProccess.php',
-					data: {
-						name: $("#name").val(),
-						password: $("#password").val()
-					},
-					dataType : 'json'
-				});
+		$('#login').on('click', function () {
+			$.ajax({
+				url: 'ajax/loginProccess.php',
+				data: {
+					name: $("#name").val(),
+					password: $("#password").val()
+				},
+				dataType : 'json'
 			});
 		});
 	</script>
