@@ -1,8 +1,9 @@
 <?php
 
-	include("../conexion.php");
+include("../conexion.php");
 
-	class Password {
+
+class Password {
 		/*const SALT = 'EstoEsUnSalt';
 		public static function hash($password) { //Generate password
 			return hash('sha512', self::SALT . $password);
@@ -12,29 +13,36 @@
 		}
 	}
 
+	$action = $_REQUEST['action'];
 
-	function login(){
-		echo "HE ENTRADO";
-	}
+	switch ($accion) {
+		case 'enter':
 
+		$users_sql = "SELECT * FROM users";
+		$users = $mysqli->query($users_sql);
 
-	$users_sql = "SELECT * FROM users";
-	$users = $mysqli->query($users_sql);
+		if ($users) {
+			foreach ($users as $user) {
+				if ($_GET['name'] == $user['name']){
+					$hash = $user['password'];
+					if (Password::verify($_GET['password'], $hash)) {
+						echo 'Contraseña correcta!\n';
+					} else {
+						echo "Contraseña incorrecta!\n";
+					}
 
-	if ($users) {
-		foreach ($users as $user) {
-			if ($_GET['name'] == $user['name']){
-				$hash = $user['password'];
-				if (Password::verify($_GET['password'], $hash)) {
-					echo 'Contraseña correcta!\n';
-				} else {
-					echo "Contraseña incorrecta!\n";
 				}
-
 			}
 		}
+		break;
+
+		default:
+			// code...
+		break;
 	}
 
 
 
-	?>
+
+
+?>

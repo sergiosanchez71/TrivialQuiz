@@ -27,7 +27,7 @@
 			<div id="login">
 				<h1>Login admin</h1>
 				<form>
-					Usuario <input type="text" id="user">
+					Usuario <input type="text" id="username">
 					Contraseña <input type="password" id="password">
 					<a id="login" class="button primary icon solid fa-comments-question">Loguearme</a>
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
@@ -55,32 +55,34 @@
 
 		$(document).ready(function () {
 			$("#login").click(function(){
-				alert('holasdaa');
+				enter();
 			});
 		});
 
-		/*enter(){
-			$.ajax({
-				url: "controller/actions.php",
-				data: parametros,
+		enter(){
+			var username = $("#username").val();
+			var password = $("#password").val();
+			var parametros = {
+				"action": "enter",
+                "username": username.toLowerCase(), //Guardamos el nombre sin diferenciar entre mayúsculas y minúsculas
+                "password": password //Su contraseña
+            };
+
+            $.ajax({
+            	url: "controller/actions.php",
+            	data: parametros,
             success: function (respuesta) { //Devuelve el valor de operador
             	if (respuesta) {
-                                if (respuesta == 1) { //Si el valor de operador es 1 entramos en la vista de operador
-                                	window.location.replace("vista/vistaOperador.php");
-                                } else if (respuesta == 0) { //Si el valor de operador es 0 entramos en la vista de usuario
-                                	window.location.replace("vista/vistaUsuario.php");
-                                } else { //En el caso que la respuesta sea distinta deberá ser porque ha surjido algún error
-                                	alert(respuesta);
-                                }
-                            }
-                        },
-                        error: function (xhr, status) {
+            		alert(respuesta);
+            	}
+            },
+            error: function (xhr, status) {
                             alert("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
                     });
-                }*/
+        }
 
 		function pulsar(e) { //Al pulsar el botón de enter intentará acceder
 			var tecla = (document.all) ? e.keyCode : e.which;
