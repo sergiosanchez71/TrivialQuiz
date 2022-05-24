@@ -21,11 +21,13 @@ class Password {
 		$username = $_REQUEST['username'];
 		$password = $_REQUEST['password'];
 
+		$users_sql = "SELECT * FROM users";
+		$users = $mysqli->query($users_sql);
+
 		if ($users) {
 			foreach ($users as $user) {
 				if ($username == $user['name']){
-					$hash = $user['password'];
-					if (Password::verify($password, $hash)) {
+					if (Password::verify($password,  $user['password'])) {
 						echo 'Contraseña correcta!\n';
 					} else {
 						echo "Contraseña incorrecta!\n";
