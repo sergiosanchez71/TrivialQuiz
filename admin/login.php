@@ -15,6 +15,10 @@
 	}
 
 
+	function login(){
+		echo "HE ENTRADO";
+	}
+
 	$users_sql = "SELECT * FROM users";
 	$users = $mysqli->query($users_sql);
 
