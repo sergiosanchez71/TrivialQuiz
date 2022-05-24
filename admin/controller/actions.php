@@ -18,6 +18,8 @@ include("../conexion.php");
 	switch ($action) {
 		case 'enter':
 
+		echo "he entrado";/*
+
 		$users_sql = "SELECT * FROM users";
 		$users = $mysqli->query($users_sql);
 
@@ -35,7 +37,7 @@ include("../conexion.php");
 					echo "";
 				}
 			}
-		}
+		}*/
 		break;
 
 		default:
