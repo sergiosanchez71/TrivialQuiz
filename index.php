@@ -25,11 +25,11 @@
 					<option>
 						<?php
 
-							if ($questionnaires) {
-								foreach ($questionnaires as $questionary) {
-									echo $questionary['name'];
-								}
+						if ($questionnaires) {
+							foreach ($questionnaires as $questionary) {
+								echo $questionary['name'];
 							}
+						}
 
 						?>
 					</option>
@@ -37,34 +37,27 @@
 				<button>Jugar</button>	
 			</form>
 			
-			<h1><a href="#">Fractal</a></h1>
-			<p>Just a simple, single page responsive<br />
-				template brought to you by <a href="http://html5up.net">HTML5 UP</a></p>
-				<ul class="actions">
-					<li><a href="#" class="button primary icon solid fa-download">Download</a></li>
-					<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
-				</ul>
-			</div>
-			<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /></div></div>
-		</header>
+		</div>
+		<div class="image phone"><div class="inner"><img src="images/screen.jpg" alt="" /></div></div>
+	</header>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<ul class="icons">
-				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-			</ul>
-			<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
-		</footer>
+	<!-- Footer -->
+	<footer id="footer">
+		<ul class="icons">
+			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+		</ul>
+		<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+	</footer>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
-	</body>
-	</html>
+</body>
+</html>
