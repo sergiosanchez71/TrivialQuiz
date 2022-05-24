@@ -60,7 +60,6 @@
 		});*/
 
 		function enter(){
-			alert('he entrado');
 			var username = $("#username").val();
 			var password = $("#password").val();
 			var parametros = {
@@ -68,6 +67,7 @@
                 "username": username.toLowerCase(), //Guardamos el nombre sin diferenciar entre mayúsculas y minúsculas
                 "password": password //Su contraseña
             };
+			alert(username);
 
             $.ajax({
             	url: "controller/actions.php",
