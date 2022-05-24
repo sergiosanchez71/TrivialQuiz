@@ -19,7 +19,7 @@
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 	<style type="text/css">
-		button{
+		a{
 			margin-top: 20px;
 			width: 100%;
 		}
