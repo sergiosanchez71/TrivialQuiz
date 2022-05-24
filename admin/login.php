@@ -1,5 +1,14 @@
 <!DOCTYPE HTML>
 <head>
+	
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
 
 	<script type="text/javascript">
 
@@ -30,7 +39,7 @@
                         type: "POST",
                         dataType: "text"
                     });
-		}*/
+                }*/
 
 		function pulsar(e) { //Al pulsar el botón de enter intentará acceder
 			var tecla = (document.all) ? e.keyCode : e.which;
@@ -78,14 +87,6 @@
 	<footer id="footer">
 		<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
 	</footer>
-
-	<!-- Scripts -->
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.scrolly.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
 
 </body>
 </html>
