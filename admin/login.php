@@ -25,7 +25,7 @@
 	$hash = Password::hash('micontraseña');
 	echo $hash;
 // Comprobar la contraseña introducida
-	if (Password::verify('micontraseña', $hash)) {
+	if (Password::verify('micontraseña', 'd1081f97df55579c8c3d0c43b2617a331376d0d82ba0501e74fc84aae999e33785e52ff8452a1e104f8c268591ec68eba28d028d5c60d559317d8692770d3323')) {
 		echo 'Contraseña correcta!\n';
 	} else {
 		echo "Contraseña incorrecta!\n";
