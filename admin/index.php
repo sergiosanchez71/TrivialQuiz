@@ -36,6 +36,7 @@
 					Contraseña <input type="text" name="password">
 					<button class="button primary icon solid fa-comments-question">Loguearme</button>
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
+					<a href="../index.php" class="button icon solid fa-chevron-down scrolly">Learn More</a>
 				</form>
 			</div>
 
