@@ -24,6 +24,7 @@ include("conexion.php");
 		if ($users) {
 			$username = $_REQUEST['username'];
 			$password = $_REQUEST['password'];
+			echo $username.''.$password;
 			foreach ($users as $user) {
 				if ($username == $user['name']){
 					$hash = $user['password'];

@@ -67,7 +67,6 @@
                 "username": username.toLowerCase(), //Guardamos el nombre sin diferenciar entre mayúsculas y minúsculas
                 "password": password //Su contraseña
             };
-			alert(username);
 
             $.ajax({
             	url: "controller/actions.php",
