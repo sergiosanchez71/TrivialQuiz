@@ -19,6 +19,11 @@
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 	<style type="text/css">
+
+		#playbutton{
+			width: 100%;
+		}
+
 		button{
 			margin: auto;
 			width: 50%;
