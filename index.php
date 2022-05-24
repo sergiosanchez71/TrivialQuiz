@@ -34,7 +34,7 @@
 						?>
 					</option>
 				</select>
-				<button>Jugar</button>	
+				<button class="button icon solid fa-chevron-down scrolly">Jugar</button>	
 			</form>
 			
 		</div>
@@ -48,7 +48,7 @@
 			<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 		</ul>
-		<p class="copyright">&copy; Untitled. Credits: <a href="http://html5up.net">HTML5 UP</a></p>
+		<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
 	</footer>
 
 	<!-- Scripts -->
