@@ -34,8 +34,8 @@
 				<form>
 					Usuario <input type="text" name="user">
 					Contraseña <input type="text" name="password">
-					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 					<a class="button primary icon solid fa-comments-question">Loguearme</a>
+					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
 			</div>
 
@@ -44,9 +44,9 @@
 				<h1>Administrador de Trivial Quiz</h1>
 				<form>
 					<p>¿Qué acción quiere hacer?</p>
-					<button class="button primary icon solid fa-comments-question">Gestionar cuestionarios</button>	
-					<button class="button primary icon solid fa-comments-question">Gestionar preguntas</button>	
-					<button class="button primary icon solid fa-comments-question">Gestionar categorías</button>
+					<a class="button primary icon solid fa-comments-question">Gestionar cuestionarios</a>	
+					<a class="button primary icon solid fa-comments-question">Gestionar preguntas</a>	
+					<a class="button primary icon solid fa-comments-question">Gestionar categorías</a>
 				</form>
 
 			</div>
