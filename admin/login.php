@@ -7,7 +7,7 @@
 		$hash = password_hash('micontraseña', PASSWORD_DEFAULT, [15]);
 		echo $hash;
 
-		if(password_verify($password, $hash)){
+		if(password_verify("micontraseña", $hash)){
 			echo "password correcto";
 		}
 
