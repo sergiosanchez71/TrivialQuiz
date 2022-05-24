@@ -1,5 +1,6 @@
 
 <?php
+$password='micontraseña';
 
 $hash = password_hash('micontraseña', PASSWORD_DEFAULT, [15]);
 
