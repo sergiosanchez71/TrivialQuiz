@@ -44,18 +44,20 @@
 			</form>
 			
 		</div>
-		<div class="image phone"><div class="inner"><img src="img/quiz.jpg.png" alt="" /></div></div>
+		<div class="image phone"><div class="inner"><img src="img/quiz2.png" alt="" /></div></div>
 	</header>
 
 	<!-- Footer -->
-	<footer id="footer">
-		<ul class="icons">
-			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-			<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-		</ul>
-		<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
-	</footer>
+	<!--
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			</ul>
+			<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
+		</footer>
+	-->
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
