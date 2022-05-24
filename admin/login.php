@@ -59,7 +59,7 @@
 			});
 		});
 
-		enter(){
+		function enter(){
 			var username = $("#username").val();
 			var password = $("#password").val();
 			var parametros = {
