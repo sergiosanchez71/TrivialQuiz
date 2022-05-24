@@ -4,28 +4,27 @@
 
 	include("../conexion.php");
 
-	/*$hash = password_hash('micontraseña', PASSWORD_DEFAULT, [15]);
-	echo $hash;
-
-	if(password_verify("micontraseña", "$2y$10$uGfLgn6Znzuju3tCttgLtOnvC8D7zI825DqmnZN3h.rxOoSJ/c.HG")){
-		echo "password correcto";
-	}*/
-
 	class Password {
-		const SALT = 'EstoEsUnSalt';
-		public static function hash($password) {
+		/*const SALT = 'EstoEsUnSalt';
+		public static function hash($password) { //Generate password
 			return hash('sha512', self::SALT . $password);
-		}
-		public static function verify($password, $hash) {
+		}*/
+		public static function verify($password, $hash) { //Verify password
 			return ($hash == self::hash($password));
 		}
 	}
 
-// Crear la contraseña:
-	$hash = Password::hash('admin321');
-	echo $hash;
-// Comprobar la contraseña introducida
-	if (Password::verify('admin321', 'cef0b1ddf5361259df64397773586228b3bea46e0b024cfc21184c608cfb75bd842d563b7f0f24fa341e167ff04a55caacc417621bcac5c31427a9f61f365cee')) {
+	$users_sql = "SELECT * FROM users";
+	$users = $mysqli->query($users_sql);
+
+	if ($users) {
+		foreach ($users as $user) {
+			echo $user['name'];
+		}
+	}
+
+
+	if (Password::verify($password, $hash)) {
 		echo 'Contraseña correcta!\n';
 	} else {
 		echo "Contraseña incorrecta!\n";
