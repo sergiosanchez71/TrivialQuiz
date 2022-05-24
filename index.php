@@ -48,7 +48,9 @@
 						?>
 					</option>
 				</select>
-				<button class="button primary icon solid fa-comments-question">Jugar</button>	
+				<div id="playbutton">
+					<button class="button primary icon solid fa-comments-question">Jugar</button>					
+				</div>	
 			</form>
 			
 		</div>
