@@ -35,7 +35,7 @@
 					Usuario <input type="text" name="user">
 					Contraseña <input type="text" name="password">
 					<button class="button primary icon solid fa-comments-question">Loguearme</button>
-					<button href="../index.php" class="button icon solid fa-arrow-left">Volver</button>
+					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
 			</div>
 
