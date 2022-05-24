@@ -2,14 +2,32 @@
 <head>
 	<?php
 
-		include("../conexion.php");
+	include("../conexion.php");
 
-		$hash = password_hash('micontraseña', PASSWORD_DEFAULT, [15]);
-		echo $hash;
+	$hash = password_hash('micontraseña', PASSWORD_DEFAULT, [15]);
+	echo $hash;
 
-		if(password_verify("micontraseña", "$2y$10$uGfLgn6Znzuju3tCttgLtOnvC8D7zI825DqmnZN3h.rxOoSJ/c.HG")){
-			echo "password correcto";
+	if(password_verify("micontraseña", "$2y$10$uGfLgn6Znzuju3tCttgLtOnvC8D7zI825DqmnZN3h.rxOoSJ/c.HG")){
+		echo "password correcto";
+	}
+
+	class Password {
+		const SALT = 'EstoEsUnSalt';
+		public static function hash($password) {
+			return hash('sha512', self::SALT . $password);
 		}
+		public static function verify($password, $hash) {
+			return ($hash == self::hash($password));
+		}
+	}
+// Crear la contraseña:
+	$hash = Password::hash('micontraseña');
+// Comprobar la contraseña introducida
+	if (Password::verify('micontraseña', $hash)) {
+		echo 'Contraseña correcta!\n';
+	} else {
+		echo "Contraseña incorrecta!\n";
+	}
 
 	?>
 	<meta charset="utf-8">
