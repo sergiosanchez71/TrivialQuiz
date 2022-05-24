@@ -23,10 +23,10 @@
 		#playbutton{
 			width: 100%;
 			background: red;
+			margin: auto;
 		}
 
 		button{
-			margin: auto;
 			width: 50%;
 		}
 	</style>
