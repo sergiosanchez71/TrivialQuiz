@@ -29,24 +29,33 @@
 	<header id="header">
 		<div class="content">
 
-			<h1>Administrador de Trivial Quiz</h1>
-			<form>
-				<p>¿Qué acción quiere hacer?</p>
-				<button class="button primary icon solid fa-comments-question">Gestionar cuestionarios</button>	
-				<button class="button primary icon solid fa-comments-question">Gestionar preguntas</button>	
-				<button class="button primary icon solid fa-comments-question">Gestionar categorías</button>
-			</form>
+			<div id="login">
+				<h1>Login admin</h1>
+				<form>
+					Usuario <input type="text" name="user">
+					Contraseña <input type="text" name="password">
+					<p>¿Qué acción quiere hacer?</p>
+					<button class="button primary icon solid fa-comments-question">Loguearme</button>	
+				</form>
+			</div>
+
+			<div id="gestiones" style="display: none;">
+				
+				<h1>Administrador de Trivial Quiz</h1>
+				<form>
+					<p>¿Qué acción quiere hacer?</p>
+					<button class="button primary icon solid fa-comments-question">Gestionar cuestionarios</button>	
+					<button class="button primary icon solid fa-comments-question">Gestionar preguntas</button>	
+					<button class="button primary icon solid fa-comments-question">Gestionar categorías</button>
+				</form>
+
+			</div>
 			
 		</div>
 	</header>
 
 	<!-- Footer -->
 	<footer id="footer">
-		<ul class="icons">
-			<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-			<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-			<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-		</ul>
 		<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
 	</footer>
 
