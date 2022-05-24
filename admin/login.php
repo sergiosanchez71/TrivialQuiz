@@ -4,6 +4,12 @@
 
 		include("../conexion.php");
 
+		$hash = password_hash('micontraseña', PASSWORD_DEFAULT, [15]);
+
+		if(password_verify($password, $hash)){
+			echo "password correcto";
+		}
+
 	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,16 +33,14 @@
 	<header id="header">
 		<div class="content">
 
-			<div id="gestiones" style="display: none;">
-				
-				<h1>Administrador de Trivial Quiz</h1>
+			<div id="login">
+				<h1>Login admin</h1>
 				<form>
-					<p>¿Qué acción quiere hacer?</p>
-					<a class="button primary icon solid fa-comments-question">Gestionar cuestionarios</a>	
-					<a class="button primary icon solid fa-comments-question">Gestionar preguntas</a>	
-					<a class="button primary icon solid fa-comments-question">Gestionar categorías</a>
+					Usuario <input type="text" name="user">
+					Contraseña <input type="password" name="password">
+					<a class="button primary icon solid fa-comments-question">Loguearme</a>
+					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
-
 			</div>
 			
 		</div>
