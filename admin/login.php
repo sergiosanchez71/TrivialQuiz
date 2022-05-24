@@ -1,6 +1,21 @@
 <!DOCTYPE HTML>
 <head>
+	<?php
 
+	include('controller/conexion.php');
+
+
+	$users_sql = "SELECT * FROM users";
+	$users = $mysqli->query($users_sql);
+
+	if ($users) {
+		foreach ($users as $user) {
+			echo $user['name'];
+		}
+	}
+
+
+	?>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

@@ -21,15 +21,7 @@ class Password {
 		$username = $_REQUEST['username'];
 		$password = $_REQUEST['password'];
 
-		if ($username == 'admin') {
-			echo "BIEN";
-		}
-/*
-		$users_sql = "SELECT * FROM users";
-		$users = $mysqli->query($users_sql);
-
 		if ($users) {
-			echo $username.''.$password;
 			foreach ($users as $user) {
 				if ($username == $user['name']){
 					$hash = $user['password'];
@@ -43,7 +35,7 @@ class Password {
 					echo "";
 				}
 			}
-		}*/
+		}
 		break;
 
 		default:
