@@ -27,11 +27,12 @@ class Password {
 		if ($users) {
 			foreach ($users as $user) {
 				if ($username == $user['name']){
-					if (Password::verify($password,  $user['password'])) {
+					/*if (Password::verify($password,  $user['password'])) {
 						echo 'Contraseña correcta!\n';
 					} else {
 						echo "Contraseña incorrecta!\n";
-					}
+					}*/
+					echo "BIEMN";
 
 				} else {
 					echo "";
