@@ -12,8 +12,6 @@
 		foreach ($users as $user) {
 			echo $user['name'];
 		}
-	} else {
-		echo "hola";
 	}
 
 
