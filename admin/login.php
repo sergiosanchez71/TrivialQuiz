@@ -19,6 +19,7 @@
 		echo "HE ENTRADO";
 	}
 
+
 	$users_sql = "SELECT * FROM users";
 	$users = $mysqli->query($users_sql);
 
@@ -39,6 +40,14 @@
 
 
 	?>
+	<script type="text/javascript">
+		
+		function newwin() {              
+			myWindow=window.open('lead_data.php?leadid=1','myWin','width=400,height=650')
+		}
+
+	</script>
+	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Trivial Quiz</title>
@@ -66,7 +75,7 @@
 				<form>
 					Usuario <input type="text" name="user">
 					Contraseña <input type="password" name="password">
-					<a onclick="login()" class="button primary icon solid fa-comments-question">Loguearme</a>
+					<a onclick="newwin()" class="button primary icon solid fa-comments-question">Loguearme</a>
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
 			</div>
