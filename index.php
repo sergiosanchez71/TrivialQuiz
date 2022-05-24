@@ -1,12 +1,18 @@
 <!DOCTYPE HTML>
-<!--
-	Fractal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
 <head>
-	<title>Fractal by HTML5 UP</title>
+	<?php
+
+		include("conexion.php");
+
+		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
+		$questionnaires_sql = "SELECT * FROM questionnaires";
+		$questionnaires = $mysqli->query($questionnaires_sql);
+
+
+	?>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Trivial Quiz</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
