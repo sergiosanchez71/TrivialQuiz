@@ -72,12 +72,12 @@
             	data: parametros,
             success: function (respuesta) { //Devuelve el valor de operador
             	if (respuesta) {
-            		alert(respuesta);
+            		console.log(respuesta);
             		location.href='index.php';
             	}
             },
             error: function (xhr, status) {
-                            alert("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                            console.log("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
