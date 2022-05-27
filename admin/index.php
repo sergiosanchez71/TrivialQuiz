@@ -20,9 +20,9 @@
 		}
 	</style>
 
-	
+
 	<?php
-	if($_SESSION['admin']){
+	if($_SESSION['admin'] == true){
 		echo "ADMIN";
 	}
 	?>
