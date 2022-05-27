@@ -20,6 +20,7 @@ switch ($action) {
 			if ($username == $user['name']){
 				if (Password::verify($password,  $user['password'])) {
 					echo 'Contraseña correcta!\n';
+					$_SESSION['admin'] == true;
 				} else {
 					echo "Contraseña incorrecta!\n";
 				}

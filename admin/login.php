@@ -15,6 +15,11 @@
 			width: 100%;
 		}
 	</style>
+	<?php
+	if($_SESSION['admin']){
+		echo "ADMIN";
+	}
+	?>
 
 </head>
 <body class="is-preload">
