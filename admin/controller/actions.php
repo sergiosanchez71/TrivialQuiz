@@ -19,6 +19,7 @@ switch ($action) {
 		foreach ($users as $user) {
 			if ($username == $user['name']){
 				if (Password::verify($password,  $user['password'])) {
+					console.log('login true');
 					$_SESSION['admin'] = true;
 				} else {
 					echo "Contraseña incorrecta!";
