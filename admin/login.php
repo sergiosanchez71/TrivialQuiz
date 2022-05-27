@@ -15,11 +15,6 @@
 			width: 100%;
 		}
 	</style>
-	<?php
-	if($_SESSION['admin']){
-		echo "ADMIN";
-	}
-	?>
 
 </head>
 <body class="is-preload">
@@ -78,6 +73,7 @@
             success: function (respuesta) { //Devuelve el valor de operador
             	if (respuesta) {
             		alert(respuesta);
+            		location.href='index.php';
             	}
             },
             error: function (xhr, status) {
