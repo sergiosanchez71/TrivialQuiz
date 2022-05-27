@@ -4,6 +4,8 @@
 
 		include("admin/controller/conexion.php");
 
+		$_SESSION['admin'] = false;
+
 		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
 		$questionnaires_sql = "SELECT * FROM questionnaires";
 		$questionnaires = $mysqli->query($questionnaires_sql);
