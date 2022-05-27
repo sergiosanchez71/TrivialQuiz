@@ -2,7 +2,7 @@
 <head>
 	<?php
 
-		include("../conexion.php");
+	include("../conexion.php");
 
 	?>
 	<meta charset="utf-8">
@@ -19,6 +19,14 @@
 			width: 100%;
 		}
 	</style>
+
+	
+	<?php
+	if($_SESSION['admin']){
+		echo "ADMIN";
+	}
+	?>
+
 
 </head>
 <body class="is-preload">
