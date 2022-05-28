@@ -5,9 +5,7 @@
 	include("../conexion.php");
 
 	session_start();
-	if ($_SESSION['admin'] == true) {
-		echo $_SESSION['admin'];
-	} else {
+	if (!$_SESSION['admin']) {
 		header('Location: http://sergiosanchez.site/projects/trivialquiz/admin/login.php');
 	}
 
