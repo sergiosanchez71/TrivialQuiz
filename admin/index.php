@@ -11,24 +11,10 @@
 
 
 	$categories_sql = "SELECT * FROM categories";
-	//if($mysqli->query($categories_sql)){
 	$categories = $mysqli->query($categories_sql);
-	//}
 
-	
-	if ($categories) {
-		foreach ($categories as $category) {
-			echo $category['name'];
-		}
-	}
 
 	$mysqli -> close();
-	/*
-	try {
-		$categories = $mysqli->query($categories_sql);
-	} catch (error) {
-		console.error(error);
-	}*/
 	
 
 	?>
