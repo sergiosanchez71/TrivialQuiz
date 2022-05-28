@@ -68,12 +68,13 @@
 					<p>Categoría <select>
 						<option>
 							<?php
-							
+							/*
 							if ($categories) {
 								foreach ($categories as $category) {
 									echo $category['name'];
 								}
 							}
+							*/
 
 							?>
 						</option>
