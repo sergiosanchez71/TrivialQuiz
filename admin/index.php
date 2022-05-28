@@ -11,7 +11,10 @@
 
 
 	$categories_sql = "SELECT * FROM categories";
-	//$categories = $mysqli->query($categories_sql);
+	if ($categories_sql) {
+		$categories = $mysqli->query($categories_sql);
+	}
+	
 
 	?>
 	<meta charset="utf-8">
