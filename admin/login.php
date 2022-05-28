@@ -73,7 +73,7 @@
             success: function (respuesta) { //Devuelve el valor de operador
             	if (respuesta) {
             		console.log(respuesta);
-            		location.href='index.php';
+            		location.href='./index.php';
             	}
             },
             error: function (xhr, status) {
