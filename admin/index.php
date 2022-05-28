@@ -45,7 +45,7 @@
 					<a class="button primary icon solid fa-comments-question">Gestionar cuestionarios</a>	
 					<a class="button primary icon solid fa-comments-question">Gestionar preguntas</a>	
 					<a class="button primary icon solid fa-comments-question">Gestionar categorías</a>
-					<a href="../index.php" class="button primary icon solid fa-comments-question">Salir</a>
+					<a href="../index.php" onclick="<?php $_SESSION['admin']=false; ?>" class="button primary icon solid fa-comments-question">Salir</a>
 				</form>
 
 			</div>
