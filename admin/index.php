@@ -11,6 +11,10 @@
 		header('Location: http://sergiosanchez.site/projects/trivialquiz/admin/login.php');
 	}
 
+
+	$categories_sql = "SELECT * FROM categories";
+	$categories = $mysqli->query($categories_sql);
+
 	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,6 +49,40 @@
 					<a class="button primary icon solid fa-comments-question">Gestionar categorías</a>
 					<a href="login.php" class="button primary icon solid fa-comments-question">Salir</a>
 				</form>
+
+			</div>
+
+			<div id="gestionarCuestionarios" style="display: none;">
+
+				<h1>Administrador de Trivial Quiz</h1>
+				<form id="gestionarCuestionariosForm">
+					<p>Gestionar cuestionarios</p>
+					<a class="button primary icon solid fa-comments-question">Crear cuestionario</a>	
+					<a class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
+					<a class="button primary icon solid fa-comments-question">Borrar cuestionario</a>	
+					<a class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
+				<form id="crearCuestionariosForm">
+					<p>Nombre <input type="text" name="nameCrearCuestionariosForm"></p>
+					<p>Categoría <select>
+						<option>
+							<?php
+							/*
+							if ($categories) {
+								foreach ($categories as $category) {
+									echo $category['name'];
+								}
+							}
+							*/
+							?>
+						</option>
+					</select> </p>
+					<p>Preguntas <input type="number" name="questionsCrearCuestionariosForm"></p>
+					<a class="button primary icon solid fa-comments-question">Crear cuestionario</a>
+					<a class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
 
 			</div>
 			
