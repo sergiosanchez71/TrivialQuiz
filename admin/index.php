@@ -11,12 +11,13 @@
 
 
 	$categories_sql = "SELECT * FROM categories";
-	
+	$categories = $mysqli->query($categories_sql);
+	/*
 	try {
 		$categories = $mysqli->query($categories_sql);
 	} catch (error) {
 		console.error(error);
-	}
+	}*/
 	
 
 	?>
