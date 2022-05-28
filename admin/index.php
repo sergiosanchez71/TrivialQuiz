@@ -22,9 +22,11 @@
 
 
 	<?php
+	session_start();
 	if($_SESSION['admin'] == true){
 		echo "ADMIN";
-	}
+	} 
+
 	?>
 
 
@@ -35,7 +37,7 @@
 	<header id="header">
 		<div class="content">
 
-			<div id="gestiones" style="display: none;">
+			<div id="gestiones">
 				
 				<h1>Administrador de Trivial Quiz</h1>
 				<form>
