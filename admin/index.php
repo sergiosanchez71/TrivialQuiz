@@ -27,6 +27,7 @@
 		echo $_SESSION['admin'];
 	} else {
 		header("Location: login.php");
+		header('Location: http://sergiosanchez.site/projects/trivialquiz/admin/login.php');
 	}
 
 	?>
