@@ -23,11 +23,9 @@
 
 	<?php
 	session_start();
-	//if(isset($_SESSION['admin'])){
 	if ($_SESSION['admin'] == true) {
 		echo $_SESSION['admin'];
 	} else {
-		echo "CAMBIO PAGINA";
 		header('Location: http://sergiosanchez.site/projects/trivialquiz/admin/login.php');
 	}
 
