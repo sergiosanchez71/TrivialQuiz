@@ -4,6 +4,13 @@
 
 	include("../conexion.php");
 
+	session_start();
+	if ($_SESSION['admin'] == true) {
+		echo $_SESSION['admin'];
+	} else {
+		header('Location: http://sergiosanchez.site/projects/trivialquiz/admin/login.php');
+	}
+
 	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,22 +27,6 @@
 		}
 	</style>
 
-
-	<?php
-	session_start();
-	if ($_SESSION['admin'] == true) {
-		echo $_SESSION['admin'];
-	} else {
-		header('Location: http://sergiosanchez.site/projects/trivialquiz/admin/login.php');
-	}
-
-	?>
-
-	<script type="text/javascript">
-		function cerrarSesion(){
-
-		}
-	</script>
 
 </head>
 <body class="is-preload">
