@@ -11,6 +11,7 @@
 
 
 	$categories_sql = "SELECT * FROM categories";
+	echo $categories_sql;
 	$categories = $mysqli->query($categories_sql);
 	/*
 	try {
