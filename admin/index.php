@@ -2,7 +2,7 @@
 <head>
 	<?php
 
-	include("../conexion.php");
+	include("controller/conexion.php");
 
 	session_start();
 	if (!$_SESSION['admin']) {
