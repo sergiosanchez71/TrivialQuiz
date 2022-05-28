@@ -11,9 +11,9 @@
 
 
 	$categories_sql = "SELECT * FROM categories";
-	if($mysqli->query($categories_sql)){
+	//if($mysqli->query($categories_sql)){
 		$categories = $mysqli->query($categories_sql);
-	}
+	//}
 
 	$mysqli -> close();
 	/*
