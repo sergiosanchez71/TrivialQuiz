@@ -35,8 +35,8 @@
 			<div id="login">
 				<h1>Login admin</h1>
 				<form>
-					Usuario <input type="text" id="username">
-					Contraseña <input type="password" id="password">
+					Usuario <input type="text" id="username" onkeypress="pulsar(event)">
+					Contraseña <input type="password" id="password" onkeypress="pulsar(event)">
 					<a onclick="enter()" id="login" class="button primary icon solid fa-comments-question">Loguearme</a>
 					<a href="../index.php" class="button icon solid fa-arrow-left">Volver</a>
 				</form>
@@ -60,10 +60,6 @@
 	<script src="../assets/js/main.js"></script>
 
 	<script type="text/javascript">
-
-		$(document).ready(function () {
-			pulsar();
-		});
 
 		function enter(){
 			var username = $("#username").val();
