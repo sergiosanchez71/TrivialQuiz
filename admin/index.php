@@ -26,7 +26,7 @@
 	if(isset($_SESSION['admin'])){
 		echo $_SESSION['admin'];
 	} else {
-		header("Location: login.php");
+		echo "CAMBIO PAGINA";
 		header('Location: http://sergiosanchez.site/projects/trivialquiz/admin/login.php');
 	}
 
