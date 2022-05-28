@@ -10,8 +10,8 @@
 	}
 
 
-	$categories_sql = "SELECT * FROM categories";
-	$categories = $mysqli->query($categories_sql);
+	//$categories_sql = "SELECT * FROM categories";
+	//$categories = $mysqli->query($categories_sql);
 
 	?>
 	<meta charset="utf-8">
