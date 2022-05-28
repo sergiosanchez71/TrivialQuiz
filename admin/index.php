@@ -10,7 +10,7 @@
 	}
 
 
-	//$categories_sql = "SELECT * FROM categories";
+	$categories_sql = "SELECT * FROM categories";
 	//$categories = $mysqli->query($categories_sql);
 
 	?>
