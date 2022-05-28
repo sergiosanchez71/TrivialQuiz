@@ -25,7 +25,9 @@
 	session_start();
 	if($_SESSION['admin'] == true){
 		echo "ADMIN";
-	} 
+	} else {
+		echo "INFILTRADO";
+	}
 
 	?>
 
