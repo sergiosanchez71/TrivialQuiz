@@ -9,6 +9,15 @@
 	<link rel="stylesheet" href="../assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
+	<?php 
+
+	session_start();
+	if ($_SESSION['admin'] == true) {
+		$_SESSION['admin'] = false;
+	} 
+
+	?>
+
 	<style type="text/css">
 		a{
 			margin-top: 20px;
@@ -52,11 +61,9 @@
 
 	<script type="text/javascript">
 
-		/*$(document).ready(function () {
-			$("#login").click(function(){
-				enter();
-			});
-		});*/
+		$(document).ready(function () {
+			pulsar();
+		});
 
 		function enter(){
 			var username = $("#username").val();
