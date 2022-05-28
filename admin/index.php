@@ -11,9 +11,12 @@
 
 
 	$categories_sql = "SELECT * FROM categories";
-	if ($categories_sql) {
+	try{
 		$categories = $mysqli->query($categories_sql);
+	} catch (Exception e){
+		echo "";
 	}
+	
 	
 
 	?>
