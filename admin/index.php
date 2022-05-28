@@ -23,11 +23,9 @@
 
 	<?php
 	session_start();
-	if($_SESSION['admin'] == true){
+	if(isset($_SESSION['admin']){
 		echo $_SESSION['admin'];
-	} else {
-		echo $_SESSION['admin'];
-	}
+	} 
 
 	?>
 
@@ -47,7 +45,7 @@
 					<a class="button primary icon solid fa-comments-question">Gestionar cuestionarios</a>	
 					<a class="button primary icon solid fa-comments-question">Gestionar preguntas</a>	
 					<a class="button primary icon solid fa-comments-question">Gestionar categorías</a>
-					<a href="../index.php"  class="button primary icon solid fa-comments-question">Salir</a>
+					<a href="../index.php" class="button primary icon solid fa-comments-question">Salir</a>
 				</form>
 
 			</div>

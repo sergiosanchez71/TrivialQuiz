@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <head>
 	<?php
-		session_destroy();
 
 		include("admin/controller/conexion.php");
 
