@@ -98,6 +98,22 @@
 	</footer>
 
 	<!-- Scripts -->
+	<script type="text/javascript">
+		/*
+		$(function()
+		{
+			$('#video').mouseover(function()
+			{
+				$('#numero').css("font-size", "62.5px");
+			});
+
+			$('#video').mouseout(function()
+			{
+				$('#numero').css("font-size", "50px");
+			});
+		});
+		*/
+	</script>
 	<script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/jquery.scrolly.min.js"></script>
 	<script src="../assets/js/browser.min.js"></script>
