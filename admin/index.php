@@ -67,7 +67,7 @@
 
 				<form id="crearCuestionariosForm" style="display: none;">
 					<p>Crear un nuevo cuestionario</p>
-					<p>Nombre <input type="text" name="nameCrearCuestionariosForm"></p>
+					<p>Nombre <input type="text" id="nameCrearCuestionariosForm"></p>
 					<p>Categoría <select id="categoryCrearCuestionariosForm">
 						<?php
 
@@ -130,7 +130,33 @@
 
 		$("#createCuestionary").click(function(){
 			console.log($("#categoryCrearCuestionariosForm").val());
+			createCuestionary($("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionsCrearCuestionariosForm").val());
+
 		});
+
+		function createCuestionary(name, category, questions){
+			var parametros = {
+				"name": name,
+                "category": category, //Guardamos el nombre sin diferenciar entre mayúsculas y minúsculas
+                "questions": questions //Su contraseña
+            };
+
+            $.ajax({
+            	url: "controller/actions.php",
+            	data: parametros,
+            success: function (respuesta) { //Devuelve el valor de operador
+            	if (respuesta) {
+            		console.log(respuesta);
+            		location.href='index.php';
+            	}
+            },
+            error: function (xhr, status) {
+                            console.log("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+        }
 
 
 
