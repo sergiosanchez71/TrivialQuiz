@@ -114,7 +114,6 @@
 			$("#gestiones").css("display","none");
 			$("#gestionarCuestionariosForm").css("display","block");
 			back = "gestionarCuestionariosForm";
-			display = "gestionarCuestionariosForm";
 		});
 
 		$("#buttonCreateCuest").click(function(){
@@ -128,6 +127,11 @@
 			$("#"+display).css("display","block");
 			display = "gestiones";
 		});
+
+		button.click(function(){
+			console.log("back:"+back);
+			console.log("display:"+display);
+		})
 
 
 
