@@ -73,7 +73,7 @@
 
 						if ($categories) {
 							foreach ($categories as $category) {
-								echo "<option id="+$category['id']+">";
+								echo "<option>";
 								echo $category['name'];
 								echo "</option>";
 							}
