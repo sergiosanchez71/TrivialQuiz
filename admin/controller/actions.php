@@ -36,6 +36,8 @@ switch ($action) {
 		$createCuestionary_sql = "INSERT INTO questionnaires('name', 'questions', 'category') VALUES ('$name','$questions','$category')";
 		$createCuestionary = $mysqli->query($categories_sql);
 
+		echo "Cuestionario creado correctamente";
+
 
 		$mysqli -> close();
 	
