@@ -82,7 +82,7 @@
 							?>
 						</option>
 					</select> </p>
-					<p>Preguntas <input type="number" name="questionsCrearCuestionariosForm"></p>
+					<p>Preguntas <input type="number" class="button primary icon solid fa-comments-question" name="questionsCrearCuestionariosForm"></p>
 					<a class="button primary icon solid fa-comments-question">Crear cuestionario</a>
 					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
@@ -129,21 +129,6 @@
 
 
 
-
-		/*
-		$(function()
-		{
-			$('#video').mouseover(function()
-			{
-				$('#numero').css("font-size", "62.5px");
-			});
-
-			$('#video').mouseout(function()
-			{
-				$('#numero').css("font-size", "50px");
-			});
-		});
-		*/
 	</script>
 
 </body>
