@@ -129,13 +129,13 @@
 		});
 
 		$("#createCuestionary").click(function(){
-			console.log($("#categoryCrearCuestionariosForm").val());
 			createCuestionary($("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionsCrearCuestionariosForm").val());
-
 		});
 
 		function createCuestionary(name, category, questions){
+			console.log(name);
 			var parametros = {
+				"action": "createCuestionary",
 				"name": name,
                 "category": category, //Guardamos el nombre sin diferenciar entre mayúsculas y minúsculas
                 "questions": questions //Su contraseña
@@ -147,7 +147,6 @@
             success: function (respuesta) { //Devuelve el valor de operador
             	if (respuesta) {
             		console.log(respuesta);
-            		location.href='index.php';
             	}
             },
             error: function (xhr, status) {
