@@ -18,7 +18,7 @@ switch ($action) {
 	if ($users) {
 		foreach ($users as $user) {
 			if ($username == $user['name']){
-				if (Password::verify($password,  $user['password'])) {
+				if (Password::verify($password, $user['password'])) {
 					echo 'login true';
 					session_start();
 					$_SESSION['admin'] = true;
