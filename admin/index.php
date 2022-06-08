@@ -46,8 +46,8 @@
 				<h1>Administrador de Trivial Quiz</h1>
 				<form>
 					<p>¿Qué acción quiere hacer?</p>
-					<a class="button primary icon solid fa-comments-question">Gestionar cuestionarios</a>	
-					<a class="button primary icon solid fa-comments-question">Gestionar preguntas</a>	
+					<a id="buttonCuestionaries" class="button primary icon solid fa-comments-question">Gestionar cuestionarios</a>	
+					<a id="buttonQuestions" class="button primary icon solid fa-comments-question">Gestionar preguntas</a>	
 					<a id="buttonCategory" class="button primary icon solid fa-comments-question">Gestionar categorías</a>
 					<a href="login.php" class="button primary icon solid fa-comments-question">Salir</a>
 				</form>
@@ -105,8 +105,9 @@
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
 	<script type="text/javascript">
-		$("#buttonCategory").click(function(){
+		$("#buttonCuestionaries").click(function(){
 			$("#gestiones").css("display","none");
+			$("#crearCuestionariosForm").css("display","block");
 		});
 		/*
 		$(function()
