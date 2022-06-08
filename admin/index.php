@@ -84,7 +84,7 @@
 					</select> </p>
 					<p>Preguntas <input type="number" name="questionsCrearCuestionariosForm"></p>
 					<a class="button primary icon solid fa-comments-question">Crear cuestionario</a>
-					<a class="button primary icon solid fa-comments-question.buttonBack">Volver</a>
+					<a class="button primary icon solid fa-comments-question buttonBack">Volver</a>
 				</form>
 
 
