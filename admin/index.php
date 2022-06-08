@@ -128,7 +128,7 @@
 			display = "gestiones";
 		});
 
-		button.click(function(){
+		$('button').click(function(){
 			console.log("back:"+back);
 			console.log("display:"+display);
 		})
