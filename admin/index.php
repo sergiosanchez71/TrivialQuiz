@@ -74,16 +74,17 @@
 							
 							if ($categories) {
 								foreach ($categories as $category) {
+									echo "<option class='categoryOption' value='"+$category['id']+"'>";
 									echo $category['name'];
+									echo "</option>";
 								}
 							}
 							
 
 							?>
-						</option>
 					</select> </p>
-					<p>Preguntas <input type="number" class="primary icon solid fa-comments-question" name="questionsCrearCuestionariosForm"></p>
-					<a class="button primary icon solid fa-comments-question">Crear cuestionario</a>
+					<p>Preguntas <input type="number" name="questionsCrearCuestionariosForm"></p>
+					<a id="createCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
 					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
@@ -127,9 +128,36 @@
 			$("#gestionarCuestionariosForm").css("display","block");
 		});
 
+		$("#createCuestionary").click(function(){
+			var name = $("#nameCrearCuestionariosForm").val();
+			var category = $(".categoryOption").val();
+			var parametros = {
+				"action": "enter",
+                "username": username.toLowerCase(), //Guardamos el nombre sin diferenciar entre mayúsculas y minúsculas
+                "password": password //Su contraseña
+            };
+
+            $.ajax({
+            	url: "controller/actions.php",
+            	data: parametros,
+            success: function (respuesta) { //Devuelve el valor de operador
+            	if (respuesta) {
+            		console.log(respuesta);
+            		location.href='index.php';
+            	}
+            },
+            error: function (xhr, status) {
+                            console.log("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+
+        });
 
 
-	</script>
+
+    </script>
 
 </body>
 </html>
