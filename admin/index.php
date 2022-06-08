@@ -107,7 +107,7 @@
 	<script src="../assets/js/main.js"></script>
 	<script type="text/javascript">
 
-		var back = none;
+		var back = null;
 
 		$("#buttonCuestionaries").click(function(){
 			$("#gestiones").css("display","none");
