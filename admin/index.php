@@ -84,7 +84,7 @@
 					</select> </p>
 					<p>Preguntas <input type="number" name="questionsCrearCuestionariosForm"></p>
 					<a class="button primary icon solid fa-comments-question">Crear cuestionario</a>
-					<a class="button primary icon solid fa-comments-question">Volver</a>
+					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
 
@@ -120,6 +120,11 @@
 		$("#buttonBackGestionForm").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#gestiones").css("display","block");
+		});
+
+		$("#buttonBackCreateForm").click(function(){
+			$("#gestiones").css("display","none");
+			$("#gestionarCuestionariosForm").css("display","block");
 		});
 
 
