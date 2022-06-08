@@ -68,7 +68,7 @@
 				<form id="crearCuestionariosForm" style="display: none;">
 					<p>Crear un nuevo cuestionario</p>
 					<p>Nombre <input type="text" name="nameCrearCuestionariosForm"></p>
-					<p>Categoría <select>
+					<p>Categoría <select id="categoryCrearCuestionariosForm">
 						<?php
 
 						if ($categories) {
@@ -129,8 +129,7 @@
 		});
 
 		$("#createCuestionary").click(function(){
-			$("#crearCuestionariosForm").css("display","none");
-			$("#gestionarCuestionariosForm").css("display","block");
+			console.log($("#categoryCrearCuestionariosForm").val());
 		});
 
 
