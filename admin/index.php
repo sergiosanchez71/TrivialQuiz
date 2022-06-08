@@ -107,12 +107,14 @@
 	<script src="../assets/js/main.js"></script>
 	<script type="text/javascript">
 
+		var display = "gestiones";
 		var back = null;
 
 		$("#buttonCuestionaries").click(function(){
 			$("#gestiones").css("display","none");
 			$("#gestionarCuestionariosForm").css("display","block");
 			back = "gestionarCuestionariosForm";
+			display = "gestionarCuestionariosForm";
 		});
 
 		$("#buttonCreateCuest").click(function(){
@@ -123,7 +125,7 @@
 
 		$(".buttonBack").click(function(){
 			$("#"+back).css("display","none");
-			$("#gestionarCuestionariosForm").css("display","block");
+			$("#"+display).css("display","block");
 		});
 
 
