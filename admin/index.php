@@ -61,7 +61,7 @@
 					<a id="buttonCreateCuest" class="button primary icon solid fa-comments-question">Crear cuestionario</a>	
 					<a id="buttonModifyCuest" class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
 					<a id="buttonDeleteCuest" class="button primary icon solid fa-comments-question">Borrar cuestionario</a>	
-					<a class="button primary icon solid fa-comments-question">Volver</a>
+					<a id="buttonBackCuest" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
 				<form id="crearCuestionariosForm" style="display: none;">
@@ -112,6 +112,11 @@
 		$("#buttonCreateCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#crearCuestionariosForm").css("display","block");
+		});
+
+		$("#buttonBackCuest").click(function(){
+			$("#crearCuestionariosForm").css("display","none");
+			$("#gestionarCuestionariosForm").css("display","block");
 		});
 
 
