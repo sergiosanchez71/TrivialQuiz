@@ -33,7 +33,7 @@ switch ($action) {
 		$name = $_REQUEST['name'];
 		$questions = $_REQUEST['questions'];
 		$category = $_REQUEST['category'];
-		$sql = "INSERT INTO questionnaires('name', 'questions', 'category') VALUES ('$name','$questions','$category')";
+		$sql = "INSERT INTO questionnaires VALUES (null, '$name','$questions','$category')";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Cuestionario creado correctamente";
