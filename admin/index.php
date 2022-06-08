@@ -107,6 +107,7 @@
 	<script type="text/javascript">
 		$("#buttonCategory").click(function(){
 			alert('hi');
+			$("#gestiones").style('display:none');
 		});
 		/*
 		$(function()
