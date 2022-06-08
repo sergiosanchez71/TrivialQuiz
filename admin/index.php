@@ -62,7 +62,7 @@
 					<a id="buttonCreateCuest" class="button primary icon solid fa-comments-question">Crear cuestionario</a>	
 					<a id="buttonModifyCuest" class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
 					<a id="buttonDeleteCuest" class="button primary icon solid fa-comments-question">Borrar cuestionario</a>	
-					<a class="button primary icon solid fa-comments-question buttonBack">Volver</a>
+					<a id="buttonBackGestionForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
 				<form id="crearCuestionariosForm" style="display: none;">
@@ -84,7 +84,7 @@
 					</select> </p>
 					<p>Preguntas <input type="number" name="questionsCrearCuestionariosForm"></p>
 					<a class="button primary icon solid fa-comments-question">Crear cuestionario</a>
-					<a class="button primary icon solid fa-comments-question buttonBack">Volver</a>
+					<a class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
 
@@ -107,32 +107,21 @@
 	<script src="../assets/js/main.js"></script>
 	<script type="text/javascript">
 
-		var display = "gestiones";
-		var back = null;
-
 		$("#buttonCuestionaries").click(function(){
 			$("#gestiones").css("display","none");
 			$("#gestionarCuestionariosForm").css("display","block");
-			back = "gestionarCuestionariosForm";
 		});
 
 		$("#buttonCreateCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#crearCuestionariosForm").css("display","block");
-			back = "crearCuestionariosForm";
-			display = "gestionarCuestionariosForm";
 		});
 
-		$(".buttonBack").click(function(){
-			$("#"+back).css("display","none");
-			$("#"+display).css("display","block");
-			display = "gestiones";
+		$("#buttonBackGestionForm").click(function(){
+			$("#gestionarCuestionariosForm").css("display","none");
+			$("#gestiones").css("display","block");
 		});
 
-		$('button').click(function(){
-			console.log("back:"+back);
-			console.log("display:"+display);
-		})
 
 
 
