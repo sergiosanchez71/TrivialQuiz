@@ -43,7 +43,7 @@
 
 
 			<h1>Administrador de Trivial Quiz</h1>
-			
+
 			<div id="gestiones">				
 				<form>
 					<p>¿Qué acción quiere hacer?</p>
@@ -66,6 +66,7 @@
 				</form>
 
 				<form id="crearCuestionariosForm" style="display: none;">
+					<p>Crear un nuevo cuestionario</p>
 					<p>Nombre <input type="text" name="nameCrearCuestionariosForm"></p>
 					<p>Categoría <select>
 						<option>
