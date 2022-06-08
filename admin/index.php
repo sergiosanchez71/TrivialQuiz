@@ -68,71 +68,57 @@
 				<form id="crearCuestionariosForm" style="display: none;">
 					<p>Crear un nuevo cuestionario</p>
 					<p>Nombre <input type="text" name="nameCrearCuestionariosForm"></p>
-					<p>Categoría <select>
-						<option>
-							<?php
-							
-							if ($categories) {
-								foreach ($categories as $category) {
-									echo "<option id='category"+$category['id']+"'>";
-									echo $category['name'];
-									echo "</option>";
-								}
-							}
-							
+					<p>Categoría <select id="categoriesCreateCuestionaryForm"></select> </p>
+						<p>Preguntas <input type="number" name="questionsCrearCuestionariosForm"></p>
+						<a id="createCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
+						<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
+					</form>
 
-							?>
-					</select> </p>
-					<p>Preguntas <input type="number" name="questionsCrearCuestionariosForm"></p>
-					<a id="createCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
-					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
-				</form>
 
+				</div>
 
 			</div>
-			
-		</div>
-	</header>
+		</header>
 
-	<!-- Footer -->
-	<footer id="footer">
-		<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
-	</footer>
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
+		</footer>
 
-	<!-- Scripts -->
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.scrolly.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
-	<script type="text/javascript">
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script type="text/javascript">
 
-		$("#buttonCuestionaries").click(function(){
-			$("#gestiones").css("display","none");
-			$("#gestionarCuestionariosForm").css("display","block");
-		});
+			$("#buttonCuestionaries").click(function(){
+				$("#gestiones").css("display","none");
+				$("#gestionarCuestionariosForm").css("display","block");
+			});
 
-		$("#buttonCreateCuest").click(function(){
-			$("#gestionarCuestionariosForm").css("display","none");
-			$("#crearCuestionariosForm").css("display","block");
-		});
+			$("#buttonCreateCuest").click(function(){
+				$("#gestionarCuestionariosForm").css("display","none");
+				$("#crearCuestionariosForm").css("display","block");
+			});
 
-		$("#buttonBackGestionForm").click(function(){
-			$("#gestionarCuestionariosForm").css("display","none");
-			$("#gestiones").css("display","block");
-		});
+			$("#buttonBackGestionForm").click(function(){
+				$("#gestionarCuestionariosForm").css("display","none");
+				$("#gestiones").css("display","block");
+			});
 
-		$("#buttonBackCreateForm").click(function(){
-			$("#crearCuestionariosForm").css("display","none");
-			$("#gestionarCuestionariosForm").css("display","block");
-		});
+			$("#buttonBackCreateForm").click(function(){
+				$("#crearCuestionariosForm").css("display","none");
+				$("#gestionarCuestionariosForm").css("display","block");
+			});
 
-		$("#createCuestionary").click(function(){
-			var name = $("#nameCrearCuestionariosForm").val();
-			var category = $(".categoryOption").val();
-			var parametros = {
-				"action": "enter",
+			$("#createCuestionary").click(function(){
+				var name = $("#nameCrearCuestionariosForm").val();
+				var category = $(".categoryOption").val();
+				var parametros = {
+					"action": "enter",
                 "username": username.toLowerCase(), //Guardamos el nombre sin diferenciar entre mayúsculas y minúsculas
                 "password": password //Su contraseña
             };
@@ -155,9 +141,38 @@
 
         });
 
+			function displayCategories(){
+				var parametros = {
+					"accion": "displayCategories"
+				};
+
+				$.ajax({
+					url: "../controller/actions.php",
+					data: parametros,
+					success: function (respuesta) {
+						var resp = JSON.parse(respuesta);
+						console.log(resp);
+
+                        for (var i = 0; i < resp.category.length; i++) {
+                        	var option = document.createElement("option");
+                            option.setAttribute("value", resp.id[i]); //Valor del id de animal
+                            $("#categoriesCreateCuestionaryForm").append(option);
+                            option.innerHTML = resp.category[i];
+                        }
 
 
-    </script>
+                    },
+                    error: function (xhr, status) {
+                    	alert("Error en mostrar animales");
+                    },
+                    type: "POST",
+                    dataType: "text"
+                });
+			}
 
-</body>
-</html>
+
+
+		</script>
+
+	</body>
+	</html>
