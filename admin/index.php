@@ -102,6 +102,7 @@
 			$("#buttonCreateCuest").click(function(){
 				$("#gestionarCuestionariosForm").css("display","none");
 				$("#crearCuestionariosForm").css("display","block");
+				displayCategories();
 			});
 
 			$("#buttonBackGestionForm").click(function(){
