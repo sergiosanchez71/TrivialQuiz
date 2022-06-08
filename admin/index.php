@@ -59,13 +59,13 @@
 				<h1>Administrador de Trivial Quiz</h1>
 				<form id="gestionarCuestionariosForm">
 					<p>Gestionar cuestionarios</p>
-					<a class="button primary icon solid fa-comments-question">Crear cuestionario</a>	
-					<a class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
-					<a class="button primary icon solid fa-comments-question">Borrar cuestionario</a>	
+					<a id="buttonCreateCuest" class="button primary icon solid fa-comments-question">Crear cuestionario</a>	
+					<a id="buttonModifyCuest" class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
+					<a id="buttonDeleteCuest" class="button primary icon solid fa-comments-question">Borrar cuestionario</a>	
 					<a class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
-				<form id="crearCuestionariosForm">
+				<form id="crearCuestionariosForm" style="display: none;">
 					<p>Nombre <input type="text" name="nameCrearCuestionariosForm"></p>
 					<p>Categoría <select>
 						<option>
@@ -109,6 +109,14 @@
 			$("#gestiones").css("display","none");
 			$("#gestionarCuestionarios").css("display","block");
 		});
+		
+		$("#buttonCreateCuest").click(function(){
+			$("#gestionarCuestionariosForm").css("display","none");
+			$("#crearCuestionariosForm").css("display","block");
+		});
+
+
+
 		/*
 		$(function()
 		{
