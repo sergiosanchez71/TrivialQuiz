@@ -107,7 +107,7 @@
 	<script type="text/javascript">
 		$("#buttonCuestionaries").click(function(){
 			$("#gestiones").css("display","none");
-			$("#crearCuestionariosForm").css("display","block");
+			$("#gestionarCuestionarios").css("display","block");
 		});
 		/*
 		$(function()
