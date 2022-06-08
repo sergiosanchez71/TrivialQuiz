@@ -133,7 +133,13 @@
 		});
 
 		function createCuestionary(name, category, questions){
-			console.log(name);
+			
+			if (questions < 5) {
+				questions = 5;
+			} else if (questions > 100){
+				questions = 100;
+			}
+
 			var parametros = {
 				"action": "createCuestionary",
 				"name": name,
