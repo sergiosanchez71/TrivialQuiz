@@ -106,8 +106,7 @@
 	<script src="../assets/js/main.js"></script>
 	<script type="text/javascript">
 		$("#buttonCategory").click(function(){
-			alert('hi');
-			$("#gestiones").hide();
+			$("#gestiones").css("display","none");
 		});
 		/*
 		$(function()
