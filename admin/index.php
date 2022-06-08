@@ -69,18 +69,18 @@
 					<p>Crear un nuevo cuestionario</p>
 					<p>Nombre <input type="text" name="nameCrearCuestionariosForm"></p>
 					<p>Categoría <select>
-						<option>
-							<?php
-							
-							if ($categories) {
-								foreach ($categories as $category) {
-									echo $category['name'];
-								}
+						<?php
+						
+						if ($categories) {
+							foreach ($categories as $category) {
+								echo "<option id='$category['id']'>";
+								echo $category['name'];
+								echo "</option>";
 							}
-							
+						}
+						
 
-							?>
-						</option>
+						?>
 					</select> </p>
 					<p>Preguntas <input type="number" name="questionsCrearCuestionariosForm"></p>
 					<a id="createCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
