@@ -126,6 +126,7 @@
 		$(".buttonBack").click(function(){
 			$("#"+back).css("display","none");
 			$("#"+display).css("display","block");
+			display = "gestiones";
 		});
 
 
