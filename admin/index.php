@@ -41,9 +41,10 @@
 	<header id="header">
 		<div class="content">
 
-			<div id="gestiones">
-				
-				<h1>Administrador de Trivial Quiz</h1>
+
+			<h1>Administrador de Trivial Quiz</h1>
+			
+			<div id="gestiones">				
 				<form>
 					<p>¿Qué acción quiere hacer?</p>
 					<a id="buttonCuestionaries" class="button primary icon solid fa-comments-question">Gestionar cuestionarios</a>	
