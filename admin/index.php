@@ -120,6 +120,7 @@
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#crearCuestionariosForm").css("display","block");
 			back = "crearCuestionariosForm";
+			display = "gestionarCuestionariosForm";
 		});
 
 		$(".buttonBack").click(function(){
