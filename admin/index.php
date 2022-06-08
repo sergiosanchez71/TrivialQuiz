@@ -123,7 +123,7 @@
 		});
 
 		$("#buttonBackCreateForm").click(function(){
-			$("#gestiones").css("display","none");
+			$("#crearCuestionariosForm").css("display","none");
 			$("#gestionarCuestionariosForm").css("display","block");
 		});
 
