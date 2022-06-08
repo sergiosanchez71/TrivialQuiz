@@ -70,15 +70,15 @@
 					<p>Nombre <input type="text" name="nameCrearCuestionariosForm"></p>
 					<p>Categoría <select>
 						<?php
-						
+
 						if ($categories) {
 							foreach ($categories as $category) {
-								echo "<option id='$category['id']'>";
+								echo "<option id="+$category['id']+">";
 								echo $category['name'];
 								echo "</option>";
 							}
 						}
-						
+
 
 						?>
 					</select> </p>
