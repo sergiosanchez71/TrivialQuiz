@@ -74,7 +74,7 @@
 						if ($categories) {
 							foreach ($categories as $category) {
 								$id = $category['id'];
-								echo "<option id=$id>";
+								echo "<option value=$id>";
 								echo $category['name'];
 								echo "</option>";
 							}
@@ -124,6 +124,11 @@
 		});
 
 		$("#buttonBackCreateForm").click(function(){
+			$("#crearCuestionariosForm").css("display","none");
+			$("#gestionarCuestionariosForm").css("display","block");
+		});
+
+		$("#createCuestionary").click(function(){
 			$("#crearCuestionariosForm").css("display","none");
 			$("#gestionarCuestionariosForm").css("display","block");
 		});
