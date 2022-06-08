@@ -31,6 +31,14 @@ switch ($action) {
 	}
 	break;
 
+	case 'displayCategories':
+
+		$categories_sql = "SELECT * FROM categories";
+		$categories = $mysqli->query($categories_sql);
+		echo $categories;
+		$mysqli -> close();
+
+
 	default:
 			// code...
 	break;
