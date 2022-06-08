@@ -54,10 +54,9 @@
 
 			</div>
 
-			<div id="gestionarCuestionarios" style="display: none;">
+			<div id="gestionarCuestionarios">
 
-				<h1>Administrador de Trivial Quiz</h1>
-				<form id="gestionarCuestionariosForm">
+				<form id="gestionarCuestionariosForm" style="display: none;">
 					<p>Gestionar cuestionarios</p>
 					<a id="buttonCreateCuest" class="button primary icon solid fa-comments-question">Crear cuestionario</a>	
 					<a id="buttonModifyCuest" class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
@@ -107,9 +106,9 @@
 	<script type="text/javascript">
 		$("#buttonCuestionaries").click(function(){
 			$("#gestiones").css("display","none");
-			$("#gestionarCuestionarios").css("display","block");
+			$("#gestionarCuestionariosForm").css("display","block");
 		});
-		
+
 		$("#buttonCreateCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#crearCuestionariosForm").css("display","block");
