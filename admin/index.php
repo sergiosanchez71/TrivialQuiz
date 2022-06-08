@@ -117,6 +117,7 @@
 		});
 
 		$("#buttonBackCuest").click(function(){
+			alert("hi");
 			$("#crearCuestionariosForm").css("display","none");
 			$("#gestionarCuestionariosForm").css("display","block");
 		});
