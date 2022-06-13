@@ -231,6 +231,7 @@
             	if (respuesta) {
             		console.log(respuesta);
             		$("#modificarCuestionarioCategoriaActual").val(respuesta);
+            	}
             },
             error: function (xhr, status) {
                             console.log("Error al mostrar la categoría"); //El mensaje que se muestra en el caso de que haya un error en la consulta
