@@ -221,7 +221,7 @@
         function searchCategoryQuestionnaire(id){
         	var parametros = {
         		"action": "searchCategoryQuestionnaire",
-        		"id": id,
+        		"id": id
             };
 
             $.ajax({
