@@ -228,11 +228,11 @@
             	url: "controller/actions.php",
             	data: parametros,
             success: function (respuesta) { 
-            	if (respuesta != "") {
+            	if (respuesta) {
             		console.log(respuesta);
             		$("#modificarCuestionarioCategoriaActual").val(respuesta);
             	} else {
-            		$("#modificarCuestionarioCategoriaActual").css("display","none");
+            		$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
             	}
             },
             error: function (xhr, status) {
