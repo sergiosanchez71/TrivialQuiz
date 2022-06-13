@@ -179,8 +179,12 @@
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
 			searchCategoryQuestionnaire($("#nameModificarCuestionariosForm").val());
+		
+		});
 
-			
+		$("#nameModificarCuestionariosForm").onchange(function(){
+			searchCategoryQuestionnaire($("#nameModificarCuestionariosForm").val());
+		
 		});
 
 		$("#buttonBackModifyForm").click(function(){
@@ -231,7 +235,7 @@
         		success: function (respuesta) { 
         			if (respuesta) {
         				console.log(respuesta);
-        				$("#modificarCuestionarioCategoriaActual").val("respuesta");
+        				$("#modificarCuestionarioCategoriaActual").val(respuesta);
         			} else {
         				$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
         			}
