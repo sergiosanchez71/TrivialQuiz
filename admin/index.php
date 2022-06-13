@@ -14,7 +14,7 @@
 	$categories = $mysqli->query($categories_sql);
 
 
-	$questionnaires_sql = "SELECT * FROM questionnaires where id='1'";
+	$questionnaires_sql = "SELECT category FROM questionnaires where id='1'";
 	$questionnaires = $mysqli->query($questionnaires_sql);
 
 
@@ -99,9 +99,9 @@
 
 						if ($questionnaires) {
 							foreach ($questionnaires as $questionnaire) {
-								$id = $questionnaire['id'];
+								$id = $questionnaire['category'];
 								echo "<option value=$id>";
-								echo $questionnaire['name'];
+								echo $questionnaire['category']; //prueba
 								echo "</option>";
 							}
 						}
