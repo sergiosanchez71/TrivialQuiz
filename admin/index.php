@@ -99,8 +99,8 @@
 
 						if ($questionnaires) {
 							foreach ($questionnaires as $questionnaire) {
-								echo $questionnaire['id']."fasfsdafdssmdl";
 								$id = $questionnaire['id'];
+								echo $id;
 								echo "<option value=$id>";
 								echo $questionnaire['name'];
 								echo "</option>";
