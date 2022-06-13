@@ -259,9 +259,7 @@
         		data: parametros,
         		success: function (respuesta) { 
         			if (respuesta) {
-        				console.log(respuesta);
         				var resp = JSON.parse(respuesta);
-        				console.log(resp);
         				$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
         			} else {
         				$("#modificarCuestionarioCategoriaActual").html("Sin categoría");
