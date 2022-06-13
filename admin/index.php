@@ -18,7 +18,7 @@
 	$questionnaires = $mysqli->query($questionnaires_sql);
 
 
-	//$mysqli -> close();
+	$mysqli -> close();
 	
 
 	?>
@@ -216,7 +216,7 @@
             	}
             },
             error: function (xhr, status) {
-                            console.log("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                            console.log("Error en el logueo"+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
