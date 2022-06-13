@@ -109,7 +109,7 @@
 
 						?>
 					</select></p>
-					<p>Categoría actual: <span id="modificarCuestionarioCategoriaActual"></span></p>
+					<p>Categoría actual: <input type="text" id="modificarCuestionarioCategoriaActual"></input></p>
 					<p>Nueva Categoría <select id="categoryModificarCuestionariosForm">
 						<?php
 
