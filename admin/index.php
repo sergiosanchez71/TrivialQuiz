@@ -258,8 +258,8 @@
         		url: "controller/actions.php",
         		data: parametros,
         		success: function (respuesta) { 
-        			if (respuesta) {
-        				console.log(respuesta);
+        			if (respuesta.category) {
+        				console.log(respuesta.category);
         				$("#modificarCuestionarioCategoriaActual").html(respuesta.category);
         			} else {
         				$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
