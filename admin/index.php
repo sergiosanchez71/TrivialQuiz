@@ -181,7 +181,7 @@
 			setTimeout(function(){
 				console.log($("nameModificarCuestionariosForm").val());
 				searchCategoryQuestionnaire($("nameModificarCuestionariosForm").val());
-			},2000);
+			},1000);
 
 			
 		});
