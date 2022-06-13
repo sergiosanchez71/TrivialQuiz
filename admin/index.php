@@ -260,7 +260,7 @@
         		success: function (respuesta) { 
         			if (respuesta) {
         				console.log(respuesta);
-        				$("#modificarCuestionarioCategoriaActual").html(respuesta);
+        				$("#modificarCuestionarioCategoriaActual").html(respuesta.category);
         			} else {
         				$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
         			}
