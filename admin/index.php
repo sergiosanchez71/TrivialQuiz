@@ -18,7 +18,7 @@
 	$questionnaires = $mysqli->query($questionnaires_sql);
 
 
-	$mysqli -> close();
+	//$mysqli -> close();
 	
 
 	?>
