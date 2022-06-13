@@ -182,7 +182,7 @@
 		
 		});
 
-		$("#nameModificarCuestionariosForm").onchange(function(){
+		$("#nameModificarCuestionariosForm").change(function(){
 			searchCategoryQuestionnaire($("#nameModificarCuestionariosForm").val());
 		
 		});
