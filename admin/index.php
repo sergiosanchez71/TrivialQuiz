@@ -14,6 +14,10 @@
 	$categories = $mysqli->query($categories_sql);
 
 
+	$questionnaires_sql = "SELECT * FROM questionnaires";
+	$questionnaires = $mysqli->query($questionnaires_sql);
+
+
 	$mysqli -> close();
 	
 
@@ -90,8 +94,22 @@
 
 				<form id="modificarCuestionariosForm" style="display: none;">
 					<p>Crear un nuevo cuestionario</p>
-					<p>Nombre <input type="text" id="nameModificarCuestionariosForm"></p>
-					<p>Categoría actual: </p>
+					<p>Nombre <select id="nameModificarCuestionariosForm">
+						<?php
+
+						if ($questionnaires) {
+							foreach ($questionnaires as $questionnaire) {
+								$id = $questionnaire['id'];
+								echo "<option value=$id>";
+								echo $questionnaire['name'];
+								echo "</option>";
+							}
+						}
+
+
+						?>
+					</select></p>
+					<p>Categoría actual: <span id="modificarCuestionarioCategoriaActual"></span></p>
 					<p>Nueva Categoría <select id="categoryModificarCuestionariosForm">
 						<?php
 
@@ -114,7 +132,7 @@
 
 
 			</div>
-			
+
 		</div>
 	</header>
 
@@ -168,7 +186,7 @@
 		});
 
 		function createCuestionary(name, category, questions){
-			
+
 			if (questions < 5) {
 				questions = 5;
 			} else if (questions > 100){
@@ -200,7 +218,7 @@
 
 
 
-	</script>
+    </script>
 
 </body>
 </html>
