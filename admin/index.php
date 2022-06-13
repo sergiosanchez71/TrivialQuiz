@@ -223,7 +223,7 @@
                     });
         }
 
-        function searchCategory(id){
+        /*function searchCategory(id){
         	var parametros = {
         		"action": "searchCategoryQuestionnaire",
         		"id": id
@@ -246,7 +246,7 @@
                         type: "POST",
                         dataType: "text"
                     });
-        }
+        }*/
 
         function searchCategoryQuestionnaire(id){
         	var parametros = {
