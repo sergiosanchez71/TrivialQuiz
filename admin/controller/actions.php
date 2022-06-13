@@ -42,18 +42,10 @@ switch ($action) {
 	
 	break;
 	case 'searchCategoryQuestionnaire':
-
-	$servername = "localhost";
-	$username = "u196455503_admin";
-	$password = "=e8Gl[oA6p";
-	$database = "u196455503_TrivialQuiz";
-
-	$mysqli2 = new mysqli($servername, $username, $password, $database);
-
 		$id = $_REQUEST['id'];
 		$category_sql = "SELECT category FROM questionnaires WHERE id='$id'";
-		$category = $mysqli2->query($category_sql);
-
+		$category = $mysqli->query($category_sql);
+		
 		if ($category) {
 			echo $category;
 		} 
