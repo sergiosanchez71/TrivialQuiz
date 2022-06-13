@@ -264,7 +264,7 @@
         				console.log(resp);
         				$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
         			} else {
-        				$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
+        				$("#modificarCuestionarioCategoriaActual").html("Sin categoría");
         			}
         		},
         		error: function (xhr, status) {
