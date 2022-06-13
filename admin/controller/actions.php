@@ -46,7 +46,7 @@ switch ($action) {
 		$category_sql = "SELECT category FROM questionnaires WHERE id='$id'";
 		//$category = $mysqli->query($category_sql);
 
-		if (mysqli_query($mysqli, $sql)) {
+		if ($category = mysqli_query($mysqli, $sql)) { //Asignación
 			echo $category;
 		} 
 
