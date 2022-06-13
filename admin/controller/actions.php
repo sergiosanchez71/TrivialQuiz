@@ -48,9 +48,7 @@ switch ($action) {
 
 		if ($category) {
 			echo $category;
-		} else {
-			echo null;
-		}
+		} 
 
 
 		break;
