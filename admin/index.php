@@ -236,6 +236,7 @@
         			if (respuesta) {
         				console.log(respuesta);
         				$("#modificarCuestionarioCategoriaActual").val(respuesta);
+        				console.log($("#modificarCuestionarioCategoriaActual").val());
         			} else {
         				$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
         			}
