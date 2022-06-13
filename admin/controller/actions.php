@@ -44,8 +44,9 @@ switch ($action) {
 	case 'searchCategoryQuestionnaire':
 		$id = $_REQUEST['id'];
 		$category_sql = "SELECT category FROM questionnaires WHERE id='$id'";
-		$category = $mysqli->query($category_sql);
-		if ($category) {
+		//$category = $mysqli->query($category_sql);
+
+		if (mysqli_query($mysqli, $sql)) {
 			echo $category;
 		} 
 
