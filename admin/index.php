@@ -262,6 +262,7 @@
         				console.log(respuesta);
         				var resp = JSON.parse(respuesta);
         				console.log(resp);
+        				console.log(resp[0].name);
         				$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
         			} else {
         				$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
