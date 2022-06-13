@@ -56,7 +56,7 @@ switch ($action) {
 		    	$test[] = $row; 
 				echo json_encode($test);
 			} else {
-				echo null;
+				echo "";
 			}
 		}
 
