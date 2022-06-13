@@ -259,8 +259,8 @@
         		data: parametros,
         		success: function (respuesta) { 
         			if (respuesta) {
-        				resp = JSON.parse(respuesta);
-        				$("#modificarCuestionarioCategoriaActual").html(resp.name);
+        				console.log(respuesta);
+        				$("#modificarCuestionarioCategoriaActual").html(respuesta.name);
         			} else {
         				$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
         			}
