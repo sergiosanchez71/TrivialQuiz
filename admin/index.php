@@ -179,7 +179,7 @@
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
 			setTimeout(function(){
-				console.log($("nameModificarCuestionariosForm").val().id);
+				console.log($("nameModificarCuestionariosForm").value);
 				searchCategoryQuestionnaire($("nameModificarCuestionariosForm").val());
 			},1000);
 
