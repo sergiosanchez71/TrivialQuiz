@@ -232,7 +232,7 @@
             		console.log(respuesta);
             		$("#modificarCuestionarioCategoriaActual").val(respuesta);
             	} else {
-            		$("#modificarCuestionarioCategoriaActual").hide();
+            		$("#modificarCuestionarioCategoriaActual").css("display","none");
             	}
             },
             error: function (xhr, status) {
