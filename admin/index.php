@@ -228,7 +228,7 @@
             	url: "controller/actions.php",
             	data: parametros,
             success: function (respuesta) { 
-            	if (respuesta) {
+            	if (respuesta != "") {
             		console.log(respuesta);
             		$("#modificarCuestionarioCategoriaActual").val(respuesta);
             	} else {
