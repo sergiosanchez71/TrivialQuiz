@@ -181,8 +181,8 @@
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
 			setTimeout(function(){
-				console.log($("nameModificarCuestionariosForm").val());
-				searchCategoryQuestionnaire($("nameModificarCuestionariosForm").val());
+				console.log($("#nameModificarCuestionariosForm").val());
+				searchCategoryQuestionnaire($("#nameModificarCuestionariosForm").val());
 			},1000);
 
 			
