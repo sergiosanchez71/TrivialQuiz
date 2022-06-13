@@ -94,22 +94,22 @@
 
 				<form id="modificarCuestionariosForm" style="display: none;">
 					<p>Crear un nuevo cuestionario</p>
-					<p>Nombre <!--<select id="nameModificarCuestionariosForm">-->
+					<p>Nombre <select id="nameModificarCuestionariosForm">
 						<?php
 
 						if ($questionnaires) {
 							foreach ($questionnaires as $questionnaire) {
 								$id = $questionnaire['id'];
 								echo $id;
-								//echo "<option value=$id>";
-								//echo $questionnaire['name'];
-								//echo "</option>";
+								echo "<option value=$id>";
+								echo $questionnaire['name'];
+								echo "</option>";
 							}
 						}
 
 
 						?>
-					<!--</select>--></p>
+					</select></p>
 					<p>Categoría actual: <span id="modificarCuestionarioCategoriaActual"></span></p>
 					<p>Nueva Categoría <select id="categoryModificarCuestionariosForm">
 						<?php
