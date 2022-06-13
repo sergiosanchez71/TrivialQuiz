@@ -258,7 +258,7 @@
         		url: "controller/actions.php",
         		data: parametros,
         		success: function (respuesta) { 
-        			if (respuesta != "") {
+        			if (respuesta) {
         				console.log(respuesta);
         				var resp = JSON.parse(respuesta);
         				console.log(resp);
