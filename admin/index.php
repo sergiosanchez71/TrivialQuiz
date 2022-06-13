@@ -216,7 +216,7 @@
             	}
             },
             error: function (xhr, status) {
-                            console.log("Error en el logueo"+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                            console.log("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
@@ -266,7 +266,7 @@
         			}
         		},
         		error: function (xhr, status) {
-                            console.log("Error al mostrar la categoría"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                            console.log("Error al mostrar la categoría"+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
