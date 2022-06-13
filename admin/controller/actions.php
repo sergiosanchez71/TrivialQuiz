@@ -43,8 +43,8 @@ switch ($action) {
 	break;
 	case 'searchCategoryQuestionnaire':
 		$id = $_REQUEST['id'];
-		$category_sql = "SELECT category FROM questionnaires WHERE id='$id'";
-		$category = $mysqli->query($category_sql);
+		$sql = "SELECT category FROM questionnaires WHERE id='$id'";
+		$category = mysqli_query($mysqli, $sql);
 
 		if ($category) {
 			echo json_encode($category);
