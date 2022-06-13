@@ -88,6 +88,30 @@
 					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
+				<form id="modificarCuestionariosForm" style="display: none;">
+					<p>Crear un nuevo cuestionario</p>
+					<p>Nombre <input type="text" id="nameModificarCuestionariosForm"></p>
+					<p>Categoría actual: </p>
+					<p>Nueva Categoría <select id="categoryModificarCuestionariosForm">
+						<?php
+
+						if ($categories) {
+							foreach ($categories as $category) {
+								$id = $category['id'];
+								echo "<option value=$id>";
+								echo $category['name'];
+								echo "</option>";
+							}
+						}
+
+
+						?>
+					</select> </p>
+					<p>Preguntas <input type="number" id="questionsModificarCuestionariosForm" min="5" max="100"></p>
+					<a id="modifyCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
+					<a id="buttonBackModifyForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
 
 			</div>
 			
@@ -130,6 +154,17 @@
 
 		$("#createCuestionary").click(function(){
 			createCuestionary($("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionsCrearCuestionariosForm").val());
+		});
+
+
+		$("#buttonModifyCuest").click(function(){
+			$("#gestionarCuestionariosForm").css("display","none");
+			$("#modificarCuestionariosForm").css("display","block");
+		});
+
+		$("#buttonBackModifyForm").click(function(){
+			$("#modificarCuestionariosForm").css("display","none");
+			$("#gestionarCuestionariosForm").css("display","block");
 		});
 
 		function createCuestionary(name, category, questions){
