@@ -178,6 +178,8 @@
 		$("#buttonModifyCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
+			searchCategoryQuestionnaire($("nameModificarCuestionariosForm").val());
+			
 		});
 
 		$("#buttonBackModifyForm").click(function(){
@@ -206,6 +208,29 @@
             success: function (respuesta) { //Devuelve el valor de operador
             	if (respuesta) {
             		console.log(respuesta);
+            	}
+            },
+            error: function (xhr, status) {
+                            console.log("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+        }
+
+        function searchCategoryQuestionnaire(id){
+        	var parametros = {
+        		"action": "searchCategoryQuestionnaire",
+        		"id": id,
+            };
+
+            $.ajax({
+            	url: "controller/actions.php",
+            	data: parametros,
+            success: function (respuesta) { 
+            	if (respuesta) {
+            		console.log(respuesta);
+            		$("#modificarCuestionarioCategoriaActual").val(respuesta);
             	}
             },
             error: function (xhr, status) {

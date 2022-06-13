@@ -39,10 +39,16 @@ switch ($action) {
 		     echo "Cuestionario creado correctamente";
 		}
 		
-		
-		
 	
 	break;
+	case 'searchCategoryQuestionnaire':
+		$id = $_REQUEST['id'];
+		$query = "SELECT category from questionnaires where id='$id'";
+		$category = $mysqli->query($query);
+
+		echo $category;
+
+
 	default:
 			// code...
 	break;
