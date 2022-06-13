@@ -178,8 +178,11 @@
 		$("#buttonModifyCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
-			console.log($("nameModificarCuestionariosForm").val());
-			searchCategoryQuestionnaire($("nameModificarCuestionariosForm").val());
+			setTimeout(function(){
+				console.log($("nameModificarCuestionariosForm").val());
+				searchCategoryQuestionnaire($("nameModificarCuestionariosForm").val());
+			},2000);
+
 			
 		});
 
