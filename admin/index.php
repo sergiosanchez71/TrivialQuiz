@@ -100,7 +100,6 @@
 						if ($questionnaires) {
 							foreach ($questionnaires as $questionnaire) {
 								$id = $questionnaire['id'];
-								echo $id;
 								echo "<option value=$id>";
 								echo $questionnaire['name'];
 								echo "</option>";
@@ -180,7 +179,6 @@
 		$("#buttonModifyCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
-			console.log($("#nameModificarCuestionariosForm").val());
 			searchCategoryQuestionnaire($("#nameModificarCuestionariosForm").val());
 
 			
