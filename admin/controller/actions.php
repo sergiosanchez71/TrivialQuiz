@@ -47,7 +47,7 @@ switch ($action) {
 		$category = $mysqli->query($category_sql);
 
 		if ($category) {
-			//echo $category;
+			echo $category['category'];
 		} 
 
 
