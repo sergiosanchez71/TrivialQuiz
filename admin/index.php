@@ -180,10 +180,8 @@
 		$("#buttonModifyCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
-			setTimeout(function(){
-				console.log($("#nameModificarCuestionariosForm").val());
-				searchCategoryQuestionnaire($("#nameModificarCuestionariosForm").val());
-			},1000);
+			console.log($("#nameModificarCuestionariosForm").val());
+			searchCategoryQuestionnaire($("#nameModificarCuestionariosForm").val());
 
 			
 		});
