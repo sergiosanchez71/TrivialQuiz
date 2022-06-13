@@ -43,13 +43,6 @@ switch ($action) {
 	break;
 	case 'searchCategoryQuestionnaire':
 		$id = $_REQUEST['id'];
-		/*$category_sql = "SELECT category FROM questionnaires WHERE id='$id'";
-		$category = $mysqli->query($category_sql);
-
-		if ($category) {
-			echo json_encode($category);
-		} */
-
 		$result = mysqli_query($mysqli, "SELECT C.id, C.name FROM questionnaires AS Q,categories AS C WHERE Q.id='$id' and Q.category=C.id");   
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
