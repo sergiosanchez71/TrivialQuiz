@@ -45,8 +45,9 @@ switch ($action) {
 		$id = $_REQUEST['id'];
 		$query = "SELECT category from questionnaires where id=$id";
 		$category = $mysqli->query($query);
-
+		if ($category) {
 		echo $category;
+		}
 
 
 	default:
