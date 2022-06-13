@@ -116,6 +116,7 @@
 						if ($categories) {
 							foreach ($categories as $category) {
 								$id = $category['id'];
+								echo $id;
 								echo "<option value=$id>";
 								echo $category['name'];
 								echo "</option>";
@@ -179,7 +180,7 @@
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
 			setTimeout(function(){
-				console.log($("nameModificarCuestionariosForm").value);
+				console.log($("nameModificarCuestionariosForm").val();
 				searchCategoryQuestionnaire($("nameModificarCuestionariosForm").val());
 			},1000);
 
