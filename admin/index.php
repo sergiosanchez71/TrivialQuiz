@@ -222,20 +222,21 @@
         	var parametros = {
         		"action": "searchCategoryQuestionnaire",
         		"id": id
-            };
+        	};
 
-            $.ajax({
-            	url: "controller/actions.php",
-            	data: parametros,
-            success: function (respuesta) { 
-            	if (respuesta) {
-            		console.log(respuesta);
-            		$("#modificarCuestionarioCategoriaActual").val(respuesta);
-            	} else {
-            		$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
-            	}
-            },
-            error: function (xhr, status) {
+        	$.ajax({
+        		url: "controller/actions.php",
+        		data: parametros,
+        		success: function (respuesta) { 
+        			console.log(respuesta);
+        			if (respuesta) {
+        				console.log(respuesta);
+        				$("#modificarCuestionarioCategoriaActual").val(respuesta);
+        			} else {
+        				$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
+        			}
+        		},
+        		error: function (xhr, status) {
                             console.log("Error al mostrar la categoría"); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
