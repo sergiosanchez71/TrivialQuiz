@@ -14,7 +14,7 @@
 	$categories = $mysqli->query($categories_sql);
 
 
-	$questionnaires_sql = "SELECT * FROM questionnaires";
+	$questionnaires_sql = "SELECT * FROM questionnaires where id='1'";
 	$questionnaires = $mysqli->query($questionnaires_sql);
 
 
