@@ -47,7 +47,7 @@ switch ($action) {
 		//$category = $mysqli->query($category_sql);
 
 		if (mysqli_query($mysqli, $category_sql)) { //Asignación
-			echo $category;
+			echo mysqli_query($mysqli, $category_sql);
 		} 
 
 
