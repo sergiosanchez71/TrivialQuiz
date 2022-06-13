@@ -178,6 +178,7 @@
 		$("#buttonModifyCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
+			echo $("nameModificarCuestionariosForm").val();
 			searchCategoryQuestionnaire($("nameModificarCuestionariosForm").val());
 			
 		});
