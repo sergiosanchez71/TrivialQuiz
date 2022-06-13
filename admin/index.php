@@ -231,6 +231,8 @@
             	if (respuesta) {
             		console.log(respuesta);
             		$("#modificarCuestionarioCategoriaActual").val(respuesta);
+            	} else {
+            		$("#modificarCuestionarioCategoriaActual").hide();
             	}
             },
             error: function (xhr, status) {
