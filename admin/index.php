@@ -172,7 +172,7 @@
 		});
 
 		$("#createCuestionary").click(function(){
-			createCuestionary($("#nameModificarCuestionariosForm").val(),$("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionsCrearCuestionariosForm").val());
+			createCuestionary($("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionsCrearCuestionariosForm").val());
 		});
 
 
@@ -194,7 +194,7 @@
 		});
 
 		$("#modifyCuestionary").click(function(){
-			modifyCuestionary($("#newNameModificarCuestionariosForm").val(), $("#categoryModificarCuestionariosForm").val(), $("#questionsModificarCuestionariosForm").val());
+			modifyCuestionary($("#nameModificarCuestionariosForm").val(),$("#newNameModificarCuestionariosForm").val(), $("#categoryModificarCuestionariosForm").val(), $("#questionsModificarCuestionariosForm").val());
 		});
 
 
