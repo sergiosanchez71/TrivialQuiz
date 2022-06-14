@@ -93,7 +93,7 @@
 				</form>
 
 				<form id="modificarCuestionariosForm" style="display: none;">
-					<p>Crear un nuevo cuestionario</p>
+					<p>Modifica un cuestionario</p>
 					<p>Selecciona un cuestionario <select id="nameModificarCuestionariosForm">
 						<?php
 
@@ -164,6 +164,28 @@
 					<a id="buttonModifyQuestions" class="button primary icon solid fa-comments-question">Modificar Pregunta</a>
 					<a id="buttonDeleteQuestions" class="button primary icon solid fa-comments-question">Borrar Pregunta</a>	
 					<a id="buttonBackQuestionsGestionForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
+				<form id="crearPreguntasForm" style="display: none;">
+					<p>Crear una nueva pregunta</p>
+					<p>Pregunta <input type="text" id="nameCrearPreguntasForm"></p>
+					<p>Categoría <select id="categoryCrearPreguntasForm">
+						<?php
+
+						if ($categories) {
+							foreach ($categories as $category) {
+								$id = $category['id'];
+								echo "<option value=$id>";
+								echo $category['name'];
+								echo "</option>";
+							}
+						}
+
+
+						?>
+					</select> </p>
+					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
+					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 				
 			</div>
