@@ -52,7 +52,7 @@
 				<form>
 					<p>¿Qué acción quiere hacer?</p>
 					<a id="buttonCuestionaries" class="button primary icon solid fa-comments-question">Gestionar cuestionarios</a>	
-					<a id="buttonQuestions" class="button primary icon solid fa-comments-question">Gestionar preguntas</a>	
+					<a id="buttonQuestion" class="button primary icon solid fa-comments-question">Gestionar preguntas</a>	
 					<a id="buttonCategory" class="button primary icon solid fa-comments-question">Gestionar categorías</a>
 					<a href="login.php" class="button primary icon solid fa-comments-question">Salir</a>
 				</form>
@@ -87,7 +87,7 @@
 
 						?>
 					</select> </p>
-					<p>Preguntas <input type="number" id="questionsCrearCuestionariosForm" min="5" max="100"></p>
+					<p>Preguntas <input type="number" id="questionCrearCuestionariosForm" min="5" max="100"></p>
 					<a id="createCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
 					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
@@ -126,7 +126,7 @@
 
 						?>
 					</select> </p>
-					<p>Preguntas <input type="number" id="questionsModificarCuestionariosForm" min="5" max="100"></p>
+					<p>Preguntas <input type="number" id="questionModificarCuestionariosForm" min="5" max="100"></p>
 					<a id="modifyCuestionary" class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
 					<a id="buttonBackModifyForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
@@ -160,9 +160,9 @@
 
 				<form id="gestionarPreguntasForm" style="display: none;">
 					<p>Gestionar preguntas</p>
-					<a id="buttonCreateQuestions" class="button primary icon solid fa-comments-question">Crear Pregunta</a>	
-					<a id="buttonModifyQuestions" class="button primary icon solid fa-comments-question">Modificar Pregunta</a>
-					<a id="buttonDeleteQuestions" class="button primary icon solid fa-comments-question">Borrar Pregunta</a>	
+					<a id="buttonCreateQuestion" class="button primary icon solid fa-comments-question">Crear Pregunta</a>	
+					<a id="buttonModifyQuestion" class="button primary icon solid fa-comments-question">Modificar Pregunta</a>
+					<a id="buttonDeleteQuestion" class="button primary icon solid fa-comments-question">Borrar Pregunta</a>	
 					<a id="buttonBackQuestionsGestionForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
@@ -228,7 +228,7 @@
 		});
 
 		$("#createCuestionary").click(function(){
-			createCuestionary($("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionsCrearCuestionariosForm").val());
+			createCuestionary($("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionCrearCuestionariosForm").val());
 		});
 
 
@@ -250,7 +250,7 @@
 		});
 
 		$("#modifyCuestionary").click(function(){
-			modifyCuestionary($("#nameModificarCuestionariosForm").val(),$("#newNameModificarCuestionariosForm").val(), $("#categoryModificarCuestionariosForm").val(), $("#questionsModificarCuestionariosForm").val());
+			modifyCuestionary($("#nameModificarCuestionariosForm").val(),$("#newNameModificarCuestionariosForm").val(), $("#categoryModificarCuestionariosForm").val(), $("#questionModificarCuestionariosForm").val());
 		});
 
 		$("#buttonDeleteCuest").click(function(){
@@ -268,26 +268,31 @@
 		});
 
 
-		$("#buttonQuestions").click(function(){
+		$("#buttonQuestion").click(function(){
 			$("#gestiones").css("display","none");
 			$("#gestionarPreguntasForm").css("display","block");
 		});
 
+		$("#buttonCreateQuestion").click(function(){
+			$("#gestionarPreguntasForm").css("display","none");
+			$("#crearPreguntasForm").css("display","block");
+		});
 
 
-		function createCuestionary(name, category, questions){
 
-			if (questions < 5) {
-				questions = 5;
-			} else if (questions > 100){
-				questions = 100;
+		function createCuestionary(name, category, question){
+
+			if (question < 5) {
+				question = 5;
+			} else if (question > 100){
+				question = 100;
 			}
 
 			var parametros = {
 				"action": "createCuestionary",
 				"name": name,
                 "category": category, 
-                "questions": questions 
+                "question": question 
             };
 
             $.ajax({
@@ -306,11 +311,11 @@
                     });
         }
 
-        function modifyCuestionary(id, name, category, questions){
-			if (questions < 5) {
-				questions = 5;
-			} else if (questions > 100){
-				questions = 100;
+        function modifyCuestionary(id, name, category, question){
+			if (question < 5) {
+				question = 5;
+			} else if (question > 100){
+				question = 100;
 			}
 
 			var parametros = {
@@ -318,7 +323,7 @@
 				"id": id,
 				"name": name,
                 "category": category, 
-                "questions": questions 
+                "question": question 
             };
 
             $.ajax({
@@ -375,7 +380,7 @@
         				var resp = JSON.parse(respuesta);
         				$("#newNameModificarCuestionariosForm").val(resp[0].questionnaire);
         				$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
-        				$("#questionsModificarCuestionariosForm").val(resp[0].questions);
+        				$("#questionModificarCuestionariosForm").val(resp[0].question);
         			} 
         		},
         		error: function (xhr, status) {
