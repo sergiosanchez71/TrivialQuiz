@@ -222,7 +222,15 @@
 		$("#buttonDeleteCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#borrarCuestionariosForm").css("display","block");
-		
+		});
+
+		$("#buttonBackModifyForm").click(function(){
+			$("#borrarCuestionariosForm").css("display","none");
+			$("#gestionarCuestionariosForm").css("display","block");
+		});
+
+		$("#deleteCuestionary").click(function(){
+			deleteCuestionary($("#nameBorrarCuestionariosForm").val());
 		});
 
 
@@ -282,6 +290,29 @@
             },
             error: function (xhr, status) {
                             console.log("Error al modificar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+        }
+
+        function deleteCuestionary(id){
+
+			var parametros = {
+				"action": "deleteCuestionary",
+				"id": id
+            };
+
+            $.ajax({
+            	url: "controller/actions.php",
+            	data: parametros,
+            success: function (respuesta) { 
+            	if (respuesta) {
+            		console.log(respuesta);
+            	}
+            },
+            error: function (xhr, status) {
+                            console.log("Error al borrar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"

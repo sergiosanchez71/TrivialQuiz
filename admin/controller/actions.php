@@ -65,6 +65,15 @@ switch ($action) {
 		}
 
 	break;
+	case 'deleteCuestionary':
+		$id = $_REQUEST['id'];
+		$sql = "DELETE FROM questionnaires WHERE id='$id'";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Cuestionario eliminado correctamente";
+		}
+
+	break;
 	default:
 			// code...
 	break;
