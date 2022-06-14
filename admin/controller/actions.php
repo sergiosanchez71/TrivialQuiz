@@ -47,6 +47,8 @@ switch ($action) {
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
 		    	$test[] = $row;
+			} else {
+				echo $row;
 			}
 			echo json_encode($test);
 		}
