@@ -186,6 +186,11 @@
 
 						?>
 					</select> </p>
+					<p>Respuestas:</p>
+					<input type="text" id="nameCrearPreguntasResp1"></p>
+					<input type="text" id="nameCrearPreguntasResp2"></p>
+					<input type="text" id="nameCrearPreguntasResp3"></p>
+					<input type="text" id="nameCrearPreguntasResp4"></p>
 					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
 					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
@@ -238,12 +243,12 @@
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
 			searchQuestionnaire($("#nameModificarCuestionariosForm").val());
-			
+
 		});
 
 		$("#nameModificarCuestionariosForm").change(function(){
 			searchQuestionnaire($("#nameModificarCuestionariosForm").val());
-			
+
 		});
 
 		$("#buttonBackModifyForm").click(function(){
