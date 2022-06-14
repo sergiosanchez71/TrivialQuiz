@@ -66,7 +66,7 @@
 					<a id="buttonCreateCuest" class="button primary icon solid fa-comments-question">Crear cuestionario</a>	
 					<a id="buttonModifyCuest" class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
 					<a id="buttonDeleteCuest" class="button primary icon solid fa-comments-question">Borrar cuestionario</a>	
-					<a id="buttonBackGestionForm" class="button primary icon solid fa-comments-question">Volver</a>
+					<a id="buttonBackCuestGestionForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
 				<form id="crearCuestionariosForm" style="display: none;">
@@ -156,6 +156,18 @@
 
 			</div>
 
+			<div id="gestionarPreguntas">
+
+				<form id="gestionarPreguntasForm" style="display: none;">
+					<p>Gestionar preguntas</p>
+					<a id="buttonCreateQuestions" class="button primary icon solid fa-comments-question">Crear Questionsionario</a>	
+					<a id="buttonModifyQuestions" class="button primary icon solid fa-comments-question">Modificar Questionsionario</a>
+					<a id="buttonDeleteQuestions" class="button primary icon solid fa-comments-question">Borrar Questionsionario</a>	
+					<a id="buttonBackQuestionsGestionForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+				
+			</div>
+
 		</div>
 	</header>
 
@@ -183,7 +195,7 @@
 			$("#crearCuestionariosForm").css("display","block");
 		});
 
-		$("#buttonBackGestionForm").click(function(){
+		$("#buttonBackCuestGestionForm").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#gestiones").css("display","block");
 		});
@@ -232,6 +244,13 @@
 		$("#deleteCuestionary").click(function(){
 			deleteCuestionary($("#nameBorrarCuestionariosForm").val());
 		});
+
+		
+		$("#buttonCuestionaries").click(function(){
+			$("#gestiones").css("display","none");
+			$("#gestionarCuestionariosForm").css("display","block");
+		});
+
 
 
 		function createCuestionary(name, category, questions){
