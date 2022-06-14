@@ -263,10 +263,7 @@
         				var resp = JSON.parse(respuesta);
         				$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
         				$("#questionsModificarCuestionariosForm").val(resp[0].questions);
-        			} else {
-        				$("#modificarCuestionarioCategoriaActual").html("Sin categoría");
-        				$("#questionsModificarCuestionariosForm").val(resp[0].questions);
-        			}
+        			} 
         		},
         		error: function (xhr, status) {
                             console.log("Error al mostrar la categoría: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
