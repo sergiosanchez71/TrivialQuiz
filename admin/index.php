@@ -248,9 +248,9 @@
                     });
         }*/
 
-        function searchCategoryQuestionnaire(id){
+        function searchQuestionnaire(id){
         	var parametros = {
-        		"action": "searchCategoryQuestionnaire",
+        		"action": "searchQuestionnaire",
         		"id": id
         	};
 
@@ -261,6 +261,7 @@
         			if (respuesta) {
         				var resp = JSON.parse(respuesta);
         				$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
+        				$("#questionsModificarCuestionariosForm").val(resp[0].questions);
         			} else {
         				$("#modificarCuestionarioCategoriaActual").html("Sin categoría");
         			}
