@@ -81,9 +81,10 @@ switch ($action) {
 		$reply2 = $_REQUEST['reply2'];
 		$reply3 = $_REQUEST['reply3'];
 		$reply4 = $_REQUEST['reply4'];
+		$replies = "$reply1 $reply2 $reply3 $reply4";
 		$success = $_REQUEST['success'];
 
-		$sql = "INSERT INTO questions VALUES (null, '$name','$reply1 $reply2 $reply3 $reply4','$success','$category')"
+		$sql = "INSERT INTO questions VALUES (null, '$name','$replies','$success','$category')"
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
