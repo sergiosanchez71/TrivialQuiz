@@ -192,7 +192,7 @@
 						<input type="text" id="nameCrearPreguntasResp1">
 					</p>
 					<p>
-						<input type="radio" name="correcta" value="2">
+						<input style="display:block;" type="radio" name="correcta" value="2">
 						<input type="text" id="nameCrearPreguntasResp2">
 					</p>
 					<p>
