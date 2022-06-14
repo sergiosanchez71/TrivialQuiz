@@ -54,6 +54,7 @@ switch ($action) {
 
 	break;
 	case 'modifyCuestionary':
+		$id = $_REQUEST['id'];
 		$name = $_REQUEST['name'];
 		$questions = $_REQUEST['questions'];
 		$category = $_REQUEST['category'];
