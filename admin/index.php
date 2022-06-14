@@ -125,7 +125,7 @@
 
 						?>
 					</select> </p>
-					<p>Preguntas <input type="number" id="questionsModificarCuestionariosForm" min="5" max="100"></p>
+					<p>Preguntas <input type="text" id="questionsModificarCuestionariosForm" min="5" max="100"></p>
 					<a id="modifyCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
 					<a id="buttonBackModifyForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
