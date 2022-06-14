@@ -198,7 +198,7 @@
 		});
 
 
-		function createCuestionary(id, name, category, questions){
+		function createCuestionary(name, category, questions){
 
 			if (questions < 5) {
 				questions = 5;
@@ -208,7 +208,6 @@
 
 			var parametros = {
 				"action": "createCuestionary",
-				"id": id,
 				"name": name,
                 "category": category, 
                 "questions": questions 
@@ -230,7 +229,7 @@
                     });
         }
 
-        function modifyCuestionary(name, category, questions){
+        function modifyCuestionary(id, name, category, questions){
 
 			if (questions < 5) {
 				questions = 5;
@@ -240,6 +239,7 @@
 
 			var parametros = {
 				"action": "modifyCuestionary",
+				"id": id,
 				"name": name,
                 "category": category, 
                 "questions": questions 
@@ -254,7 +254,7 @@
             	}
             },
             error: function (xhr, status) {
-                            console.log("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                            console.log("Error al modificar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
@@ -280,7 +280,7 @@
         			} 
         		},
         		error: function (xhr, status) {
-                            console.log("Error al mostrar la categoría: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                            console.log("Error al mostrar el cuestionario: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
