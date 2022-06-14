@@ -219,6 +219,7 @@
             success: function (respuesta) { 
             	if (respuesta) {
             		console.log(respuesta);
+					searchQuestionnaire($("#nameModificarCuestionariosForm").val());
             	}
             },
             error: function (xhr, status) {
