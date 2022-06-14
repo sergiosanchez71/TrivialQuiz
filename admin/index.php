@@ -160,9 +160,9 @@
 
 				<form id="gestionarPreguntasForm" style="display: none;">
 					<p>Gestionar preguntas</p>
-					<a id="buttonCreateQuestions" class="button primary icon solid fa-comments-question">Crear Questionsionario</a>	
-					<a id="buttonModifyQuestions" class="button primary icon solid fa-comments-question">Modificar Questionsionario</a>
-					<a id="buttonDeleteQuestions" class="button primary icon solid fa-comments-question">Borrar Questionsionario</a>	
+					<a id="buttonCreateQuestions" class="button primary icon solid fa-comments-question">Crear Pregunta</a>	
+					<a id="buttonModifyQuestions" class="button primary icon solid fa-comments-question">Modificar Pregunta</a>
+					<a id="buttonDeleteQuestions" class="button primary icon solid fa-comments-question">Borrar Pregunta</a>	
 					<a id="buttonBackQuestionsGestionForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 				
@@ -245,7 +245,7 @@
 			deleteCuestionary($("#nameBorrarCuestionariosForm").val());
 		});
 
-		
+
 		$("#buttonQuestions").click(function(){
 			$("#gestiones").css("display","none");
 			$("#gestionarPreguntasForm").css("display","block");
