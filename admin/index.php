@@ -109,6 +109,7 @@
 
 						?>
 					</select></p>
+					<p>Nuevo nombre <input type="text" id="newNameModificarCuestionariosForm"></p>
 					<p>Categoría actual: <span id="modificarCuestionarioCategoriaActual"></span></p>
 					<p>Nueva Categoría <select id="categoryModificarCuestionariosForm">
 						<?php
@@ -126,7 +127,7 @@
 						?>
 					</select> </p>
 					<p>Preguntas <input type="number" id="questionsModificarCuestionariosForm" min="5" max="100"></p>
-					<a id="modifyCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
+					<a id="modifyCuestionary" class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
 					<a id="buttonBackModifyForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
@@ -192,6 +193,11 @@
 			$("#gestionarCuestionariosForm").css("display","block");
 		});
 
+		$("#modifyCuestionary").click(function(){
+			modifyCuestionary($("#nameModificarCuestionariosForm").val(), $("#categoryModificarCuestionariosForm").val(), $("#questionsModificarCuestionariosForm").val());
+		});
+
+
 		function createCuestionary(name, category, questions){
 
 			if (questions < 5) {
@@ -203,14 +209,45 @@
 			var parametros = {
 				"action": "createCuestionary",
 				"name": name,
-                "category": category, //Guardamos el nombre sin diferenciar entre mayúsculas y minúsculas
-                "questions": questions //Su contraseña
+                "category": category, 
+                "questions": questions 
             };
 
             $.ajax({
             	url: "controller/actions.php",
             	data: parametros,
-            success: function (respuesta) { //Devuelve el valor de operador
+            success: function (respuesta) { 
+            	if (respuesta) {
+            		console.log(respuesta);
+            	}
+            },
+            error: function (xhr, status) {
+                            console.log("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+        }
+
+        function modifyCuestionary(name, category, questions){
+
+			if (questions < 5) {
+				questions = 5;
+			} else if (questions > 100){
+				questions = 100;
+			}
+
+			var parametros = {
+				"action": "modifyCuestionary",
+				"name": name,
+                "category": category, 
+                "questions": questions 
+            };
+
+            $.ajax({
+            	url: "controller/actions.php",
+            	data: parametros,
+            success: function (respuesta) { 
             	if (respuesta) {
             		console.log(respuesta);
             	}
@@ -236,6 +273,7 @@
         			console.log(respuesta);
         			if (respuesta) {
         				var resp = JSON.parse(respuesta);
+        				$("#newNameModificarCuestionariosForm").html(resp[0].name);
         				$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
         				$("#questionsModificarCuestionariosForm").val(resp[0].questions);
         			} 

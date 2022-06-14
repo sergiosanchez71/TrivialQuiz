@@ -43,7 +43,7 @@ switch ($action) {
 	break;
 	case 'searchQuestionnaire':
 		$id = $_REQUEST['id'];
-		$result = mysqli_query($mysqli, "SELECT C.id, C.name, Q.questions FROM questionnaires AS Q,categories AS C WHERE Q.id='$id' and Q.category=C.id");   
+		$result = mysqli_query($mysqli, "SELECT C.id, C.name, Q.name, Q.questions FROM questionnaires AS Q,categories AS C WHERE Q.id='$id' and Q.category=C.id");   
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
 		    	$test[] = $row;
@@ -51,6 +51,17 @@ switch ($action) {
 			echo json_encode($test);
 		}
 
+
+	break;
+	case 'modifyCuestionary':
+		$name = $_REQUEST['name'];
+		$questions = $_REQUEST['questions'];
+		$category = $_REQUEST['category'];
+		$sql = "UPDATE questionnaires SET 'name'='$name','questions'='$questions','category'='$category' WHERE 'id"='$id';
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Cuestionario creado correctamente";
+		}
 
 	break;
 	default:
