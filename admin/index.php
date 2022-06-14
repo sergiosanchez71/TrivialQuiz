@@ -251,8 +251,6 @@
             success: function (respuesta) { 
             	if (respuesta) {
             		console.log(respuesta);
-            		$("#nameModificarCuestionariosForm").html("");
-            		$("#nameModificarCuestionariosForm").html(name);
             	}
             },
             error: function (xhr, status) {
