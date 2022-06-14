@@ -94,7 +94,7 @@
 
 				<form id="modificarCuestionariosForm" style="display: none;">
 					<p>Crear un nuevo cuestionario</p>
-					<p>Nombre <select id="nameModificarCuestionariosForm">
+					<p>Selecciona un cuestionario <select id="nameModificarCuestionariosForm">
 						<?php
 
 						if ($questionnaires) {
