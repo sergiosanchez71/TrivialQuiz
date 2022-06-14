@@ -125,7 +125,7 @@
 
 						?>
 					</select> </p>
-					<p>Preguntas <input type="text" id="questionsModificarCuestionariosForm" min="5" max="100"></p>
+					<p>Preguntas <input type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="questionsModificarCuestionariosForm" min="5" max="100"></p>
 					<a id="modifyCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
 					<a id="buttonBackModifyForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
@@ -222,31 +222,6 @@
                         dataType: "text"
                     });
         }
-
-        /*function searchCategory(id){
-        	var parametros = {
-        		"action": "searchCategoryQuestionnaire",
-        		"id": id
-        	};
-
-        	$.ajax({
-        		url: "controller/actions.php",
-        		data: parametros,
-        		success: function (respuesta) { 
-        			if (respuesta) {
-        				console.log(respuesta);
-        				$("#modificarCuestionarioCategoriaActual").html(respuesta);
-        			} else {
-        				$("#modificarCuestionarioCategoriaActual").val("Sin categoría");
-        			}
-        		},
-        		error: function (xhr, status) {
-                            console.log("Error al buscar la categoría"); //El mensaje que se muestra en el caso de que haya un error en la consulta
-                        },
-                        type: "POST",
-                        dataType: "text"
-                    });
-        }*/
 
         function searchQuestionnaire(id){
         	var parametros = {
