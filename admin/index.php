@@ -187,10 +187,10 @@
 						?>
 					</select> </p>
 					<p>Respuestas:</p>
-					<input type="text" id="nameCrearPreguntasResp1"><input type="radio" name="valida" value="1">
-					<input type="text" id="nameCrearPreguntasResp2"><input type="radio" name="valida" value="2">
-					<input type="text" id="nameCrearPreguntasResp3"><input type="radio" name="valida" value="3">
-					<input type="text" id="nameCrearPreguntasResp4"><input type="radio" name="valida" value="4">
+					<p><input type="text" id="nameCrearPreguntasResp1"><input type="radio" name="valida" value="1"></p>
+					<p><input type="text" id="nameCrearPreguntasResp2"><input type="radio" name="valida" value="2"></p>
+					<p><input type="text" id="nameCrearPreguntasResp3"><input type="radio" name="valida" value="3"></p>
+					<p><input type="text" id="nameCrearPreguntasResp4"><input type="radio" name="valida" value="4"></p>
 					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
 					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
