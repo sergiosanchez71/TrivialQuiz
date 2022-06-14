@@ -230,7 +230,7 @@
         }
 
         function modifyCuestionary(id, name, category, questions){
-
+        	console.log(id+" "+name+" "+category+" "+questions);
 			if (questions < 5) {
 				questions = 5;
 			} else if (questions > 100){
