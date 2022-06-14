@@ -246,9 +246,9 @@
 		});
 
 		
-		$("#buttonCuestionaries").click(function(){
+		$("#buttonQuestions").click(function(){
 			$("#gestiones").css("display","none");
-			$("#gestionarCuestionariosForm").css("display","block");
+			$("#gestionarPreguntasForm").css("display","block");
 		});
 
 
