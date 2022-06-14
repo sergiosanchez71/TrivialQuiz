@@ -224,7 +224,7 @@
 			$("#borrarCuestionariosForm").css("display","block");
 		});
 
-		$("#buttonBackModifyForm").click(function(){
+		$("#buttonBackDeleteForm").click(function(){
 			$("#borrarCuestionariosForm").css("display","none");
 			$("#gestionarCuestionariosForm").css("display","block");
 		});
