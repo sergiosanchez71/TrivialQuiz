@@ -61,7 +61,7 @@ switch ($action) {
 		$sql = "UPDATE questionnaires SET 'name'='$name','questions'='$questions','category'='$category' WHERE 'id'='$id'";
 
 		if (mysqli_query($mysqli, $sql)) {
-		     echo "Cuestionario creado correctamente";
+		     echo "Cuestionario modificado correctamente";
 		}
 
 	break;
