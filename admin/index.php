@@ -187,6 +187,8 @@
 						?>
 					</select> </p>
 					<p>Respuestas:</p>
+					 <label for="button one"><input type="radio" name="group1" id="r1" value="1" /> button one</label> 
+
 					<label>
 						<input type="radio" name="correcta" value="1" checked>
 						<input type="text" id="nameCrearPreguntasResp1">
