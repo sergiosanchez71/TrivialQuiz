@@ -172,7 +172,7 @@
 		});
 
 		$("#createCuestionary").click(function(){
-			createCuestionary($("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionsCrearCuestionariosForm").val());
+			createCuestionary($("#nameModificarCuestionariosForm").val(),$("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionsCrearCuestionariosForm").val());
 		});
 
 
@@ -194,11 +194,11 @@
 		});
 
 		$("#modifyCuestionary").click(function(){
-			modifyCuestionary($("#nameModificarCuestionariosForm").val(), $("#categoryModificarCuestionariosForm").val(), $("#questionsModificarCuestionariosForm").val());
+			modifyCuestionary($("#newNameModificarCuestionariosForm").val(), $("#categoryModificarCuestionariosForm").val(), $("#questionsModificarCuestionariosForm").val());
 		});
 
 
-		function createCuestionary(name, category, questions){
+		function createCuestionary(id, name, category, questions){
 
 			if (questions < 5) {
 				questions = 5;
@@ -208,6 +208,7 @@
 
 			var parametros = {
 				"action": "createCuestionary",
+				"id": id,
 				"name": name,
                 "category": category, 
                 "questions": questions 
