@@ -74,6 +74,22 @@ switch ($action) {
 		}
 
 	break;
+	case 'createQuestion':
+		$name = $_REQUEST['name'];
+		$category = $_REQUEST['category'];
+		$reply1 = $_REQUEST['reply1'];
+		$reply2 = $_REQUEST['reply2'];
+		$reply3 = $_REQUEST['reply3'];
+		$reply4 = $_REQUEST['reply4'];
+		$success = $_REQUEST['success'];
+
+		$sql = "INSERT INTO questions('name', 'replies', 'success', 'category') VALUES ('$name','$reply1 $reply2 $reply3 $reply4','$success','$category')"
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Pregunta creada correctamente";
+		}
+
+	break;
 	default:
 			// code...
 	break;
