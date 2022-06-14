@@ -192,7 +192,7 @@
 						<input type="text" id="nameCrearPreguntasResp1">
 					</div>
 					<div>
-						<input type="checkbox" name="correcta" value="2">
+						<input type="radio" name="correcta" value="2">
 						<input type="text" id="nameCrearPreguntasResp2">
 					</div>
 					<div>
