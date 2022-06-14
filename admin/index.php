@@ -188,16 +188,16 @@
 					</select> </p>
 					<p>Respuestas:</p>
 					<div>
-						<input type="radio" name="success" id="r1" value="1" />
+						<input type="radio" name="success" id="r1" value="0" />
 						<label for="r1"> <input type="text" id="nameCrearPreguntasResp1"></label>
 
-						<input type="radio" name="success" id="r2" value="2" />
+						<input type="radio" name="success" id="r2" value="1" />
 						<label for="r2"> <input type="text" id="nameCrearPreguntasResp2"></label>
 
-						<input type="radio" name="success" id="r3" value="3" />
+						<input type="radio" name="success" id="r3" value="2" />
 						<label for="r3"> <input type="text" id="nameCrearPreguntasResp3"></label>
 
-						<input type="radio" name="success" id="r4" value="4" />
+						<input type="radio" name="success" id="r4" value="3" />
 						<label for="r4"> <input type="text" id="nameCrearPreguntasResp4"></label>
 					</div>
 
@@ -222,195 +222,8 @@
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
-	<script type="text/javascript">
+	<script src="controller/admin.js"></script>
 
-		$("#buttonCuestionaries").click(function(){
-			$("#gestiones").css("display","none");
-			$("#gestionarCuestionariosForm").css("display","block");
-		});
-
-		$("#buttonCreateCuest").click(function(){
-			$("#gestionarCuestionariosForm").css("display","none");
-			$("#crearCuestionariosForm").css("display","block");
-		});
-
-		$("#buttonBackCuestGestionForm").click(function(){
-			$("#gestionarCuestionariosForm").css("display","none");
-			$("#gestiones").css("display","block");
-		});
-
-		$("#buttonBackCreateForm").click(function(){
-			$("#crearCuestionariosForm").css("display","none");
-			$("#gestionarCuestionariosForm").css("display","block");
-		});
-
-		$("#createCuestionary").click(function(){
-			createCuestionary($("#nameCrearCuestionariosForm").val(), $("#categoryCrearCuestionariosForm").val(), $("#questionCrearCuestionariosForm").val());
-		});
-
-
-		$("#buttonModifyCuest").click(function(){
-			$("#gestionarCuestionariosForm").css("display","none");
-			$("#modificarCuestionariosForm").css("display","block");
-			searchQuestionnaire($("#nameModificarCuestionariosForm").val());
-
-		});
-
-		$("#nameModificarCuestionariosForm").change(function(){
-			searchQuestionnaire($("#nameModificarCuestionariosForm").val());
-
-		});
-
-		$("#buttonBackModifyForm").click(function(){
-			$("#modificarCuestionariosForm").css("display","none");
-			$("#gestionarCuestionariosForm").css("display","block");
-		});
-
-		$("#modifyCuestionary").click(function(){
-			modifyCuestionary($("#nameModificarCuestionariosForm").val(),$("#newNameModificarCuestionariosForm").val(), $("#categoryModificarCuestionariosForm").val(), $("#questionModificarCuestionariosForm").val());
-		});
-
-		$("#buttonDeleteCuest").click(function(){
-			$("#gestionarCuestionariosForm").css("display","none");
-			$("#borrarCuestionariosForm").css("display","block");
-		});
-
-		$("#buttonBackDeleteForm").click(function(){
-			$("#borrarCuestionariosForm").css("display","none");
-			$("#gestionarCuestionariosForm").css("display","block");
-		});
-
-		$("#deleteCuestionary").click(function(){
-			deleteCuestionary($("#nameBorrarCuestionariosForm").val());
-		});
-
-
-		$("#buttonQuestion").click(function(){
-			$("#gestiones").css("display","none");
-			$("#gestionarPreguntasForm").css("display","block");
-		});
-
-		$("#buttonCreateQuestion").click(function(){
-			$("#gestionarPreguntasForm").css("display","none");
-			$("#crearPreguntasForm").css("display","block");
-		});
-
-
-
-		function createCuestionary(name, category, question){
-
-			if (question < 5) {
-				question = 5;
-			} else if (question > 100){
-				question = 100;
-			}
-
-			var parametros = {
-				"action": "createCuestionary",
-				"name": name,
-				"category": category, 
-				"question": question 
-			};
-
-			$.ajax({
-				url: "controller/actions.php",
-				data: parametros,
-				success: function (respuesta) { 
-					if (respuesta) {
-						console.log(respuesta);
-					}
-				},
-				error: function (xhr, status) {
-                            console.log("Error en el logueo"); //El mensaje que se muestra en el caso de que haya un error en la consulta
-                        },
-                        type: "POST",
-                        dataType: "text"
-                    });
-		}
-
-		function modifyCuestionary(id, name, category, question){
-			if (question < 5) {
-				question = 5;
-			} else if (question > 100){
-				question = 100;
-			}
-
-			var parametros = {
-				"action": "modifyCuestionary",
-				"id": id,
-				"name": name,
-				"category": category, 
-				"question": question 
-			};
-
-			$.ajax({
-				url: "controller/actions.php",
-				data: parametros,
-				success: function (respuesta) { 
-					if (respuesta) {
-						console.log(respuesta);
-					}
-				},
-				error: function (xhr, status) {
-                            console.log("Error al modificar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
-                        },
-                        type: "POST",
-                        dataType: "text"
-                    });
-		}
-
-		function deleteCuestionary(id){
-
-			var parametros = {
-				"action": "deleteCuestionary",
-				"id": id
-			};
-
-			$.ajax({
-				url: "controller/actions.php",
-				data: parametros,
-				success: function (respuesta) { 
-					if (respuesta) {
-						console.log(respuesta);
-					}
-				},
-				error: function (xhr, status) {
-                            console.log("Error al borrar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
-                        },
-                        type: "POST",
-                        dataType: "text"
-                    });
-		}
-
-		function searchQuestionnaire(id){
-			var parametros = {
-				"action": "searchQuestionnaire",
-				"id": id
-			};
-
-			$.ajax({
-				url: "controller/actions.php",
-				data: parametros,
-				success: function (respuesta) { 
-					console.log(respuesta);
-					if (respuesta) {
-						var resp = JSON.parse(respuesta);
-						$("#newNameModificarCuestionariosForm").val(resp[0].questionnaire);
-						$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
-						$("#questionModificarCuestionariosForm").val(resp[0].question);
-					} 
-				},
-				error: function (xhr, status) {
-                            console.log("Error al mostrar el cuestionario: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
-                        },
-                        type: "POST",
-                        dataType: "text"
-                    });
-		}
-
-
-
-	</script>
 
 </body>
 </html>
