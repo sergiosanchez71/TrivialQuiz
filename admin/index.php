@@ -302,7 +302,7 @@
 
 		function createQuestion(name, category, reply1, reply2, reply3, reply4, successReply){
 
-			console.log(name+" "+category+" "reply1+" "+reply2+" "+reply3+" "+reply4+" "+successReply);
+			console.log(name+" "+category+" "+reply1+" "+reply2+" "+reply3+" "+reply4+" "+successReply);
 
 			var parametros = {
 				"action": "createQuestion",
