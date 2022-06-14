@@ -273,7 +273,7 @@
         			console.log(respuesta);
         			if (respuesta) {
         				var resp = JSON.parse(respuesta);
-        				$("#newNameModificarCuestionariosForm").html(resp[0].questionnaire);
+        				//$("#newNameModificarCuestionariosForm").html(resp[0].questionnaire);
         				$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
         				$("#questionsModificarCuestionariosForm").val(resp[0].questions);
         			} 
