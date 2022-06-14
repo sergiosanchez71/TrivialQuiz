@@ -53,7 +53,7 @@ switch ($action) {
 
 
 	break;
-	case 'modifyCuestionary':
+	/*case 'modifyCuestionary':
 		$name = $_REQUEST['name'];
 		$questions = $_REQUEST['questions'];
 		$category = $_REQUEST['category'];
@@ -63,7 +63,7 @@ switch ($action) {
 		     echo "Cuestionario creado correctamente";
 		}
 
-	break;
+	break;*/
 	default:
 			// code...
 	break;
