@@ -188,7 +188,7 @@
 					</select> </p>
 					<p>Respuestas:</p>
 					<div>
-						<input type="radio" name="success" id="r1" value="0" />
+						<input type="radio" name="success" id="r1" value="0" checked />
 						<label for="r1"> <input type="text" id="nameCrearPreguntasResp1"></label>
 
 						<input type="radio" name="success" id="r2" value="1" />
