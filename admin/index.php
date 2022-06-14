@@ -296,13 +296,13 @@
 		});
 
 		$("#createQuestion").click(function(){
-			/*createQuestion($("#nameCrearPreguntasForm").val(), $("#categoryCrearPreguntasForm").val(), $("#nameCrearPreguntasResp1").val(), $("#nameCrearPreguntasResp2").val(), $("#nameCrearPreguntasResp3").val(), $("#nameCrearPreguntasResp4").val(), $('input[name=success]:checked', '#crearPreguntasForm').val());*/
+			createQuestion($("#nameCrearPreguntasForm").val(), $("#categoryCrearPreguntasForm").val(), $("#nameCrearPreguntasResp1").val(), $("#nameCrearPreguntasResp2").val(), $("#nameCrearPreguntasResp3").val(), $("#nameCrearPreguntasResp4").val(), $('input[name=success]:checked', '#crearPreguntasForm').val());
 		});
 
 
 		function createQuestion(name, category, reply1, reply2, reply3, reply4, successReply){
 
-			console.log(name+" "+category+" "reply1+" "reply2+" "+reply3+" "+reply4+" "+successReply);
+			console.log(name+" "+category+" "reply1+" "+reply2+" "+reply3+" "+reply4+" "+successReply);
 
 			var parametros = {
 				"action": "createQuestion",
