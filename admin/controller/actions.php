@@ -43,7 +43,7 @@ switch ($action) {
 	break;
 	case 'searchQuestionnaire':
 		$id = $_REQUEST['id'];
-		$result = mysqli_query($mysqli, "SELECT C.id, C.name, Q.questions FROM questionnaires AS Q,categories AS C WHERE Q.id='$id' and Q.category=C.id");   
+		$result = mysqli_query($mysqli, "SELECT C.id, C.name FROM questionnaires AS Q,categories AS C WHERE Q.id='$id' and Q.category=C.id");   
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
 		    	$test[] = $row; 
