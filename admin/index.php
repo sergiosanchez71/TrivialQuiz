@@ -131,6 +131,28 @@
 					<a id="buttonBackModifyForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
+				<form id="borrarCuestionariosForm" style="display: none;">
+					<p>Borrar un cuestionario</p>
+					<p>Selecciona un cuestionario <select id="nameBorrarCuestionariosForm">
+						<?php
+
+						if ($questionnaires) {
+							foreach ($questionnaires as $questionnaire) {
+								$id = $questionnaire['id'];
+								echo "<option value=$id>";
+								echo $questionnaire['name'];
+								echo "</option>";
+							}
+						}
+
+
+						?>
+					</select></p>
+
+					<a id="deleteCuestionary" class="button primary icon solid fa-comments-question">Borrar cuestionario</a>
+					<a id="buttonBackDeleteForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
 
 			</div>
 
@@ -197,6 +219,12 @@
 			modifyCuestionary($("#nameModificarCuestionariosForm").val(),$("#newNameModificarCuestionariosForm").val(), $("#categoryModificarCuestionariosForm").val(), $("#questionsModificarCuestionariosForm").val());
 		});
 
+		$("#buttonDeleteCuest").click(function(){
+			$("#gestionarCuestionariosForm").css("display","none");
+			$("#borrarCuestionariosForm").css("display","block");
+		
+		});
+
 
 		function createCuestionary(name, category, questions){
 
@@ -230,7 +258,6 @@
         }
 
         function modifyCuestionary(id, name, category, questions){
-        	console.log(id+" "+name+" "+category+" "+questions);
 			if (questions < 5) {
 				questions = 5;
 			} else if (questions > 100){
