@@ -265,6 +265,7 @@
         				$("#questionsModificarCuestionariosForm").val(resp[0].questions);
         			} else {
         				$("#modificarCuestionarioCategoriaActual").html("Sin categoría");
+        				$("#questionsModificarCuestionariosForm").val(resp[0].questions);
         			}
         		},
         		error: function (xhr, status) {
