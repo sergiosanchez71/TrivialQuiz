@@ -178,12 +178,12 @@
 		$("#buttonModifyCuest").click(function(){
 			$("#gestionarCuestionariosForm").css("display","none");
 			$("#modificarCuestionariosForm").css("display","block");
-			searchCategoryQuestionnaire($("#nameModificarCuestionariosForm").val());
+			searchQuestionnaire($("#nameModificarCuestionariosForm").val());
 		
 		});
 
 		$("#nameModificarCuestionariosForm").change(function(){
-			searchCategoryQuestionnaire($("#nameModificarCuestionariosForm").val());
+			searchQuestionnaire($("#nameModificarCuestionariosForm").val());
 		
 		});
 
