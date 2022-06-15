@@ -103,9 +103,9 @@ switch ($action) {
 		for ($i=0; $i < 4; $i++) { 
 			if($i == 0){
 				$sql = "SELECT MAX(id) as id FROM replies";
-			} else {
+			} /*else {
 				$sql = "SELECT MAX(id) as id FROM replies WHERE NOT id='$repliesId[$i-1]'";
-			}
+			}*/
 			$result = mysqli_query($mysqli, $sql);  
 			while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
