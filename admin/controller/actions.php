@@ -92,11 +92,11 @@ switch ($action) {
 
 		echo $idQuestion;
 
-		$sql = "INSERT INTO questions VALUES (null, '$name','$reply1/$reply2/$reply3/$reply4','$success','$category')";
+		/*$sql = "INSERT INTO questions VALUES (null, '$name','$reply1/$reply2/$reply3/$reply4','$success','$category')";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
-		}
+		}*/
 
 	break;
 	default:
