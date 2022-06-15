@@ -91,11 +91,12 @@ switch ($action) {
 		$result = mysqli_query($mysqli, $idQuestionSQL);  
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
-		    	$idQuestion[] = $row['id'];
+		    	$idQuestion = $row['id'];
 			} 
 		}
 
-		echo json_encode($idQuestion);
+		//echo json_encode($idQuestion);
+		echo $idQuestion;
 
 		/*$sql = "INSERT INTO questions VALUES (null, '$name','$reply1/$reply2/$reply3/$reply4','$success','$category')";
 
