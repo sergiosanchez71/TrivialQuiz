@@ -100,14 +100,11 @@ switch ($action) {
 
 
 
-		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name','$reply1 $reply2 $reply3 $reply4','$success','$category')";
-
-		/*
-		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name','$reply1 $reply2 $reply3 $reply4','$success','$category')";
+		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name','$replies[0] $replies[1] $replies[2] $replies[3]','$success','$category')";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
-		}*/
+		}
 
 	break;
 	default:
