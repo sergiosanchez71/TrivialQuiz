@@ -92,7 +92,7 @@ switch ($action) {
 			} 
 		}
 
-		for ($i=1; $i <= 4 ; $i++) { 
+		for ($i=0; $i < 4 ; $i++) { 
 			$sql = "INSERT INTO replies VALUES (null,'$replies[$i]','$idQuestion')";
 			mysqli_query($mysqli, $sql);
 			echo "Respuesta $i creada correctamente";
