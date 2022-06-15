@@ -321,7 +321,7 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						console.log(respuesta.id);
+						console.log(resp.id);
 					}
 				},
 				error: function (xhr, status) {
