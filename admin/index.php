@@ -202,7 +202,7 @@
 					</div>
 
 					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
-					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
+					<a id="buttonBackCreateQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 				
 			</div>
@@ -299,7 +299,7 @@
 			createQuestion($("#nameCrearPreguntasForm").val(), $("#categoryCrearPreguntasForm").val(), $("#nameCrearPreguntasResp1").val(), $("#nameCrearPreguntasResp2").val(), $("#nameCrearPreguntasResp3").val(), $("#nameCrearPreguntasResp4").val(), $('input[name=success]:checked', '#crearPreguntasForm').val());
 		});
 
-		$("#buttonBackCreateForm").click(function(){
+		$("#buttonBackCreateQuestForm").click(function(){
 			$("#crearPreguntasForm").css("display","none");
 			$("#gestionarPreguntasForm").css("display","block");
 		});
