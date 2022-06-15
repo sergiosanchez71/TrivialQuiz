@@ -78,10 +78,7 @@ switch ($action) {
 	case 'createQuestion':
 		$name = $_REQUEST['name'];
 		$category = $_REQUEST['category'];
-		$reply1 = $_REQUEST['reply1'];
-		$reply2 = $_REQUEST['reply2'];
-		$reply3 = $_REQUEST['reply3'];
-		$reply4 = $_REQUEST['reply4'];
+		$replies = array($_REQUEST['reply1'], $_REQUEST['reply2'], $_REQUEST['reply3'], $_REQUEST['reply4']);
 		$success = $_REQUEST['success'];
 
 		//Habría que crear las respuestas también en su respectiva tabla
@@ -96,8 +93,7 @@ switch ($action) {
 		}
 
 		for ($i=1; $i <= 4 ; $i++) { 
-			$reply = $reply+$i;
-			$sql = "INSERT INTO replies VALUES (null,'$reply','$idQuestion')";
+			$sql = "INSERT INTO replies VALUES (null,'$reply[$i]','$idQuestion')";
 			mysqli_query($mysqli, $sql);
 			echo "Respuesta $i creada correctamente";
 		}
