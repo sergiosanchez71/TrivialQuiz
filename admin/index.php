@@ -299,10 +299,13 @@
 			createQuestion($("#nameCrearPreguntasForm").val(), $("#categoryCrearPreguntasForm").val(), $("#nameCrearPreguntasResp1").val(), $("#nameCrearPreguntasResp2").val(), $("#nameCrearPreguntasResp3").val(), $("#nameCrearPreguntasResp4").val(), $('input[name=success]:checked', '#crearPreguntasForm').val());
 		});
 
+		$("#buttonBackCreateForm").click(function(){
+			$("#crearPreguntasForm").css("display","none");
+			$("#gestionarPreguntasForm").css("display","block");
+		});
+
 
 		function createQuestion(name, category, reply1, reply2, reply3, reply4, successReply){
-
-			console.log(name+" "+category+" "+reply1+" "+reply2+" "+reply3+" "+reply4+" "+successReply);
 
 			var parametros = {
 				"action": "createQuestion",
