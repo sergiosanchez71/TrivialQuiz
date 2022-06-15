@@ -95,7 +95,7 @@ switch ($action) {
 			} 
 		}
 
-		echo json_encode($idQuestion);
+		echo $idQuestion["id"];
 
 		/*$sql = "INSERT INTO questions VALUES (null, '$name','$reply1/$reply2/$reply3/$reply4','$success','$category')";
 
