@@ -320,7 +320,8 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
-						console.log(respuesta);
+						var resp = JSON.parse(respuesta);
+						console.log(resp);
 					}
 				},
 				error: function (xhr, status) {
