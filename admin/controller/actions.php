@@ -89,7 +89,7 @@ switch ($action) {
 		$idQuestionSQL = "SELECT MAX(id) as id FROM questions";
 
 		$result = mysqli_query($mysqli, $idQuestionSQL);  
-		echo $result[0]; 
+		echo $result; 
 		/*while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
 		    	$idQuestion[] = $row;
