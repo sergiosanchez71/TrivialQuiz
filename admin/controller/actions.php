@@ -86,7 +86,9 @@ switch ($action) {
 
 		//Habría que crear las respuestas también en su respectiva tabla
 
-		$idQuestion = "SELECT max(id) FROM questions";
+		$idQuestionSQL = "SELECT max(id) FROM questions";
+
+		$idQuestion = mysqli_query($mysqli, $sql);
 
 		echo $idQuestion;
 
