@@ -98,8 +98,6 @@ switch ($action) {
 			echo "Respuesta $i creada correctamente";
 		}
 
-		$replyId4 = 0;
-
 		//for ($i=0; $i < 4; $i++) { 
 			$sql = "SELECT MAX(id) as id FROM replies";
 			$result = mysqli_query($mysqli, $sql);  
@@ -110,9 +108,11 @@ switch ($action) {
 			}
 		//}
 
+		$repliesId = array($replyId4-3,$replyId4-2,$replyId4-1,$replyId4);
 
 
-		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name',$replyId4-3+' '+$replyId4-2+' '+$replyId4-1+' '+$replyId4,'$success','$category')";
+
+		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name',implode(' ', $repliesId),'$success','$category')";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
