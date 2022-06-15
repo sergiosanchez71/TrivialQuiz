@@ -91,14 +91,23 @@ switch ($action) {
 		$result = mysqli_query($mysqli, $idQuestionSQL);  
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
-		    	$idQuestion = $row['id'];
+		    	$idQuestion = $row['id']+1;
 			} 
 		}
 
-		//echo json_encode($idQuestion);
-		echo $idQuestion;
+		for ($i=1; $i <= 4 ; $i++) { 
+		
+			$sql = "INSERT INTO replies('name', 'question') VALUES (null,'$reply[i]','$idQuestion')";
+			mysqli_query($mysqli, $sql);
 
-		/*$sql = "INSERT INTO questions VALUES (null, '$name','$reply1/$reply2/$reply3/$reply4','$success','$category')";
+		}
+
+
+
+		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name','$reply1 $reply2 $reply3 $reply4','$success','$category')";
+
+		/*
+		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name','$reply1 $reply2 $reply3 $reply4','$success','$category')";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
