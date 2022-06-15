@@ -43,7 +43,8 @@ switch ($action) {
 	break;
 	case 'searchQuestionnaire':
 		$id = $_REQUEST['id'];
-		$result = mysqli_query($mysqli, "SELECT C.id, C.name, Q.name as questionnaire, Q.questions FROM questionnaires AS Q,categories AS C WHERE Q.id='$id' and Q.category=C.id");   
+		$sql = "SELECT C.id, C.name, Q.name as questionnaire, Q.questions FROM questionnaires AS Q,categories AS C WHERE Q.id='$id' and Q.category=C.id";
+		$result = mysqli_query($mysqli, $sql);   
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
 		    	$test[] = $row;
@@ -84,6 +85,10 @@ switch ($action) {
 		$success = $_REQUEST['success'];
 
 		//Habría que crear las respuestas también en su respectiva tabla
+
+		$idQuestion = "SELECT max(id) FROM questions";
+
+		echo $idQuestion;
 
 		$sql = "INSERT INTO questions VALUES (null, '$name','$reply1/$reply2/$reply3/$reply4','$success','$category')";
 
