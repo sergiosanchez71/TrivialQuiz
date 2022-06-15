@@ -88,14 +88,15 @@ switch ($action) {
 
 		$idQuestionSQL = "SELECT MAX(id) FROM questions";
 
-		$result = mysqli_query($mysqli, $idQuestionSQL);   
+		$result = mysqli_query($mysqli, $idQuestionSQL); 
+		echo $result;  
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
 		    	$idQuestion[] = $row;
 			} 
 		}
 
-		echo $idQuestion[0];
+		echo $idQuestion;
 
 		/*$sql = "INSERT INTO questions VALUES (null, '$name','$reply1/$reply2/$reply3/$reply4','$success','$category')";
 
