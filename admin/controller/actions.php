@@ -114,7 +114,7 @@ switch ($action) {
 
 
 
-		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name','$replyId4-3 $replyId4-2 $replyId4-1 $replyId4','$success','$category')";
+		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name',$replyId4-3+' '+$replyId4-2+' '+$replyId4-1+' '+$replyId4,'$success','$category')";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
