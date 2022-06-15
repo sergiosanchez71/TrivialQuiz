@@ -304,6 +304,11 @@
 			$("#gestionarPreguntasForm").css("display","block");
 		});
 
+		$("#buttonBackQuestionsGestionForm").click(function(){
+			$("#gestionarPreguntasForm").css("display","none");
+			$("#gestiones").css("display","block");
+		});
+
 
 		function createQuestion(name, category, reply1, reply2, reply3, reply4, successReply){
 
