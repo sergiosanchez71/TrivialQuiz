@@ -112,7 +112,7 @@ switch ($action) {
 
 		$repliesString = implode(' ', $repliesId);
 
-		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name', $repliesString,'$success','$category')";
+		$sql = "INSERT INTO questions VALUES ('$idQuestion', '$name', '$repliesString','$success','$category')";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
