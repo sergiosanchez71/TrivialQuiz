@@ -109,7 +109,7 @@ switch ($action) {
 			$result = mysqli_query($mysqli, $sql);  
 			while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
-			    	$repliesId[$i] = $row['id'];
+			    	array_push($repliesId, $row['id']);
 				} 
 			}
 		}
