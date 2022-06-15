@@ -88,7 +88,7 @@ switch ($action) {
 
 		$idQuestionSQL = "SELECT max(id) FROM questions";
 
-		$idQuestion = mysqli_query($mysqli, $sql);
+		$idQuestion = mysqli_query($mysqli, $idQuestionSQL);
 
 		echo $idQuestion;
 
