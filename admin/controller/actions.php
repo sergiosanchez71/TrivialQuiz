@@ -98,9 +98,25 @@ switch ($action) {
 			echo "Respuesta $i creada correctamente";
 		}
 
+		$repliesId = array();
+
+		for ($i=0; $i < 4; $i++) { 
+			if($i == 0){
+				$sql = "SELECT MAX(id) as id FROM replies";
+			} else {
+				$sql = "SELECT MAX(id) as id FROM replies WHERE NOT id='$repliesId[$i-1]'";
+			}
+			$result = mysqli_query($mysqli, $sql);  
+			while($row = mysqli_fetch_assoc($result)){
+				if ($row) {
+			    	$repliesId[$i] = $row['id'];
+				} 
+			}
+		}
 
 
-		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name','$replies[0] $replies[1] $replies[2] $replies[3]','$success','$category')";
+
+		$sql = "INSERT INTO questions VALUES ($idQuestion, '$name','$repliesId[0] $repliesId[1] $repliesId[2] $repliesId[3]','$success','$category')";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
