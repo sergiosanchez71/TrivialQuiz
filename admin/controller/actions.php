@@ -89,14 +89,13 @@ switch ($action) {
 		$idQuestionSQL = "SELECT MAX(id) as id FROM questions";
 
 		$result = mysqli_query($mysqli, $idQuestionSQL);  
-		echo $result; 
-		/*while($row = mysqli_fetch_assoc($result)){
+		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
-		    	$idQuestion[] = $row;
+		    	$idQuestion[] = $row['id'];
 			} 
 		}
 
-		echo json_encode($idQuestion);*/
+		echo json_encode($idQuestion);
 
 		/*$sql = "INSERT INTO questions VALUES (null, '$name','$reply1/$reply2/$reply3/$reply4','$success','$category')";
 
