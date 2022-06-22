@@ -132,8 +132,6 @@ switch ($action) {
 
 		$replies = explode(',', $repliesString);
 
-		$repliesNames = array();
-
 		for ($i=0; $i < 4 ; $i++) { 
 			$sql = "SELECT name FROM replies WHERE id='$replies[$i]'";
 			$result = mysqli_query($mysqli, $sql);
