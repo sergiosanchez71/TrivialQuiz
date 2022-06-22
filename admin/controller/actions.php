@@ -130,7 +130,14 @@ switch ($action) {
 				} 
 			}
 
-		$replies = explode(' ', $repliesString);
+		$replies = explode(',', $repliesString);
+
+		for ($i=0; $i < 4 ; $i++) { 
+			$sql = "INSERT INTO replies VALUES (null,'$replies[$i]','$idQuestion')";
+			mysqli_query($mysqli, $sql);
+		}
+
+
 
 		echo $repliesString;
 
