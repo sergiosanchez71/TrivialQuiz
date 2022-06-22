@@ -505,6 +505,7 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
+						var resp = JSON.parse(respuesta);
 						//var respuestas = respuesta.split(',');
 						//console.log(respuestas[1]);
 						console.log(respuesta[3]);
