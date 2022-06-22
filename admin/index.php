@@ -508,7 +508,7 @@
 						var resp = JSON.parse(respuesta);
 						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
 
-						for (var i = 1; i <= 4; i++) {
+						for (var i = 1; i <= resp.replies.lenght; i++) {
 							if (i-1 == resp.success) {
 								$("#radioModifPreguntasResp"+i).prop("checked", true);
 							}
