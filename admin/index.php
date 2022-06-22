@@ -512,7 +512,7 @@
 							if (i-1 == resp.success) {
 								$("#radioModifPreguntasResp"+i).prop("checked", true); //
 							}
-							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
+							$("#nameModifPreguntasResp"+i).val(resp.replies[i]);
 						}
 					} 
 				},
