@@ -371,7 +371,7 @@
 		$("#buttonModifyQuestion").click(function(){
 			$("#gestionarPreguntasForm").css("display","none");
 			$("#modificarPreguntasForm").css("display","block");
-			searchRepliesFromQuestion($("questionModificarPreguntasForm")~.val());
+			searchRepliesFromQuestion($("questionModificarPreguntasForm").val());
 		});
 
 
