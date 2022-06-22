@@ -505,8 +505,9 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
-						var respuestas = respuesta.split(',');
-						console.log(respuestas[1]);
+						//var respuestas = respuesta.split(',');
+						//console.log(respuestas[1]);
+						console.log(respuesta);
 						/*for (var i = respuesta.length - 1; i >= 0; i--) {
 							console.log(respuesta[i]);
 						}*/
