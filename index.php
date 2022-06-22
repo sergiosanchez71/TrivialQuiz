@@ -4,7 +4,11 @@
 
 		include("admin/controller/conexion.php");
 
+<<<<<<< HEAD
 		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";faskogfsdko
+=======
+		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)"; prueba de otra mas
+>>>>>>> 7d450ac70ee1fab82173eaa1766b46e7a7500ad5
 		$questionnaires_sql = "SELECT * FROM questionnaires";
 		$questionnaires = $mysqli->query($questionnaires_sql);
 
