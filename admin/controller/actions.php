@@ -142,21 +142,21 @@ switch ($action) {
 			}
 		}
 
+		$question->replies = $repliesNames;
+
 
 		$sql = "SELECT success, category FROM questions WHERE id='$id'";
-
 
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
-			    	$success = $row['success'];
-			    	$category = $row['category'];
+			    	$question->success = $row['success'];
+			    	$question->category = $row['category'];
 				} 
 			} 
 
-
-		echo json_encode($repliesNames);
+		echo json_encode($question);
 
 
 
