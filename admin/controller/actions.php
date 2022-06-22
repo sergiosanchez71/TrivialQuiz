@@ -118,7 +118,7 @@ switch ($action) {
 		}
 
 	break;
-	case 'searchRepliesFromQuestion':
+	case 'searchInfoFromQuestion':
 		$id = $_REQUEST['id'];
 		$idRepliesSQL = "SELECT replies FROM questions WHERE id='$id'";
 
