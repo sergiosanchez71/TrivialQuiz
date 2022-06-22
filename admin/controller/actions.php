@@ -146,7 +146,7 @@ switch ($action) {
 
 
 
-		echo $repliesNames;
+		echo json_encode($repliesNames);
 
 
 
