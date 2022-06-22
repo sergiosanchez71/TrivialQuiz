@@ -10,8 +10,6 @@ git_autocommit_commit_count=0
 
 set -o errexit
 
-git pull
-
 function fatal
 {
     echo $1 >&2
