@@ -508,7 +508,7 @@
 						var resp = JSON.parse(respuesta);
 						for (var i = resp.length - 1; i >= 0; i--) {
 							console.log(resp[i]);
-							$("#nameModifPreguntasResp"+i).val(resp[i]);
+							$("#nameModifPreguntasResp"+i+1).val(resp[i]);
 						}
 					} 
 				},
