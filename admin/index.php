@@ -506,6 +506,9 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						console.log(respuesta);
+						for (var i = respuesta.length - 1; i >= 0; i--) {
+							respuesta[i];
+						}
 					} 
 				},
 				error: function (xhr, status) {
