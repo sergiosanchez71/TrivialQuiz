@@ -231,8 +231,8 @@
 					<p>Categoría <select id="categoryModificarPreguntasForm">
 						<?php
 
-						if ($categories) {
-							foreach ($categories as $category) {
+						if ($categories_question) {
+							foreach ($categories_question as $category) {
 								$id = $category['id'];
 								if($id != 0){
 									echo "<option value=$id>";
