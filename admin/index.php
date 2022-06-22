@@ -248,16 +248,16 @@
 					<p>Respuestas:</p>
 					<div>
 						<input type="radio" name="success" id="r1" value="0" checked />
-						<label for="r1"> <input type="text" id="nameCrearPreguntasResp1"></label>
+						<label for="r1"> <input type="text" id="nameModifPreguntasResp1"></label>
 
 						<input type="radio" name="success" id="r2" value="1" />
-						<label for="r2"> <input type="text" id="nameCrearPreguntasResp2"></label>
+						<label for="r2"> <input type="text" id="nameModifPreguntasResp2"></label>
 
 						<input type="radio" name="success" id="r3" value="2" />
-						<label for="r3"> <input type="text" id="nameCrearPreguntasResp3"></label>
+						<label for="r3"> <input type="text" id="nameModifPreguntasResp3"></label>
 
 						<input type="radio" name="success" id="r4" value="3" />
-						<label for="r4"> <input type="text" id="nameCrearPreguntasResp4"></label>
+						<label for="r4"> <input type="text" id="nameModifPreguntasResp4"></label>
 					</div>
 
 					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
