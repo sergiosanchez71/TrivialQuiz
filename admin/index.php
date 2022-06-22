@@ -508,7 +508,7 @@
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						console.log(resp.success);
-						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true); //
+						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
 
 						for (var i = 1; i <= 4; i++) {
 							if (i-1 == resp.success) {
