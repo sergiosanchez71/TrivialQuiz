@@ -234,11 +234,9 @@
 						if ($categories) {
 							foreach ($categories as $category) {
 								$id = $category['id'];
-								if($id != 0){
-									echo "<option value=$id>";
-									echo $category['name'];
-									echo "</option>";
-								}
+								echo "<option value=$id>";
+								echo $category['name'];
+								echo "</option>";
 							}
 						}
 
