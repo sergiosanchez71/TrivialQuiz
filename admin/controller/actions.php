@@ -139,7 +139,7 @@ switch ($action) {
 			$result = mysqli_query($mysqli, $sql);
 			while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
-			    	$repliesNames[$i] = $row['replies'];
+			    	$repliesNames[$i] = $row['name'];
 				} 
 			}
 		}
