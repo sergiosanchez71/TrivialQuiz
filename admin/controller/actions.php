@@ -143,10 +143,10 @@ switch ($action) {
 		}
 
 
-		$idRepliesSQL = "SELECT success, category FROM questions WHERE id='$id'";
+		$sql = "SELECT success, category FROM questions WHERE id='$id'";
 
 
-		$result = mysqli_query($mysqli, $idRepliesSQL);
+		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
