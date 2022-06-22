@@ -207,7 +207,7 @@
 
 				<form id="modificarPreguntasForm" style="display: none;">
 					<p>Modifica una pregunta</p>
-					<p>Pregunta <select id="questionModifyPreguntasForm">
+					<p>Pregunta <select id="questionModificarPreguntasForm">
 						<?php
 
 						if ($categories) {
@@ -224,7 +224,7 @@
 
 						?>
 					</select> </p>
-					<p>Categoría <select id="categoryCrearPreguntasForm">
+					<p>Categoría <select id="categoryModificarPreguntasForm">
 						<?php
 
 						if ($categories) {
