@@ -132,7 +132,7 @@ switch ($action) {
 
 		echo $repliesString;
 
-		//$replies = explode(' ', $repliesString);
+		//$replies = explode(' ', $repliesString)
 
 
 
