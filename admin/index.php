@@ -224,6 +224,23 @@
 
 						?>
 					</select> </p>
+					<p>Categoría <select id="categoryCrearPreguntasForm">
+						<?php
+
+						if ($categories) {
+							foreach ($categories as $category) {
+								$id = $category['id'];
+								if($id != 0){
+									echo "<option value=$id>";
+									echo $category['name'];
+									echo "</option>";
+								}
+							}
+						}
+
+
+						?>
+					</select> </p>
 					<p>Respuestas:</p>
 					<div>
 						<input type="radio" name="success" id="r1" value="0" checked />
