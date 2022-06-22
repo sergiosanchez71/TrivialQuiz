@@ -4,7 +4,7 @@
 
 		include("admin/controller/conexion.php");
 
-		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)"; prueba de autocommit
+		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)"; prueba de otra mas
 		$questionnaires_sql = "SELECT * FROM questionnaires";
 		$questionnaires = $mysqli->query($questionnaires_sql);
 
