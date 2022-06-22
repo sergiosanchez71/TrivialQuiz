@@ -508,7 +508,7 @@
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						console.log(resp.success);
-						for (var i = 1; i <= resp.length; i++) {
+						for (var i = 1; i <= 4; i++) {
 							if (i-1 == resp.success) {
 								$("#radioModifPreguntasResp"+i).prop("checked", true);
 							}
