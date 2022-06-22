@@ -510,7 +510,7 @@
 						console.log(resp.success);
 						for (var i = 1; i <= resp.length; i++) {
 							if (i-1 == resp.success) {
-								$("#radioModifPreguntasResp"+i).val(resp.replies[i-1]);
+								$("#radioModifPreguntasResp"+i).prop("checked", true);
 							}
 							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
 						}
