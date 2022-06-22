@@ -427,7 +427,7 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
-						console.log(respuesta);
+						console.log(respuesta[0]);
 					}
 				},
 				error: function (xhr, status) {
