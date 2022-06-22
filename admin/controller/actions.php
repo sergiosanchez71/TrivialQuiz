@@ -133,7 +133,7 @@ switch ($action) {
 		$replies = explode(',', $repliesString);
 
 		for ($i=0; $i < 4 ; $i++) { 
-			$sql = "INSERT INTO replies VALUES (null,'$replies[$i]','$idQuestion')";
+			$sql = "SELECT name FROM replies WHERE id='$id'";
 			mysqli_query($mysqli, $sql);
 		}
 
