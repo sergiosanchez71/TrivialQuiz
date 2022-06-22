@@ -14,6 +14,10 @@
 	$categories = $mysqli->query($categories_sql);
 
 
+	$questions_sql = "SELECT * FROM questions";
+	$questions = $mysqli->query($questions_sql);
+
+
 	$questionnaires_sql = "SELECT * FROM questionnaires";
 	$questionnaires = $mysqli->query($questionnaires_sql);
 
@@ -204,6 +208,59 @@
 					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
 					<a id="buttonBackCreateQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
+
+				<form id="modificarPreguntasForm" style="display: none;">
+					<p>Modifica una pregunta</p>
+					<p>Pregunta <select id="questionModificarPreguntasForm">
+						<?php
+
+						if ($questions) {
+							foreach ($questions as $question) {
+								$id = $question['id'];
+								if($id != 0){
+									echo "<option value=$id>";
+									echo $question['name'];
+									echo "</option>";
+								}
+							}
+						}
+
+
+						?>
+					</select> </p>
+					<p>Categoría <select id="categoryModificarPreguntasForm">
+						<?php
+
+						if ($categories) {
+							foreach ($categories as $category) {
+								$id = $category['id'];
+								echo "<option value=$id>";
+								echo $category['name'];
+								echo "</option>";
+							}
+						}
+
+
+						?>
+					</select> </p>
+					<p>Respuestas:</p>
+					<div>
+						<input type="radio" id="radioModifPreguntasResp1" name="success" id="r1" value="0" checked />
+						<label for="r1"> <input type="text" id="nameModifPreguntasResp1"></label>
+
+						<input type="radio" id="radioModifPreguntasResp2" name="success" id="r2" value="1" />
+						<label for="r2"> <input type="text" id="nameModifPreguntasResp2"></label>
+
+						<input type="radio" id="radioModifPreguntasResp3" name="success" id="r3" value="2" />
+						<label for="r3"> <input type="text" id="nameModifPreguntasResp3"></label>
+
+						<input type="radio" id="radioModifPreguntasResp4" name="success" id="r4" value="3" />
+						<label for="r4"> <input type="text" id="nameModifPreguntasResp4"></label>
+					</div>
+
+					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
+					<a id="buttonBackCreateQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
 				
 			</div>
 
@@ -307,6 +364,16 @@
 		$("#buttonBackQuestionsGestionForm").click(function(){
 			$("#gestionarPreguntasForm").css("display","none");
 			$("#gestiones").css("display","block");
+		});
+
+		$("#buttonModifyQuestion").click(function(){
+			$("#gestionarPreguntasForm").css("display","none");
+			$("#modificarPreguntasForm").css("display","block");
+			searchInfoFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cargar
+		});
+
+		$("#questionModificarPreguntasForm").change(function(){
+			searchInfoFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cambiar
 		});
 
 
@@ -421,6 +488,36 @@
 				},
 				error: function (xhr, status) {
                             console.log("Error al borrar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+		function searchInfoFromQuestion(id){
+			var parametros = {
+				"action": "searchInfoFromQuestion",
+				"id": id
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+						var resp = JSON.parse(respuesta);
+						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
+						for (var i = 1; i <= resp.replies.lenght; i++) {
+							if (i-1 == resp.success) {
+								$("#radioModifPreguntasResp"+i).prop("checked", true);
+							}
+							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
+						}
+					} 
+				},
+				error: function (xhr, status) {
+                            console.log("Error al buscar las respuestas de la pregunta: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"

@@ -109,7 +109,7 @@ switch ($action) {
 
 		$repliesId = array($replyId4-3,$replyId4-2,$replyId4-1,$replyId4);
 
-		$repliesString = implode(' ', $repliesId);
+		$repliesString = implode(',', $repliesId);
 
 		$sql = "INSERT INTO questions VALUES ('$idQuestion', '$name', '$repliesString','$success','$category')";
 
@@ -118,6 +118,55 @@ switch ($action) {
 		}
 
 	break;
+	case 'searchInfoFromQuestion':
+		$id = $_REQUEST['id'];
+		$idRepliesSQL = "SELECT replies FROM questions WHERE id='$id'";
+
+		$result = mysqli_query($mysqli, $idRepliesSQL);  
+
+		while($row = mysqli_fetch_assoc($result)){
+				if ($row) {
+			    	$repliesString = $row['replies'];
+				} 
+			}
+
+		$replies = explode(',', $repliesString);
+
+		for ($i=0; $i < 4 ; $i++) { 
+			$sql = "SELECT name FROM replies WHERE id='$replies[$i]'";
+			$result = mysqli_query($mysqli, $sql);
+			while($row = mysqli_fetch_assoc($result)){
+				if ($row) {
+			    	$repliesNames[$i] = $row['name'];
+				} 
+			}
+		}
+
+		$sql = "SELECT success, category FROM questions WHERE id='$id'";
+
+		$result = mysqli_query($mysqli, $sql);
+
+		while($row = mysqli_fetch_assoc($result)){
+				if ($row) {
+			    	$success = $row['success'];
+			    	$category = $row['category'];
+				} 
+			} 
+
+		$question = new stdClass();
+		$question = array(
+			"replies" => $repliesNames,
+			"success" => $success,
+			"category" => $category
+		);
+
+
+		echo json_encode($question);
+
+
+
+	break;
+
 	default:
 			// code...
 	break;
