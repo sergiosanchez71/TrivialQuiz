@@ -35,11 +35,12 @@ function verbose_log
 # Returns 0 if changes have been auto-commited, 1 if not.
 function autocommit
 {
+    git pull
+    
     local files=$(git status --porcelain)
     if [ ! -z "$files" ]; then
         verbose_log "$files"
         # Add everything that is there.
-        git pull
         git add -A >/dev/null
         git push
         # Commit
