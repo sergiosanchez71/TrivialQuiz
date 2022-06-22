@@ -503,10 +503,11 @@
 				success: function (respuesta) { 
 					console.log(respuesta);
 					if (respuesta) {
-						var resp = JSON.parse(respuesta);
+						console.log(respuesta);
+						/*var resp = JSON.parse(respuesta);
 						$("#newNameModificarCuestionariosForm").val(resp[0].questionnaire);
 						$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
-						$("#questionModificarCuestionariosForm").val(resp[0].question);
+						$("#questionModificarCuestionariosForm").val(resp[0].question);*/
 					} 
 				},
 				error: function (xhr, status) {
