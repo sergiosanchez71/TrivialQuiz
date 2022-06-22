@@ -43,7 +43,8 @@ function autocommit
         git add -A >/dev/null
         git push
         # Commit
-        git commit -q -m "$GIT_AUTOCOMMIT_MESSAGE" >/dev/null
+        git commit -m "Prueba"
+        #git commit -q -m "$GIT_AUTOCOMMIT_MESSAGE" >/dev/null
         print_autocommit_stats
         return 0
     fi
