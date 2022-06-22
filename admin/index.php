@@ -427,7 +427,7 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
-						console.log(respuesta); //Mostramos id respuestas
+						console.log(respuesta);
 					}
 				},
 				error: function (xhr, status) {
@@ -493,6 +493,7 @@
 		}
 
 		function searchRepliesFromQuestion(id){
+			console.log(id);
 			var parametros = {
 				"action": "searchRepliesFromQuestion",
 				"id": id
@@ -505,10 +506,6 @@
 					console.log(respuesta);
 					if (respuesta) {
 						console.log(respuesta);
-						/*var resp = JSON.parse(respuesta);
-						$("#newNameModificarCuestionariosForm").val(resp[0].questionnaire);
-						$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
-						$("#questionModificarCuestionariosForm").val(resp[0].question);*/
 					} 
 				},
 				error: function (xhr, status) {
