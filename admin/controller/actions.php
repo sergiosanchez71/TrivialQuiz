@@ -120,7 +120,7 @@ switch ($action) {
 	break;
 	case 'searchRepliesFromQuestion':
 		$id = $_REQUEST['id'];
-		$idRepliesSQL = "SELECT replies, success, category FROM questions WHERE id='$id'";
+		$idRepliesSQL = "SELECT replies FROM questions WHERE id='$id'";
 
 		$result = mysqli_query($mysqli, $idRepliesSQL);  
 
@@ -141,6 +141,19 @@ switch ($action) {
 				} 
 			}
 		}
+
+
+		$idRepliesSQL = "SELECT success, category FROM questions WHERE id='$id'";
+
+
+		$result = mysqli_query($mysqli, $idRepliesSQL);
+
+		while($row = mysqli_fetch_assoc($result)){
+				if ($row) {
+			    	$success = $row['success'];
+			    	$category = $row['category'];
+				} 
+			} 
 
 
 		echo json_encode($repliesNames);
