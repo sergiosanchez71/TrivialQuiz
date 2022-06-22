@@ -154,9 +154,9 @@ switch ($action) {
 			} 
 
 		$question = array(
-			"replies" => $repliesNames,
-			"success" => $success,
-			"category" => $category
+			replies => $repliesNames,
+			success => $success,
+			category => $category
 		);
 
 
