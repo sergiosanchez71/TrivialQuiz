@@ -369,11 +369,11 @@
 		$("#buttonModifyQuestion").click(function(){
 			$("#gestionarPreguntasForm").css("display","none");
 			$("#modificarPreguntasForm").css("display","block");
-			searchRepliesFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar
+			searchRepliesFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cargar
 		});
 
 		$("#questionModificarPreguntasForm").change(function(){
-			searchRepliesFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar
+			searchRepliesFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cambiar
 		});
 
 
