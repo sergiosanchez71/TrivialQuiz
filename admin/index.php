@@ -491,6 +491,32 @@
                     });
 		}
 
+		function searchRepliesFromQuestion(id){
+			var parametros = {
+				"action": "searchRepliesFromQuestion",
+				"id": id
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					console.log(respuesta);
+					if (respuesta) {
+						var resp = JSON.parse(respuesta);
+						$("#newNameModificarCuestionariosForm").val(resp[0].questionnaire);
+						$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
+						$("#questionModificarCuestionariosForm").val(resp[0].question);
+					} 
+				},
+				error: function (xhr, status) {
+                            console.log("Error al buscar las respuestas de la pregunta: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
 		function searchQuestionnaire(id){
 			var parametros = {
 				"action": "searchQuestionnaire",
