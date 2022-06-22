@@ -374,7 +374,7 @@
 
 		$("#questionModificarPreguntasForm").change(function(){
 			//searchRepliesFromQuestion($("questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar
-			console.log($("questionModificarPreguntasForm").val()); //mostrar valor
+			console.log($("questionModificarPreguntasForm").val());
 		});
 
 
