@@ -204,6 +204,45 @@
 					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
 					<a id="buttonBackCreateQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
+
+				<form id="crearPreguntasForm" style="display: none;">
+					<p>Crear una nueva pregunta</p>
+					<p>Pregunta <input type="text" id="nameCrearPreguntasForm"></p>
+					<p>Categoría <select id="categoryCrearPreguntasForm">
+						<?php
+
+						if ($categories) {
+							foreach ($categories as $category) {
+								$id = $category['id'];
+								if($id != 0){
+									echo "<option value=$id>";
+									echo $category['name'];
+									echo "</option>";
+								}
+							}
+						}
+
+
+						?>
+					</select> </p>
+					<p>Respuestas:</p>
+					<div>
+						<input type="radio" name="success" id="r1" value="0" checked />
+						<label for="r1"> <input type="text" id="nameCrearPreguntasResp1"></label>
+
+						<input type="radio" name="success" id="r2" value="1" />
+						<label for="r2"> <input type="text" id="nameCrearPreguntasResp2"></label>
+
+						<input type="radio" name="success" id="r3" value="2" />
+						<label for="r3"> <input type="text" id="nameCrearPreguntasResp3"></label>
+
+						<input type="radio" name="success" id="r4" value="3" />
+						<label for="r4"> <input type="text" id="nameCrearPreguntasResp4"></label>
+					</div>
+
+					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
+					<a id="buttonBackCreateQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
 				
 			</div>
 
