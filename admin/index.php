@@ -205,7 +205,7 @@
 					<a id="buttonBackCreateQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
-				<form id="crearPreguntasForm" style="display: none;">
+				<form id="modificarPreguntasForm" style="display: none;">
 					<p>Crear una nueva pregunta</p>
 					<p>Pregunta <input type="text" id="nameCrearPreguntasForm"></p>
 					<p>Categoría <select id="categoryCrearPreguntasForm">
