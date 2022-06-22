@@ -206,9 +206,9 @@
 				</form>
 
 				<form id="modificarPreguntasForm" style="display: none;">
-					<p>Crear una nueva pregunta</p>
+					<p>Modifica una pregunta</p>
 					<p>Pregunta <input type="text" id="nameCrearPreguntasForm"></p>
-					<p>Categoría <select id="categoryCrearPreguntasForm">
+					<p>Pregunta <select id="categoryCrearPreguntasForm">
 						<?php
 
 						if ($categories) {
