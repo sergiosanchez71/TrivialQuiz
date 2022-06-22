@@ -153,6 +153,7 @@ switch ($action) {
 				} 
 			} 
 
+		$question = new stdClass();
 		$question = array(
 			"replies" => $repliesNames,
 			"success" => $success,
