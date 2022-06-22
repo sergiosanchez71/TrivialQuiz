@@ -126,7 +126,7 @@ switch ($action) {
 
 		$replies = explode(' ', $repliesString);
 
-		echo $repliesString;
+		echo $repliesString; //Cadena
 
 
 	break;
