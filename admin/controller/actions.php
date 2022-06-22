@@ -126,7 +126,7 @@ switch ($action) {
 
 		$replies = explode(' ', $repliesString);
 
-		echo $replies;
+		echo $repliesString;
 
 
 	break;
