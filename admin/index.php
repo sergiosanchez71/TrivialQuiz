@@ -373,7 +373,7 @@
 		});
 
 		$("#questionModificarPreguntasForm").change(function(){
-			searchRepliesFromQuestion($("questionModificarPreguntasForm").val()); //
+			searchRepliesFromQuestion($("questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar
 		});
 
 
