@@ -14,6 +14,10 @@
 	$categories = $mysqli->query($categories_sql);
 
 
+	$questions_sql = "SELECT * FROM questions";
+	$questions = $mysqli->query($questions_sql);
+
+
 	$questionnaires_sql = "SELECT * FROM questionnaires";
 	$questionnaires = $mysqli->query($questionnaires_sql);
 
@@ -210,9 +214,9 @@
 					<p>Pregunta <select id="questionModificarPreguntasForm">
 						<?php
 
-						if ($categories) {
-							foreach ($categories as $category) {
-								$id = $category['id'];
+						if ($questions) {
+							foreach ($questions as $question) {
+								$id = $question['id'];
 								if($id != 0){
 									echo "<option value=$id>";
 									echo $category['name'];
