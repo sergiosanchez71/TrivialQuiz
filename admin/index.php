@@ -426,7 +426,6 @@
 				url: "controller/actions.php",
 				data: parametros,
 				success: function (respuesta) { 
-					dump(respuesta);
 					if (respuesta) {
 						console.log(respuesta); //Mostramos id respuestas
 					}
