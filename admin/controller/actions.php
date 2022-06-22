@@ -121,6 +121,12 @@ switch ($action) {
 	case 'searchRepliesFromQuestion':
 		$id = $_REQUEST['id'];
 		$idRepliesSQL = "SELECT replies FROM questions where id='$id'";
+
+		$repliesString = mysqli_query($mysqli, $idRepliesSQL);
+
+		$replies = explode(' ', $repliesString);
+
+
 	break;
 
 	default:
