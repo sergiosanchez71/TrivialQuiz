@@ -35,12 +35,12 @@ function verbose_log
 # Returns 0 if changes have been auto-commited, 1 if not.
 function autocommit
 {
-    git pull
     
     local files=$(git status --porcelain)
     if [ ! -z "$files" ]; then
         verbose_log "$files"
         # Add everything that is there.
+        git pull
         git add -A >/dev/null
         git push
         # Commit
@@ -99,71 +99,71 @@ function soft_reset_to_parent_commit
 
 function show_help
 {
-cat <<EOM
-git-autocommit -- Periodically commits uncommitted changes.
-Version $GIT_AUTOCOMMIT_VERSION, Copyright 2015 by Ralf Holly.
-Licensed under the terms of the MIT License, see LICENSE file.
+    cat <<EOM
+    git-autocommit -- Periodically commits uncommitted changes.
+    Version $GIT_AUTOCOMMIT_VERSION, Copyright 2015 by Ralf Holly.
+    Licensed under the terms of the MIT License, see LICENSE file.
 
-Options:
+    Options:
     -h          Show help.
     -s          Soft reset to parent commit of an auto-commit sequence.
-                (useful for squashing autocommits into a meaningful topic commit.)
+    (useful for squashing autocommits into a meaningful topic commit.)
     -i <secs>   Set check-for-modifications interval to <secs> seconds.
     -q          Quiet (no output).
     -V          Enable verbose output.
-EOM
+    EOM
 }
 
 # If ':' at beginning -> silent error mode!
 while getopts ":hsVqi:" opt; do
-    case $opt in
-        h)
-            show_help
-            exit
-            ;;
-        s)
-            soft_reset_to_parent_commit
-            exit
-            ;;
-        V)
-            GIT_AUTOCOMMIT_VERBOSE=1
-            ;;
-        i)
-            GIT_AUTOCOMMIT_INTERVAL_SECONDS=$OPTARG
-            if [ -z "$GIT_AUTOCOMMIT_INTERVAL_SECONDS" ] || [ $GIT_AUTOCOMMIT_INTERVAL_SECONDS -le 0 ]; then
-                fatal "Please provide a positive poll interval"
-            fi
-            verbose_log "Setting poll interval to $GIT_AUTOCOMMIT_INTERVAL_SECONDS seconds"
-            ;;
-        q)
-            GIT_AUTOCOMMIT_QUIET=1
-            ;;
-        :)
-            fatal "Option -$OPTARG requires an argument"
-            ;;
-        ?)
-            fatal "Wrong option provided: -$OPTARG"
-            ;;
-    esac
+case $opt in
+h)
+show_help
+exit
+;;
+s)
+soft_reset_to_parent_commit
+exit
+;;
+V)
+GIT_AUTOCOMMIT_VERBOSE=1
+;;
+i)
+GIT_AUTOCOMMIT_INTERVAL_SECONDS=$OPTARG
+if [ -z "$GIT_AUTOCOMMIT_INTERVAL_SECONDS" ] || [ $GIT_AUTOCOMMIT_INTERVAL_SECONDS -le 0 ]; then
+fatal "Please provide a positive poll interval"
+fi
+verbose_log "Setting poll interval to $GIT_AUTOCOMMIT_INTERVAL_SECONDS seconds"
+;;
+q)
+GIT_AUTOCOMMIT_QUIET=1
+;;
+:)
+fatal "Option -$OPTARG requires an argument"
+;;
+?)
+fatal "Wrong option provided: -$OPTARG"
+;;
+esac
 done
 
 # If there are no changes that have been auto-committed just now.
 if ! autocommit; then
 
-    if is_last_commit_autocommit; then
-        echo -n "There are autocommits. Squash first? [y/N] "
-        read answer
-        case "$answer" in
-            [yY] | yes | YES)
-                soft_reset_to_parent_commit
-                exit
-                ;;
-        esac
-    fi
+if is_last_commit_autocommit; then
+echo -n "There are autocommits. Squash first? [y/N] "
+read answer
+case "$answer" in
+[yY] | yes | YES)
+soft_reset_to_parent_commit
+exit
+;;
+esac
+fi
 fi
 
 while true; do
-    autocommit || true
-    sleep $GIT_AUTOCOMMIT_INTERVAL_SECONDS
+autocommit || true
+sleep $GIT_AUTOCOMMIT_INTERVAL_SECONDS
 done
 
