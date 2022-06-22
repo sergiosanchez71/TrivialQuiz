@@ -146,7 +146,7 @@ switch ($action) {
 
 
 
-		echo $repliesString;
+		echo $repliesNames;
 
 
 
