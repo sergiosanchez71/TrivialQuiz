@@ -120,7 +120,7 @@ switch ($action) {
 	break;
 	case 'searchRepliesFromQuestion':
 		$id = $_REQUEST['id'];
-		$idRepliesSQL = "SELECT replies FROM questions where id='$id'";
+		$idRepliesSQL = "SELECT replies FROM questions WHERE id='$id'";
 
 		$repliesString = mysqli_query($mysqli, $idRepliesSQL);
 		echo $repliesString;
