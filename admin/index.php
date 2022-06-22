@@ -506,7 +506,7 @@
 				success: function (respuesta) { 
 					console.log(respuesta);
 					if (respuesta) {
-						console.log(respuesta[0]); //a
+						console.log(respuesta[0]);
 					} 
 				},
 				error: function (xhr, status) {
