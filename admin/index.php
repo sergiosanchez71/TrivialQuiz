@@ -505,6 +505,7 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
+						console.log(resp);
 						var resp = JSON.parse(respuesta);
 						for (var i = 1; i <= resp.length; i++) {
 							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]); //
