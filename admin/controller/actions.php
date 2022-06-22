@@ -109,7 +109,7 @@ switch ($action) {
 
 		$repliesId = array($replyId4-3,$replyId4-2,$replyId4-1,$replyId4);
 
-		$repliesString = implode(' ', $repliesId);
+		$repliesString = implode(',', $repliesId);
 
 		$sql = "INSERT INTO questions VALUES ('$idQuestion', '$name', '$repliesString','$success','$category')";
 
