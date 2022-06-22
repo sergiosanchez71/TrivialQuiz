@@ -160,7 +160,7 @@ switch ($action) {
 		);
 
 
-		echo json_encode($question);
+		echo json_encode($question); //
 
 
 
