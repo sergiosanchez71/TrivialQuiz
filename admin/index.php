@@ -219,7 +219,7 @@
 								$id = $question['id'];
 								if($id != 0){
 									echo "<option value=$id>";
-									echo $question['name'].$id; //echo
+									echo $question['name'];
 									echo "</option>";
 								}
 							}
