@@ -121,6 +121,11 @@ switch ($action) {
 	case 'searchRepliesFromQuestion':
 		$id = $_REQUEST['id'];
 		$idRepliesSQL = "SELECT replies FROM questions WHERE id='$id'";
+		while($row = mysqli_fetch_assoc($idRepliesSQL)){
+				if ($row) {
+			    	$repliesString = $row['replies'];
+				} 
+			}
 
 		$repliesString = mysqli_query($mysqli, $idRepliesSQL);
 		echo $repliesString;
