@@ -504,7 +504,7 @@
 				url: "controller/actions.php",
 				data: parametros,
 				success: function (respuesta) { 
-					console.log(respuesta); //
+					console.log(respuesta);
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						console.log(resp.replies);
