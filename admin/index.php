@@ -217,10 +217,9 @@
 						if ($questions) {
 							foreach ($questions as $question) {
 								$id = $question['id'];
-								echo $id; //echo
 								if($id != 0){
 									echo "<option value=$id>";
-									echo $question['name'];
+									echo $question['name'].$id;
 									echo "</option>";
 								}
 							}
