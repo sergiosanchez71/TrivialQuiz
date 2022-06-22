@@ -123,10 +123,10 @@ switch ($action) {
 		$idRepliesSQL = "SELECT replies FROM questions where id='$id'";
 
 		$repliesString = mysqli_query($mysqli, $idRepliesSQL);
+		echo $repliesString;
 
 		$replies = explode(' ', $repliesString);
 
-		echo $repliesString;
 
 
 	break;
