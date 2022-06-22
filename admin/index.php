@@ -506,7 +506,7 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var respuestas = respuesta.split(' ');
-						console.log(respuesta[0]);
+						console.log(respuestas[0]);
 						/*for (var i = respuesta.length - 1; i >= 0; i--) {
 							console.log(respuesta[i]);
 						}*/
