@@ -118,6 +118,11 @@ switch ($action) {
 		}
 
 	break;
+	case 'searchRepliesFromQuestion':
+		$id = $_REQUEST['id'];
+		$idRepliesSQL = "SELECT replies FROM questions where id=''";
+	break;
+
 	default:
 			// code...
 	break;
