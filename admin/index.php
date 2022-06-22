@@ -217,6 +217,7 @@
 						if ($questions) {
 							foreach ($questions as $question) {
 								$id = $question['id'];
+								console.log($id);
 								if($id != 0){
 									echo "<option value=$id>";
 									echo $question['name'];
