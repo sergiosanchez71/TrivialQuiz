@@ -495,7 +495,6 @@
 		}
 
 		function searchRepliesFromQuestion(id){
-			console.log(id);
 			var parametros = {
 				"action": "searchRepliesFromQuestion",
 				"id": id
@@ -507,7 +506,7 @@
 				success: function (respuesta) { 
 					console.log(respuesta);
 					if (respuesta) {
-						console.log(respuesta);
+						console.log(respuesta[0]);
 					} 
 				},
 				error: function (xhr, status) {
