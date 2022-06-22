@@ -39,6 +39,7 @@ function autocommit
     if [ ! -z "$files" ]; then
         verbose_log "$files"
         # Add everything that is there.
+        git pull
         git add -A >/dev/null
         git push
         # Commit
