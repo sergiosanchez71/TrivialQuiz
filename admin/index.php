@@ -427,7 +427,7 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
-						console.log(respuesta[0]);
+						console.log(respuesta[0]); //Mostramos id respuesta
 					}
 				},
 				error: function (xhr, status) {
