@@ -372,6 +372,10 @@
 			searchRepliesFromQuestion($("questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar
 		});
 
+		$("#questionModificarPreguntasForm").change(function(){
+			searchRepliesFromQuestion($("questionModificarPreguntasForm").val()); //
+		});
+
 
 		function createQuestion(name, category, reply1, reply2, reply3, reply4, successReply){
 
