@@ -504,8 +504,8 @@
 				url: "controller/actions.php",
 				data: parametros,
 				success: function (respuesta) { 
-					console.log(respuesta);
-					if (respuesta) {
+
+				if (respuesta) {
 						console.log(respuesta[0]);
 					} 
 				},
