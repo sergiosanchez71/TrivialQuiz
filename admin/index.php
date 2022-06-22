@@ -505,15 +505,9 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
-<<<<<<< HEAD
 						console.log(respuesta);
 						var resp = JSON.parse(respuesta);
 						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
-=======
-						var resp = JSON.parse(respuesta);
-						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
-
->>>>>>> 09f5369a9f9b793394b85477e9228aedc528dfae
 						for (var i = 1; i <= resp.replies.lenght; i++) {
 							if (i-1 == resp.success) {
 								$("#radioModifPreguntasResp"+i).prop("checked", true);
