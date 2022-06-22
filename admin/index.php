@@ -369,11 +369,11 @@
 		$("#buttonModifyQuestion").click(function(){
 			$("#gestionarPreguntasForm").css("display","none");
 			$("#modificarPreguntasForm").css("display","block");
-			searchRepliesFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cargar
+			searchInfoFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cargar
 		});
 
 		$("#questionModificarPreguntasForm").change(function(){
-			searchRepliesFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cambiar
+			searchInfoFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cambiar
 		});
 
 
@@ -494,9 +494,9 @@
                     });
 		}
 
-		function searchRepliesFromQuestion(id){
+		function searchInfoFromQuestion(id){
 			var parametros = {
-				"action": "searchRepliesFromQuestion",
+				"action": "searchInfoFromQuestion",
 				"id": id
 			};
 
@@ -508,6 +508,8 @@
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						console.log(resp.success);
+						$("categoryModificarPreguntasForm").val().attr("selected",true);
+						
 						for (var i = 1; i <= 4; i++) {
 							if (i-1 == resp.success) {
 								$("#radioModifPreguntasResp"+i).prop("checked", true);
