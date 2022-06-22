@@ -507,7 +507,7 @@
 					console.log(respuesta);
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						console.log(resp.replies[0]);
+						console.log(resp.replies[1]);
 						for (var i = 1; i <= resp.length; i++) {
 							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
 						}
