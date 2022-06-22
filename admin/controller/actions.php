@@ -125,7 +125,7 @@ switch ($action) {
 		$repliesString = mysqli_query($mysqli, $idRepliesSQL);
 		echo $repliesString;
 
-		$replies = explode(' ', $repliesString);
+		//$replies = explode(' ', $repliesString);
 
 
 
