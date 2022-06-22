@@ -245,16 +245,16 @@
 					</select> </p>
 					<p>Respuestas:</p>
 					<div>
-						<input type="radio" name="success" id="r1" value="0" checked />
+						<input type="radio" id="radioModifPreguntasResp1" name="success" id="r1" value="0" checked />
 						<label for="r1"> <input type="text" id="nameModifPreguntasResp1"></label>
 
-						<input type="radio" name="success" id="r2" value="1" />
+						<input type="radio" id="radioModifPreguntasResp2" name="success" id="r2" value="1" />
 						<label for="r2"> <input type="text" id="nameModifPreguntasResp2"></label>
 
-						<input type="radio" name="success" id="r3" value="2" />
+						<input type="radio" id="radioModifPreguntasResp3" name="success" id="r3" value="2" />
 						<label for="r3"> <input type="text" id="nameModifPreguntasResp3"></label>
 
-						<input type="radio" name="success" id="r4" value="3" />
+						<input type="radio" id="radioModifPreguntasResp4" name="success" id="r4" value="3" />
 						<label for="r4"> <input type="text" id="nameModifPreguntasResp4"></label>
 					</div>
 
@@ -509,6 +509,9 @@
 						var resp = JSON.parse(respuesta);
 						console.log(resp.success);
 						for (var i = 1; i <= resp.length; i++) {
+							if (i-1 == resp.success) {
+								$("#radioModifPreguntasResp"+i).val(resp.replies[i-1]);
+							}
 							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
 						}
 					} 
