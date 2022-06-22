@@ -505,7 +505,7 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
-						console.log(respuesta[0]);
+						console.log(respuesta[2]);
 					} 
 				},
 				error: function (xhr, status) {
