@@ -132,10 +132,10 @@ switch ($action) {
 
 		$replies = explode(',', $repliesString);
 
-		$repliesNames = array($replies[0], $replies[1], $replies[2], $replies[3]); //Array de ids de respuestas
+		$repliesNames = array();
 
 		for ($i=0; $i < 4 ; $i++) { 
-			$sql = "SELECT name FROM replies WHERE id='$repliesNames[$i]'";
+			$sql = "SELECT name FROM replies WHERE id='$replies[$i]'";
 			$result = mysqli_query($mysqli, $sql);
 			while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
