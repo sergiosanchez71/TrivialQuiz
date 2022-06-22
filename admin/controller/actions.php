@@ -130,7 +130,7 @@ switch ($action) {
 				} 
 			}
 
-		$replies = explode(' ', $repliesString[0]); //array
+		$replies = explode(' ', $repliesString); //array
 
 		echo $replies;
 
