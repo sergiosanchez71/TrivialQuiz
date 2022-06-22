@@ -506,12 +506,9 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						//var respuestas = respuesta.split(',');
-						//console.log(respuestas[1]);
-						console.log(resp[2]);
-						/*for (var i = respuesta.length - 1; i >= 0; i--) {
-							console.log(respuesta[i]);
-						}*/
+						for (var i = resp.length - 1; i >= 0; i--) {
+							$("#nameModifPreguntasResp"+i+1).val(resp[i].questionnaire);
+						}
 					} 
 				},
 				error: function (xhr, status) {
