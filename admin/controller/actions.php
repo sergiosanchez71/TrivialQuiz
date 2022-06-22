@@ -135,7 +135,7 @@ switch ($action) {
 		$repliesNames = array();
 
 		for ($i=0; $i < 4 ; $i++) { 
-			$sql = "SELECT name FROM replies WHERE id='$id'";
+			$sql = "SELECT name FROM replies WHERE id='$replies[$i]'";
 			$result = mysqli_query($mysqli, $sql);
 			while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
