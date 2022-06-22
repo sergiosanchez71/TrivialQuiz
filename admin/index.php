@@ -506,8 +506,8 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						for (var i = resp.length - 1; i >= 0; i--) {
-							$("#nameModifPreguntasResp"+i+1).val(resp[i]);
+						for (var i = 1; i > resp.length; i++) {
+							$("#nameModifPreguntasResp"+i).val(resp[i]);
 						}
 					} 
 				},
