@@ -259,6 +259,7 @@
 
 						<input type="radio" id="radioModifPreguntasResp4" name="success" id="r4" value="3" />
 						<label for="r4"> <input type="text" id="nameModifPreguntasResp4"></label>
+						<input type="text" name="idRespuestasModifPreguntas" style="display: none;">
 					</div>
 
 					<a id="modifyQuestion" class="button primary icon solid fa-comments-question">Modificar pregunta</a>
