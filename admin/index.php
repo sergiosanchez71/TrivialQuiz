@@ -692,7 +692,7 @@
 		function modifyCategory(id, name){
 
 			var parametros = {
-				"action": "modifyQuestion",
+				"action": "modifyCategory",
 				"id": id,
 				"name": name
 			};
