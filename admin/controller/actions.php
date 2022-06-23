@@ -242,7 +242,8 @@ switch ($action) {
 	case "modifyCategory":
 		$id = $_REQUEST['id'];
 		$name = $_REQUEST['name'];
-		$sql = "UPDATE questionnaires SET name='$name', questions='$questions', category='$category' WHERE id='$id'";
+
+		$sql = "UPDATE categories SET name='$name' WHERE id='$id'";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta modificado correctamente";
