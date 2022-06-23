@@ -523,7 +523,7 @@
 			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
 		});
 
-		$("#nameModificarCuestionariosForm").change(function(){
+		$("#nameModificarCategoriasForm").change(function(){
 			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
 		});
 
