@@ -246,17 +246,17 @@
 					</select> </p>
 					<p>Respuestas:</p>
 					<div>
-						<input type="radio" id="radioModifPreguntasResp1" name="success" id="r1" value="0" checked />
-						<label for="r1"> <input type="text" id="nameModifPreguntasResp1"></label>
+						<input type="radio" id="radioModifPreguntasResp1" name="success" id="r5" value="0" checked />
+						<label for="r5"> <input type="text" id="nameModifPreguntasResp1"></label>
 
-						<input type="radio" id="radioModifPreguntasResp2" name="success" id="r2" value="1" />
-						<label for="r2"> <input type="text" id="nameModifPreguntasResp2"></label>
+						<input type="radio" id="radioModifPreguntasResp2" name="success" id="r6" value="1" />
+						<label for="r6"> <input type="text" id="nameModifPreguntasResp2"></label>
 
-						<input type="radio" id="radioModifPreguntasResp3" name="success" id="r3" value="2" />
-						<label for="r3"> <input type="text" id="nameModifPreguntasResp3"></label>
+						<input type="radio" id="radioModifPreguntasResp3" name="success" id="r7" value="2" />
+						<label for="r7"> <input type="text" id="nameModifPreguntasResp3"></label>
 
-						<input type="radio" id="radioModifPreguntasResp4" name="success" id="r4" value="3" />
-						<label for="r4"> <input type="text" id="nameModifPreguntasResp4"></label>
+						<input type="radio" id="radioModifPreguntasResp4" name="success" id="r8" value="3" />
+						<label for="r8"> <input type="text" id="nameModifPreguntasResp4"></label>
 					</div>
 
 					<a id="modifyQuestion" class="button primary icon solid fa-comments-question">Modificar pregunta</a>
