@@ -768,6 +768,7 @@
 		}
 
 		function deleteCategory(id){
+			console.log(id);
 			var parametros = {
 				"action": "deleteCategory",
 				"id": id
