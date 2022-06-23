@@ -376,6 +376,10 @@
 			searchInfoFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cambiar
 		});
 
+		$("#modifyQuestion").click(function(){
+			modifyQuestion($("#nameCrearPreguntasForm").val(), $("#categoryCrearPreguntasForm").val(), $("#nameCrearPreguntasResp1").val(), $("#nameCrearPreguntasResp2").val(), $("#nameCrearPreguntasResp3").val(), $("#nameCrearPreguntasResp4").val(), $('input[name=success]:checked', '#crearPreguntasForm').val());
+		});
+
 		$("#buttonBackModifyQuestForm").click(function(){
 			$("#modificarPreguntasForm").css("display","none");
 			$("#gestionarPreguntasForm").css("display","block");
