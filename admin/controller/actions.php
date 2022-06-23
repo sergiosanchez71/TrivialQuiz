@@ -229,7 +229,7 @@ switch ($action) {
 		}
 	break;
 
-	case "searchInfoFromCuestionary":
+	case "searchInfoFromCategory":
 
 		$id = $_REQUEST['id'];
 		$idRepliesSQL = "SELECT name FROM categories WHERE id='$id'";
