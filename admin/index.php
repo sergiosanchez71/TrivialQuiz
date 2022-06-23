@@ -501,22 +501,17 @@
 
 		$("#buttonCreateCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
-			$("#createCategory").css("display","block");			
-		});
-
-		$("#buttonCreateCategory").click(function(){
-			$("#gestionarCategoriasForm").css("display","none");
-			$("#createCategory").css("display","block");			
+			$("#crearCategoriaForm").css("display","block");			
 		});
 
 		$("#buttonModifyCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
-			$("#modifyCategory").css("display","block");			
+			$("#modificarCategoriaForm").css("display","block");			
 		});
 
 		$("#buttonDeleteCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
-			$("#deleteCategory").css("display","block");			
+			$("#borrarCategoriasForm").css("display","block");			
 		});
 
 
