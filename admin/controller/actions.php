@@ -142,12 +142,13 @@ switch ($action) {
 			}
 		}
 
-		$sql = "SELECT success, category FROM questions WHERE id='$id'";
+		$sql = "SELECT name, success, category FROM questions WHERE id='$id'";
 
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
+			    	$name = $row['name'];
 			    	$success = $row['success'];
 			    	$category = $row['category'];
 				} 
@@ -155,6 +156,7 @@ switch ($action) {
 
 		$question = new stdClass();
 		$question = array(
+			"name" => $name,
 			"replies" => $repliesNames,
 			"success" => $success,
 			"category" => $category
