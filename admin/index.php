@@ -505,7 +505,6 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
-						console.log(respuesta);
 						var resp = JSON.parse(respuesta);
 						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
 						for (var i = 1; i <= 4; i++) {
