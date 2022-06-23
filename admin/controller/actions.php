@@ -109,7 +109,7 @@ switch ($action) {
 			    	$replyId4 = $row['id'];
 				} 
 			}
-		//}
+		//}//
 
 		$repliesId = array($replyId4-3,$replyId4-2,$replyId4-1,$replyId4);
 
