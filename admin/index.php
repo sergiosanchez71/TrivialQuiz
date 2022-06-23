@@ -516,7 +516,7 @@
 		$("#buttonModifyCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
 			$("#modificarCategoriasForm").css("display","block");
-			$("#newNameModificarCategoriasForm").val($("categoryModificarPreguntasForm").html()); //
+			$("#newNameModificarCategoriasForm").val($("categoryModificarPreguntasForm").innerHTML); //
 		});
 
 		$("#buttonDeleteCategory").click(function(){
