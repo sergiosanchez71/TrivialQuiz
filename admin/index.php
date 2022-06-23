@@ -283,7 +283,7 @@
 	<script type="text/javascript">
 
 		$('input').click(function(e) {
-			e.stopPropagation()
+			e.stopPropagation();
 		})
 
 		$("#buttonCuestionaries").click(function(){
