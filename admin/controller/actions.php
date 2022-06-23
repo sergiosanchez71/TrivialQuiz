@@ -81,6 +81,10 @@ switch ($action) {
 		$replies = array($_REQUEST['reply1'], $_REQUEST['reply2'], $_REQUEST['reply3'], $_REQUEST['reply4']);
 		$success = $_REQUEST['success'];
 
+		$sql = "INSERT INTO questions VALUES (null, '$name', null,'$success','$category')";
+
+		mysqli_query($mysqli, $sql);
+
 		//Habría que crear las respuestas también en su respectiva tabla
 
 		$idQuestionSQL = "SELECT MAX(id) as id FROM questions";
@@ -88,7 +92,7 @@ switch ($action) {
 		$result = mysqli_query($mysqli, $idQuestionSQL);  
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
-		    	$idQuestion = $row['id']+1;
+		    	$idQuestion = $row['id'];
 			} 
 		}
 
@@ -112,6 +116,8 @@ switch ($action) {
 		$repliesString = implode(',', $repliesId);
 
 		$sql = "INSERT INTO questions VALUES ('$idQuestion', '$name', '$repliesString','$success','$category')";
+
+		$sql = "UPDATE questions SET replies='$repliesString' WHERE id='$idQuestion'";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
