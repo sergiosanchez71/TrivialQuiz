@@ -325,7 +325,7 @@
 						?>
 					</select> </p>
 					<p>Nuevo nombre <input type="text" id="newNameModificarCategoriasForm"></p>
-					<a id="modifyCategory" class="button primary icon solid fa-comments-question">Modificar categoría</a>
+					<a id="modifyCategoryButton" class="button primary icon solid fa-comments-question">Modificar categoría</a>
 					<a id="buttonBackModifyCategoryForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
@@ -522,7 +522,7 @@
 			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
 		});
 
-		$("#modifyCategory").click(function(){ //
+		$("#modifyCategoryButton").click(function(){
 			modifyCategory($("#nameModificarCategoriasForm").val(), $("#newNameModificarCategoriasForm").val());
 		});
 
