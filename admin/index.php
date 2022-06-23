@@ -307,7 +307,7 @@
 
 				<form id="modificarCategoriasForm" style="display: none;">
 					<p>Modificar categoría</p>
-					<p>Categoría <select id="categoryModificarPreguntasForm">
+					<p>Categoría <select id="nameModificarCategoriasForm">
 						<?php
 
 						if ($categories) {
@@ -410,7 +410,6 @@
 
 		$("#nameModificarCuestionariosForm").change(function(){
 			searchQuestionnaire($("#nameModificarCuestionariosForm").val());
-
 		});
 
 		$("#buttonBackModifyForm").click(function(){
@@ -521,6 +520,10 @@
 		$("#buttonDeleteCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
 			$("#borrarCategoriasForm").css("display","block");
+			searchInfoFromCuestionary($("#categoryModificarPreguntasForm").val());
+		});
+
+		$("#nameModificarCuestionariosForm").change(function(){
 			searchInfoFromCuestionary($("#categoryModificarPreguntasForm").val());
 		});
 
