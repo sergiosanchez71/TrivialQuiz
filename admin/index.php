@@ -545,6 +545,11 @@
 			$("#gestionarCategoriasForm").css("display","block");
 		});
 
+		$("#buttonBackCategoryGestionForm").click(function(){
+			$("#gestionarCategoriasForm").css("display","none");
+			$("#gestiones").css("display","block");	
+		});
+
 
 
 
