@@ -219,7 +219,7 @@ switch ($action) {
 		$sql = "INSERT INTO categories VALUES (null, '$name')";
 
 		if (mysqli_query($mysqli, $sql)) {
-		     echo "Cuestionario creado correctamente";
+		     echo "Categoría creada correctamente";
 		}
 	break;
 
