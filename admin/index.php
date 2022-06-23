@@ -768,7 +768,7 @@
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						console.log(respuesta.name);
-						$("#nameModificarCategoriasForm").val(respuesta.name);
+						$("#newNameModificarCategoriasForm").val(respuesta.name);
 					} 
 				},
 				error: function (xhr, status) {
