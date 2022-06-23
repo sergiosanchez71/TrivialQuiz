@@ -508,6 +508,11 @@
 			createCategory($("#nameCrearCuestionariosForm").val());			
 		});
 
+		$("#buttonBackCreateCategoryForm").click(function(){
+			$("#crearCategoriaForm").css("display","none");
+			$("#gestionarCategoriasForm").css("display","block");
+		});
+
 		$("#buttonModifyCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
 			$("#modificarCategoriasForm").css("display","block");			
