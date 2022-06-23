@@ -527,7 +527,7 @@
 		});
 
 		$("#buttonBackModifyCategoryForm").click(function(){
-			$("#modificarCategoriaForm").css("display","none");
+			$("#modificarCategoriasForm").css("display","none");
 			$("#gestionarCategoriasForm").css("display","block");
 		});
 
