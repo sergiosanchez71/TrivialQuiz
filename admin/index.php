@@ -235,9 +235,11 @@
 						if ($categories) {
 							foreach ($categories as $category) {
 								$id = $category['id'];
-								echo "<option value=$id>";
-								echo $category['name'];
-								echo "</option>";
+								if($id != 0){
+									echo "<option value=$id>";
+									echo $category['name'];
+									echo "</option>";
+								}
 							}
 						}
 
@@ -283,7 +285,7 @@
 	<script type="text/javascript">
 
 		$('input').click(function(e) {
-			e.stopPropagation(); //
+			e.stopPropagation();
 		})
 
 		$("#buttonCuestionaries").click(function(){
