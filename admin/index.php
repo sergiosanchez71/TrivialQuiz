@@ -264,6 +264,28 @@
 					<a id="modifyQuestion" class="button primary icon solid fa-comments-question">Modificar pregunta</a>
 					<a id="buttonBackModifyQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
+
+				<form id="borrarPreguntasForm" style="display: none;">
+					<p>Borrar una pregunta</p>
+					<p>Selecciona una pregunta <select id="nameBorrarPreguntasForm">
+						<?php
+
+						if ($questions) {
+							foreach ($questions as $question) {
+								$id = $question['id'];
+								echo "<option value=$id>";
+								echo $question['name'];
+								echo "</option>";
+							}
+						}
+
+
+						?>
+					</select></p>
+
+					<a id="deleteCuestionary" class="button primary icon solid fa-comments-question">Borrar cuestionario</a>
+					<a id="buttonBackDeleteForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
 				
 			</div>
 
@@ -394,7 +416,7 @@
 
 		$("#buttonDeleteQuestion").click(function(){
 			$("#gestionarPreguntasForm").css("display","none");
-			$("#modificarPreguntasForm").css("display","block");
+			$("#borrarPreguntasForm").css("display","block");
 		});
 
 
