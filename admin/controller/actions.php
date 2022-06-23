@@ -177,11 +177,13 @@ switch ($action) {
 		$reply4 = $_REQUEST['reply4'];
 		$success = $_REQUEST['success'];
 
-		
-		$sql = "UPDATE questionnaires SET name='$name', questions='$questions', category='$category' WHERE id='$id'";
+		$repliesString = $reply1.",".$reply2.",".$reply3.",".$reply4;
+
+
+		$sql = "UPDATE questions SET name='$name', category='$category', replies='$repliesString', success='$success' WHERE id='$id'";
 
 		if (mysqli_query($mysqli, $sql)) {
-		     echo "Cuestionario modificado correctamente";
+		     echo "Pregunta modificada correctamente";
 		}
 	break;
 
