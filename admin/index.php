@@ -580,6 +580,30 @@
                     });
 		}
 
+
+		function createCategory(name){
+
+			var parametros = {
+				"action": "createCategory",
+				"name": name
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+					}
+				},
+				error: function (xhr, status) {
+                            console.log("Error al crear categoría"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
 		function modifyCuestionary(id, name, category, question){
 			if (question < 5) {
 				question = 5;
