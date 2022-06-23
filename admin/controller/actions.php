@@ -210,7 +210,7 @@ switch ($action) {
 		$sql = "DELETE FROM questions WHERE id='$id'";
 
 		if (mysqli_query($mysqli, $sql)) {
-		     echo "Cuestionario eliminado correctamente";
+		     echo "Pregunta eliminado correctamente";
 		}
 	break;
 
