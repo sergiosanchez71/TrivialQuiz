@@ -515,16 +515,16 @@
 		$("#buttonModifyCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
 			$("#modificarCategoriasForm").css("display","block");
-		});
-
-		$("#buttonDeleteCategory").click(function(){
-			$("#gestionarCategoriasForm").css("display","none");
-			$("#borrarCategoriasForm").css("display","block");
 			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
 		});
 
 		$("#nameModificarCategoriasForm").change(function(){
 			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
+		});
+
+		$("#buttonDeleteCategory").click(function(){
+			$("#gestionarCategoriasForm").css("display","none");
+			$("#borrarCategoriasForm").css("display","block");
 		});
 
 
