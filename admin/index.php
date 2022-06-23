@@ -237,7 +237,7 @@
 								$id = $category['id'];
 								if($id != 0){
 									echo "<option value=$id>";
-									echo $category['name']; //
+									echo $category['name'];
 									echo "</option>";
 								}
 							}
@@ -489,6 +489,7 @@
 
 		function modifyQuestion(id, name, category, reply1, reply2, reply3, reply4, successReply){
 
+			console.log(reply1+","+reply2+","+reply3+","+reply4);
 
 			var parametros = {
 				"action": "modifyQuestion",
