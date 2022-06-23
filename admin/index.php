@@ -505,7 +505,7 @@
 		});
 
 		$("#createCategory").click(function(){
-			createCategory($("#nameCrearCuestionariosForm").val());			
+			createCategory($("#nameCrearCategoriaForm").val());			
 		});
 
 		$("#buttonBackCreateCategoryForm").click(function(){
