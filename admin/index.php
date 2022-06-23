@@ -767,7 +767,7 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						$("#newNameModificarCategoriasForm").val(resp);
+						$("#newNameModificarCategoriasForm").val(resp); //
 					} 
 				},
 				error: function (xhr, status) {
