@@ -377,7 +377,7 @@
 		});
 
 		$("#modifyQuestion").click(function(){
-			modifyQuestion($("#nameCrearPreguntasForm").val(), $("#categoryCrearPreguntasForm").val(), $("#nameCrearPreguntasResp1").val(), $("#nameCrearPreguntasResp2").val(), $("#nameCrearPreguntasResp3").val(), $("#nameCrearPreguntasResp4").val(), $('input[name=success]:checked', '#crearPreguntasForm').val());
+			modifyQuestion($("#questionModificarPreguntasForm").val(), $("#questionModificarPreguntasForm").val(), $("#categoryModificarPreguntasForm").val(), $("#nameModificarPreguntasResp1").val(), $("#nameModificarPreguntasResp2").val(), $("#nameModificarPreguntasResp3").val(), $("#nameModificarPreguntasResp4").val(), $('input[name=success]:checked', '#crearPreguntasForm').val());
 		});
 
 		$("#buttonBackModifyQuestForm").click(function(){
