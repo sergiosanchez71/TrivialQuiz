@@ -242,7 +242,7 @@ switch ($action) {
 				} 
 			}
 
-		echo json_encode($name); //
+		echo json_encode($name);
 	break;
 
 	case "modifyCategory":
