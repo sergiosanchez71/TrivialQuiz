@@ -528,7 +528,7 @@
 
 		$("#buttonBackModifyCategoryForm").click(function(){
 			$("#modificarCategoriasForm").css("display","none");
-			$("#gestionarCategoriasForm").css("display","block");
+			$("#gestionarCategoriasForm").css("display","block"); //
 		});
 
 		$("#buttonDeleteCategory").click(function(){
