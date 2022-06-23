@@ -523,7 +523,7 @@
 		});
 
 		$("#modifyQuestion").click(function(){
-			modifyCategory($("#newNameModificarCategoriasForm").val());
+			modifyCategory($("#nameModificarCategoriasForm").val(), $("#newNameModificarCategoriasForm").val());
 		});
 
 		$("#buttonBackModifyCategoryForm").click(function(){
@@ -671,6 +671,30 @@
 				"reply3": reply3,
 				"reply4": reply4,
 				"success": successReply
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+					}
+				},
+				error: function (xhr, status) {
+                            console.log("Error al modificar la pregunta"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+		function modifyCategory(id, name){
+
+			var parametros = {
+				"action": "modifyQuestion",
+				"id": id,
+				"name": name
 			};
 
 			$.ajax({
