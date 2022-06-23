@@ -577,7 +577,6 @@
 		}
 
 		function deleteQuestion(id){
-			console.log("HOLA");//
 			var parametros = {
 				"action": "deleteQuestion",
 				"id": id
