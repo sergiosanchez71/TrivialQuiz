@@ -257,7 +257,7 @@ switch ($action) {
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Categoría eliminada correctamente";
-		}
+		} //
 	break;
 
 	default:
