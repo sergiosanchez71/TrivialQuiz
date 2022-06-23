@@ -762,6 +762,30 @@
                     });
 		}
 
+		function deleteCategory(id){
+			var parametros = {
+				"action": "deleteCategory",
+				"id": id
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+					}
+				},
+				error: function (xhr, status) {
+                            console.log("Error al borrar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+
+
 		function searchInfoFromQuestion(id){
 			var parametros = {
 				"action": "searchInfoFromQuestion",
