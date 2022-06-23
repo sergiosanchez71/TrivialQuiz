@@ -756,6 +756,7 @@
 		}
 
 		function searchInfoFromCuestionary(id){
+			console.log("FASDF");
 			var parametros = {
 				"action": "searchInfoFromCuestionary",
 				"id": id
