@@ -300,9 +300,9 @@
 
 				<form id="crearCategoriaForm" style="display: none;">
 					<p>Crear una nueva categoría</p>
-					<p>Nombre <input type="text" id="nameCrearPreguntasForm"></p>
-					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear categoría</a>
-					<a id="buttonBackCreateQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
+					<p>Nombre <input type="text" id="nameCrearCategoriaForm"></p>
+					<a id="createCategory" class="button primary icon solid fa-comments-question">Crear categoría</a>
+					<a id="buttonBackCreateCategoryForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
 			</div>
