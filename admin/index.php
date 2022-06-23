@@ -283,7 +283,7 @@
 						?>
 					</select></p>
 
-					<a id="deleteQuestion" class="button primary icon solid fa-comments-question">Borrar cuestionario</a>
+					<a id="deleteQuestion" class="button primary icon solid fa-comments-question">Borrar pregunta</a>
 					<a id="buttonBackDeleteQuestionForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 				
