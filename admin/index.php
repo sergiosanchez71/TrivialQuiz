@@ -540,6 +540,11 @@
 			deleteCategory($("#categoryModificarPreguntasForm").val());
 		});
 
+		$("#buttonBackDeleteCategoryForm").click(function(){
+			$("#borrarCategoriasForm").css("display","none");
+			$("#gestionarCategoriasForm").css("display","block");
+		});
+
 
 
 
