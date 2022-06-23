@@ -522,6 +522,11 @@
 			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
 		});
 
+		$("#buttonBackModifyCategoryForm").click(function(){
+			$("#modificarCategoriaForm").css("display","none");
+			$("#gestionarCategoriasForm").css("display","block");
+		});
+
 		$("#buttonDeleteCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
 			$("#borrarCategoriasForm").css("display","block");
@@ -767,7 +772,7 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						$("#newNameModificarCategoriasForm").val(resp); //
+						$("#newNameModificarCategoriasForm").val(resp);
 					} 
 				},
 				error: function (xhr, status) {
