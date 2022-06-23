@@ -182,7 +182,7 @@ switch ($action) {
 
 		//$sql = "UPDATE questions SET name='$name', category='$category', replies='$repliesString', success='$success' WHERE id='$id'";
 
-		if (mysqli_query($mysqli, $sql)) {
+		if (mysqli_query($mysqli, $sql)) { //
 		     echo "Pregunta modificada correctamente";
 		}
 	break;
