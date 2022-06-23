@@ -191,16 +191,14 @@ switch ($action) {
 
 		$idReplies = explode(',', $repliesString);
 
-		$sql = "UPDATE questions SET name='$name', category='$category', success='$success' WHERE id='$id'";
-
+		$replies = array($reply1, $reply2, $reply3, $reply4);
 
 		for ($i=0; $i < 4 ; $i++) { 
-			$numReply = '$reply'+($i+1);
-			$sql = "UPDATE replies SET name='$numReply' WHERE id='$replies[$i]'";
+			$sql = "UPDATE replies SET name='$replies[$i]' WHERE id='$idReplies[$i]'";
 			mysqli_query($mysqli, $sql);
 		}
 
-
+		$sql = "UPDATE questions SET name='$name', category='$category', success='$success' WHERE id='$id'";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta modificada correctamente";
