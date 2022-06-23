@@ -505,7 +505,7 @@
 		});
 
 		$("#createCategory").click(function(){
-			createCategory($("#nameCrearCategoriaForm").val());			
+			createCategory($("#nameCrearCategoriaForm").val($("categoryModificarPreguntasForm").html()));			
 		});
 
 		$("#buttonBackCreateCategoryForm").click(function(){
@@ -515,7 +515,8 @@
 
 		$("#buttonModifyCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
-			$("#modificarCategoriasForm").css("display","block");			
+			$("#modificarCategoriasForm").css("display","block");
+			$("#newNameModificarCategoriasForm").val();
 		});
 
 		$("#buttonDeleteCategory").click(function(){
@@ -592,7 +593,7 @@
 
 		function createCategory(name){
 
-			console.log(name); //
+			console.log(name);
 
 			var parametros = {
 				"action": "createCategory",
