@@ -331,7 +331,7 @@
 
 				<form id="borrarCategoriasForm" style="display: none;">
 					<p>Borrar una categoría</p>
-					<p>Categoría <select id="categoryModificarPreguntasForm">
+					<p>Categoría <select id="categoryBorrarPreguntasForm">
 						<?php
 
 						if ($categories) {
@@ -537,7 +537,7 @@
 		});
 
 		$("#deleteCategoryButton").click(function(){
-			deleteCategory($("#categoryModificarPreguntasForm").val());
+			deleteCategory($("#categoryBorrarPreguntasForm").val());
 		});
 
 		$("#buttonBackDeleteCategoryForm").click(function(){
