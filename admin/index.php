@@ -528,12 +528,16 @@
 
 		$("#buttonBackModifyCategoryForm").click(function(){
 			$("#modificarCategoriasForm").css("display","none");
-			$("#gestionarCategoriasForm").css("display","block"); //
+			$("#gestionarCategoriasForm").css("display","block");
 		});
 
 		$("#buttonDeleteCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
 			$("#borrarCategoriasForm").css("display","block");
+		});
+
+		$("#deleteCategoryButton").click(function(){
+			deleteCategory($("#nameBorrarCategoriasForm").val());
 		});
 
 
