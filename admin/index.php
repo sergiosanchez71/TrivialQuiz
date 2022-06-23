@@ -520,11 +520,11 @@
 		$("#buttonDeleteCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
 			$("#borrarCategoriasForm").css("display","block");
-			searchInfoFromCuestionary($("#categoryModificarPreguntasForm").val());
+			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
 		});
 
 		$("#nameModificarCuestionariosForm").change(function(){
-			searchInfoFromCuestionary($("#categoryModificarPreguntasForm").val());
+			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
 		});
 
 
