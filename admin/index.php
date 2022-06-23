@@ -592,7 +592,7 @@
 
 		function createCategory(name){
 
-			console.log(name);
+			console.log(name); //
 
 			var parametros = {
 				"action": "createCategory",
