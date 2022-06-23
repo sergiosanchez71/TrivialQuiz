@@ -306,6 +306,7 @@
 				</form>
 
 				<form id="modificarCategoriasForm" style="display: none;">
+					<p>Modificar categoría</p>
 					<p>Nombre <input type="text" id="newNameModificarCategoriasForm"></p>
 					<a id="modifyCategory" class="button primary icon solid fa-comments-question">Modificar categoría</a>
 					<a id="buttonBackModifyCategoryForm" class="button primary icon solid fa-comments-question">Volver</a>
