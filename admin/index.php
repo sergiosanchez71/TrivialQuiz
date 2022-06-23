@@ -173,7 +173,6 @@
 				<form id="crearPreguntasForm" style="display: none;">
 					<p>Crear una nueva pregunta</p>
 					<p>Pregunta <input type="text" id="nameCrearPreguntasForm"></p>
-					<p>Nuevo nombre <input type="text" id="newNameModificarPreguntasForm"></p>
 					<p>Categoría <select id="categoryCrearPreguntasForm">
 						<?php
 
@@ -229,6 +228,7 @@
 
 						?>
 					</select> </p>
+					<p>Nuevo nombre <input type="text" id="newNameModificarPreguntasForm"></p>
 					<p>Categoría <select id="categoryModificarPreguntasForm">
 						<?php
 
