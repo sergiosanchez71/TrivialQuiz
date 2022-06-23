@@ -43,7 +43,9 @@
 
 						if ($questionnaires) {
 							foreach ($questionnaires as $questionary) {
+								echo "<option>";
 								echo $questionary['name'];
+								echo "</option>";
 							}
 						}
 
