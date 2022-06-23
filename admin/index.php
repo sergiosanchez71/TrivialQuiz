@@ -307,9 +307,50 @@
 
 				<form id="modificarCategoriasForm" style="display: none;">
 					<p>Modificar categoría</p>
-					<p>Nombre <input type="text" id="newNameModificarCategoriasForm"></p>
+					<p>Categoría <select id="categoryModificarPreguntasForm">
+						<?php
+
+						if ($categories) {
+							foreach ($categories as $category) {
+								$id = $category['id'];
+								if($id != 0){
+									echo "<option value=$id>";
+									echo $category['name'];
+									echo "</option>";
+								}
+							}
+						}
+
+
+						?>
+					</select> </p>
+					<p>Nuevo nombre <input type="text" id="newNameModificarCategoriasForm"></p>
 					<a id="modifyCategory" class="button primary icon solid fa-comments-question">Modificar categoría</a>
 					<a id="buttonBackModifyCategoryForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
+				<form id="borrarCategoriasForm" style="display: none;">
+					<p>Borrar una categoría</p>
+					<p>Categoría <select id="categoryModificarPreguntasForm">
+						<?php
+
+						if ($categories) {
+							foreach ($categories as $category) {
+								$id = $category['id'];
+								if($id != 0){
+									echo "<option value=$id>";
+									echo $category['name'];
+									echo "</option>";
+								}
+							}
+						}
+
+
+						?>
+					</select> </p>
+
+					<a id="deleteQuestionButton" class="button primary icon solid fa-comments-question">Borrar pregunta</a>
+					<a id="buttonBackDeleteQuestionForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
 			</div>
