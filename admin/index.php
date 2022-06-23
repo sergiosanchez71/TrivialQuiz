@@ -537,7 +537,7 @@
 		});
 
 		$("#deleteCategoryButton").click(function(){
-			deleteCategory($("#nameBorrarCategoriasForm").val());
+			deleteCategory($("#categoryModificarPreguntasForm").val());
 		});
 
 
