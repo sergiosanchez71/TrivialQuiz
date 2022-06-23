@@ -268,7 +268,7 @@
 		</div>
 	</header>
 
-	<!-- Footer -->
+	<!-- Footer  -->
 	<footer id="footer">
 		<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
 	</footer>
