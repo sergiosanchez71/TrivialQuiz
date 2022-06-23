@@ -587,6 +587,8 @@
 
 		function createCuestionary(name, category, question){
 
+			console.log(question);
+
 			if (question < 5) {
 				question = 5;
 			} else if (question > 100){
