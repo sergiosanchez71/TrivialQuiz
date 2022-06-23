@@ -506,7 +506,7 @@
 
 		$("#buttonModifyCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
-			$("#modificarCategoriaForm").css("display","block");			
+			$("#modificarCategoriasForm").css("display","block");			
 		});
 
 		$("#buttonDeleteCategory").click(function(){
