@@ -552,7 +552,7 @@
 						for (var i = 1; i <= 4; i++) {
 							/*if (i-1 == resp.success) {
 								$("#radioModifPreguntasResp"+i).prop("checked", true);
-							}*/
+							}*///
 							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
 						}
 					} 
