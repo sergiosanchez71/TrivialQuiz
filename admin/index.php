@@ -258,8 +258,8 @@
 						<label for="r4"> <input type="text" id="nameModifPreguntasResp4"></label>
 					</div>
 
-					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
-					<a id="buttonBackCreateQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
+					<a id="modifyQuestion" class="button primary icon solid fa-comments-question">Modificar pregunta</a>
+					<a id="buttonBackModifyQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 				
 			</div>
@@ -374,6 +374,11 @@
 
 		$("#questionModificarPreguntasForm").change(function(){
 			searchInfoFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cambiar
+		});
+
+		$("#buttonBackQuestionsGestionForm").click(function(){
+			$("#gestionarPreguntasForm").css("display","none");
+			$("#gestiones").css("display","block");
 		});
 
 
