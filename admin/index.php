@@ -511,7 +511,7 @@
 
 		$("#buttonDeleteCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
-			$("#borrarCategoriasForm").css("display","block");			
+			$("#borrarCategoriasForm").css("display","block");//
 		});
 
 
