@@ -195,7 +195,7 @@ switch ($action) {
 
 		for ($i=0; $i < 4 ; $i++) { 
 			$sql = "UPDATE replies SET name='$replies[$i]' WHERE id='$idReplies[$i]'";
-			mysqli_query($mysqli, $sql);
+			mysqli_query($mysqli, $sql);//
 		}
 
 		$sql = "UPDATE questions SET name='$name', category='$category', success='$success' WHERE id='$id'";
