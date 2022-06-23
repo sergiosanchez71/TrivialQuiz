@@ -214,6 +214,15 @@ switch ($action) {
 		}
 	break;
 
+	case "createCategory":
+		$name = $_REQUEST['name'];
+		$sql = "INSERT INTO categories VALUES (null, '$name')";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Cuestionario creado correctamente";
+		}
+	break;
+
 	default:
 			// code...
 	break;
