@@ -160,8 +160,8 @@ switch ($action) {
 				} 
 			} 
 
-		$question = new stdClass();
-		$question = array(
+		$questionInfo = new stdClass();
+		$questionInfo = array(
 			"name" => $name,
 			"replies" => $repliesNames,
 			"success" => $success,
@@ -170,7 +170,7 @@ switch ($action) {
 		);
 
 
-		echo json_encode($question);
+		echo json_encode($questionInfo);
 
 	break;
 
