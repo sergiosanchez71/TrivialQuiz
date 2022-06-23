@@ -246,7 +246,7 @@ switch ($action) {
 		$sql = "UPDATE categories SET name='$name' WHERE id='$id'";
 
 		if (mysqli_query($mysqli, $sql)) {
-		     echo "Pregunta modificado correctamente";
+		     echo "Categoría modificada correctamente";
 		}
 
 	break;
