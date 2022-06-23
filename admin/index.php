@@ -858,7 +858,6 @@
 				url: "controller/actions.php",
 				data: parametros,
 				success: function (respuesta) { 
-					console.log(respuesta);
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						$("#newNameModificarCuestionariosForm").val(resp[0].questionnaire);
