@@ -159,7 +159,8 @@ switch ($action) {
 			"name" => $name,
 			"replies" => $repliesNames,
 			"success" => $success,
-			"category" => $category
+			"category" => $category,
+			"repliesString" => $repliesString
 		);
 
 
