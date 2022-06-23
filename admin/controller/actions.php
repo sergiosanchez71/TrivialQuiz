@@ -182,6 +182,8 @@ switch ($action) {
 
 		$sql = "UPDATE questions SET name='$name', category='$category', success='$success' WHERE id='$id'";
 
+		//$sql = "UPDATE questions SET name='$name', category='$category', success='$success' WHERE id='$id'";
+
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta modificada correctamente";
 		}
