@@ -376,9 +376,9 @@
 			searchInfoFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cambiar
 		});
 
-		$("#buttonBackQuestionsGestionForm").click(function(){
-			$("#gestionarPreguntasForm").css("display","none");
-			$("#gestiones").css("display","block");
+		$("#buttonBackModifyQuestForm").click(function(){
+			$("#modificarPreguntasForm").css("display","none");
+			$("#gestionarPreguntasForm").css("display","block");
 		});
 
 
