@@ -384,7 +384,7 @@
 		});
 
 		$("#modifyQuestion").click(function(){
-			modifyQuestion($("#questionModificarPreguntasForm").val(), $("#newNameModificarPreguntasForm").val(), $("#categoryModificarPreguntasForm").val(), $("#nameModificarPreguntasResp1").val(), $("#nameModificarPreguntasResp2").val(), $("#nameModificarPreguntasResp3").val(), $("#nameModificarPreguntasResp4").val(), $('input[name=success]:checked', '#modificarPreguntasForm').val());
+			modifyQuestion($("#questionModificarPreguntasForm").val(), $("#newNameModificarPreguntasForm").val(), $("#categoryModificarPreguntasForm").val(), $("#nameModifPreguntasResp1").val(), $("#nameModifPreguntasResp2").val(), $("#nameModifPreguntasResp3").val(), $("#nameModifPreguntasResp4").val(), $('input[name=success]:checked', '#modificarPreguntasForm').val());
 		});
 
 		$("#buttonBackModifyQuestForm").click(function(){
