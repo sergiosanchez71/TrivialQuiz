@@ -652,7 +652,7 @@
 				"id": id,
 				"name": name,
 				"category": category, 
-				"questions": question 
+				"questions": question //
 			};
 
 			$.ajax({
