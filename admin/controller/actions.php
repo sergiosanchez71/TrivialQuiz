@@ -251,6 +251,15 @@ switch ($action) {
 
 	break;
 
+	case "deleteCategory":
+		$id = $_REQUEST['id'];
+		$sql = "DELETE FROM categories WHERE id='$id'";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Categoría eliminada correctamente";
+		}
+	break;
+
 	default:
 			// code...
 	break;
