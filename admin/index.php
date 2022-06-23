@@ -515,11 +515,11 @@
 		$("#buttonModifyCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
 			$("#modificarCategoriasForm").css("display","block");
-			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
+			searchInfoFromCategory($("#nameModificarCategoriasForm").val());
 		});
 
 		$("#nameModificarCategoriasForm").change(function(){
-			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
+			searchInfoFromCategory($("#nameModificarCategoriasForm").val());
 		});
 
 		$("#modifyCategoryButton").click(function(){
@@ -652,7 +652,7 @@
 				"id": id,
 				"name": name,
 				"category": category, 
-				"questions": question //
+				"questions": question
 			};
 
 			$.ajax({
@@ -825,9 +825,9 @@
                     });
 		}
 
-		function searchInfoFromCuestionary(id){
+		function searchInfoFromCategory(id){
 			var parametros = {
-				"action": "searchInfoFromCuestionary",
+				"action": "searchInfoFromCategory",
 				"id": id
 			};
 
