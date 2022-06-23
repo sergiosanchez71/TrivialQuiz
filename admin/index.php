@@ -519,11 +519,11 @@
 		});
 
 		$("#nameModificarCategoriasForm").change(function(){
-			searchInfoFromCuestionary($("#newNameModificarCategoriasForm").val());
+			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
 		});
 
 		$("#modifyQuestion").click(function(){
-			modifyCategory($("#questionModificarPreguntasForm").val());
+			modifyCategory($("#newNameModificarCategoriasForm").val());
 		});
 
 		$("#buttonBackModifyCategoryForm").click(function(){
