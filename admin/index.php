@@ -763,6 +763,7 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
+						console.log(respuesta);
 						/*$("#newNameModificarPreguntasForm").val(resp.name);
 						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
 						for (var i = 1; i <= 4; i++) {
