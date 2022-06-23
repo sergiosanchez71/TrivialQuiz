@@ -173,6 +173,7 @@
 				<form id="crearPreguntasForm" style="display: none;">
 					<p>Crear una nueva pregunta</p>
 					<p>Pregunta <input type="text" id="nameCrearPreguntasForm"></p>
+					<p>Nuevo nombre <input type="text" id="newNameModificarPreguntasForm"></p>
 					<p>Categoría <select id="categoryCrearPreguntasForm">
 						<?php
 
@@ -377,7 +378,7 @@
 		});
 
 		$("#modifyQuestion").click(function(){
-			modifyQuestion($("#questionModificarPreguntasForm").val(), $("#questionModificarPreguntasForm").val(), $("#categoryModificarPreguntasForm").val(), $("#nameModificarPreguntasResp1").val(), $("#nameModificarPreguntasResp2").val(), $("#nameModificarPreguntasResp3").val(), $("#nameModificarPreguntasResp4").val(), $('input[name=success]:checked', '#crearPreguntasForm').val());
+			modifyQuestion($("#questionModificarPreguntasForm").val(), $("#newNameModificarPreguntasForm").val(), $("#categoryModificarPreguntasForm").val(), $("#nameModificarPreguntasResp1").val(), $("#nameModificarPreguntasResp2").val(), $("#nameModificarPreguntasResp3").val(), $("#nameModificarPreguntasResp4").val(), $('input[name=success]:checked', '#modificarPreguntasForm').val());
 		});
 
 		$("#buttonBackModifyQuestForm").click(function(){
@@ -515,6 +516,7 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
+						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
 						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
 						for (var i = 1; i <= 4; i++) {
 							if (i-1 == resp.success) {
