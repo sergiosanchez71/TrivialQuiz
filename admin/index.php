@@ -522,7 +522,7 @@
 			searchInfoFromCuestionary($("#nameModificarCategoriasForm").val());
 		});
 
-		$("#modifyQuestion").click(function(){
+		$("#modifyCategory").click(function(){
 			modifyCategory($("#nameModificarCategoriasForm").val(), $("#newNameModificarCategoriasForm").val());
 		});
 
