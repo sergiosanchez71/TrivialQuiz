@@ -305,6 +305,12 @@
 					<a id="buttonBackCreateCategoryForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 
+				<form id="modificarCuestionariosForm" style="display: none;">
+					<p>Nombre <input type="text" id="newNameModificarCuestionariosForm"></p>
+					<a id="modifyCuestionary" class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
+					<a id="buttonBackModifyForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
 			</div>
 
 		</div>
