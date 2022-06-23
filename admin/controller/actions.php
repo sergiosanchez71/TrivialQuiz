@@ -259,7 +259,7 @@ switch ($action) {
 		     echo "Categoría eliminada correctamente";
 		}*/
 
-		echo $id;
+		echo $id; //
 
 	break;
 
