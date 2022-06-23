@@ -195,13 +195,22 @@ switch ($action) {
 
 		for ($i=0; $i < 4 ; $i++) { 
 			$sql = "UPDATE replies SET name='$replies[$i]' WHERE id='$idReplies[$i]'";
-			mysqli_query($mysqli, $sql);//
+			mysqli_query($mysqli, $sql);
 		}
 
 		$sql = "UPDATE questions SET name='$name', category='$category', success='$success' WHERE id='$id'";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta modificada correctamente";
+		}
+	break;
+
+	case "deleteQuestion":
+		$id = $_REQUEST['id'];
+		$sql = "DELETE FROM questions WHERE id='$id'";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Cuestionario eliminado correctamente";
 		}
 	break;
 
