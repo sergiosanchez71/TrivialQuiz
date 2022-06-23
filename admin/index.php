@@ -289,6 +289,17 @@
 				
 			</div>
 
+			<div id="gestionarCategorias">
+				<form id="gestionarCategoriasForm" style="display: none;">
+					<p>Gestionar categorías</p>
+					<a id="buttonCreateCategory" class="button primary icon solid fa-comments-question">Crear categoría</a>	
+					<a id="buttonModifyCategory" class="button primary icon solid fa-comments-question">Modificar categoría</a>
+					<a id="buttonDeleteCategory" class="button primary icon solid fa-comments-question">Borrar categoría</a>	
+					<a id="buttonBackCategoryGestionForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
+			</div>
+
 		</div>
 	</header>
 
