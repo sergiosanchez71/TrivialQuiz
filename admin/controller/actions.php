@@ -261,7 +261,7 @@ switch ($action) {
 	break;
 
 	default:
-			// code...
+			// code
 	break;
 }
 
