@@ -223,6 +223,22 @@ switch ($action) {
 		}
 	break;
 
+	case "searchInfoFromCuestionary":
+
+		$id = $_REQUEST['id'];
+		$idRepliesSQL = "SELECT name FROM categories WHERE id='$id'";
+
+		$result = mysqli_query($mysqli, $idRepliesSQL);  
+
+		while($row = mysqli_fetch_assoc($result)){
+				if ($row) {
+			    	$name = $row['name'];
+				} 
+			}
+
+		echo json_encode($name);
+	break;
+
 	default:
 			// code...
 	break;
