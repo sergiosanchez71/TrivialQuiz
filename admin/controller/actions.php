@@ -180,9 +180,9 @@ switch ($action) {
 		$repliesString = $reply1.",".$reply2.",".$reply3.",".$reply4;
 
 
-		//$sql = "UPDATE questions SET name='$name', category='$category', replies='$repliesString', success='$success' WHERE id='$id'";
+		$sql = "UPDATE questions SET name='$name', category='$category', success='$success' WHERE id='$id'";
 
-		if (mysqli_query($mysqli, $sql)) { //
+		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta modificada correctamente";
 		}
 	break;
