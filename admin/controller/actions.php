@@ -254,10 +254,12 @@ switch ($action) {
 	case "deleteCategory":
 		$id = $_REQUEST['id'];
 		$sql = "DELETE FROM categories WHERE id='$id'";
+		$sql2 = "DELETE FROM questionnaires WHERE category='$id'";
+		$sql3 = "DELETE FROM questions WHERE id='$id'";
 
-		if (mysqli_query($mysqli, $sql)) {
+		if (mysqli_query($mysqli, $sql) && mysqli_query($mysqli, $sql2) && mysqli_query($mysqli, $sql3)) {
 		     echo "Categoría eliminada correctamente";
-		} //
+		}
 	break;
 
 	default:
