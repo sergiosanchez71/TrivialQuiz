@@ -504,6 +504,10 @@
 			$("#crearCategoriaForm").css("display","block");			
 		});
 
+		$("#createCategory").click(function(){
+			createCategory($("#nameCrearCuestionariosForm").val());			
+		});
+
 		$("#buttonModifyCategory").click(function(){
 			$("#gestionarCategoriasForm").css("display","none");
 			$("#modificarCategoriasForm").css("display","block");			
