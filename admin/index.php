@@ -283,8 +283,8 @@
 						?>
 					</select></p>
 
-					<a id="deleteCuestionary" class="button primary icon solid fa-comments-question">Borrar cuestionario</a>
-					<a id="buttonBackDeleteForm" class="button primary icon solid fa-comments-question">Volver</a>
+					<a id="deleteQuestion" class="button primary icon solid fa-comments-question">Borrar cuestionario</a>
+					<a id="buttonBackDeleteQuestionForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 				
 			</div>
@@ -417,6 +417,11 @@
 		$("#buttonDeleteQuestion").click(function(){
 			$("#gestionarPreguntasForm").css("display","none");
 			$("#borrarPreguntasForm").css("display","block");
+		});
+
+		$("#buttonBackDeleteQuestionForm").click(function(){
+			$("#borrarPreguntasForm").css("display","none");
+			$("#gestionarPreguntasForm").css("display","block");
 		});
 
 
