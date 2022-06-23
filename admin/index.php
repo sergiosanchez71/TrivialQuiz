@@ -597,7 +597,7 @@
 				"action": "createCuestionary",
 				"name": name,
 				"category": category, 
-				"question": question 
+				"questions": question 
 			};
 
 			$.ajax({
@@ -652,7 +652,7 @@
 				"id": id,
 				"name": name,
 				"category": category, 
-				"question": question 
+				"questions": question 
 			};
 
 			$.ajax({
