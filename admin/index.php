@@ -395,7 +395,6 @@
 		$("#buttonDeleteQuestion").click(function(){
 			$("#gestionarPreguntasForm").css("display","none");
 			$("#modificarPreguntasForm").css("display","block");
-
 		});
 
 
