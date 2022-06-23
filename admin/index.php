@@ -755,7 +755,7 @@
 					}
 				},
 				error: function (xhr, status) {
-                            console.log("Error al borrar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                            console.log("Error al borrar la pregunta"); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
@@ -777,7 +777,7 @@
 					}
 				},
 				error: function (xhr, status) {
-                            console.log("Error al borrar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                            console.log("Error al borrar la categoría"); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
