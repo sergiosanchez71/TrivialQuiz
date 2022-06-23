@@ -505,7 +505,7 @@
 		});
 
 		$("#createCategory").click(function(){
-			createCategory($("#nameCrearCategoriaForm").val($("categoryModificarPreguntasForm").html()));			
+			createCategory($("#nameCrearCategoriaForm").val($("categoryModificarPreguntasForm").html())); //	
 		});
 
 		$("#buttonBackCreateCategoryForm").click(function(){
