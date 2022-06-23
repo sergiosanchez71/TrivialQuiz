@@ -239,6 +239,17 @@ switch ($action) {
 		echo json_encode($name); //
 	break;
 
+	case "modifyCategory":
+		$id = $_REQUEST['id'];
+		$name = $_REQUEST['name'];
+		$sql = "UPDATE questionnaires SET name='$name', questions='$questions', category='$category' WHERE id='$id'";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Pregunta modificado correctamente";
+		}
+
+	break;
+
 	default:
 			// code...
 	break;
