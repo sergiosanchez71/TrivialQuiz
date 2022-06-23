@@ -283,7 +283,7 @@
 						?>
 					</select></p>
 
-					<a id="deleteQuestion" class="button primary icon solid fa-comments-question">Borrar pregunta</a>
+					<a id="deleteQuestionButton" class="button primary icon solid fa-comments-question">Borrar pregunta</a>
 					<a id="buttonBackDeleteQuestionForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 				
@@ -419,7 +419,7 @@
 			$("#borrarPreguntasForm").css("display","block");
 		});
 
-		$("#deleteQuestion").click(function(){
+		$("#deleteQuestionButton").click(function(){
 			deleteQuestion($("#nameBorrarPreguntasForm").val());
 		});
 
