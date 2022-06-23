@@ -764,14 +764,6 @@
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						console.log(respuesta.name);
-						/*$("#newNameModificarPreguntasForm").val(resp.name);
-						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
-						for (var i = 1; i <= 4; i++) {
-							if (i-1 == resp.success) {
-								$("#radioModifPreguntasResp"+i).prop("checked", true);
-							}
-							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
-						}*/
 					} 
 				},
 				error: function (xhr, status) {
