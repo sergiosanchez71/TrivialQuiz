@@ -115,7 +115,7 @@ switch ($action) {
 
 		$repliesString = implode(',', $repliesId);
 
-		$sql = "INSERT INTO questions VALUES ('$idQuestion', '$name', '$repliesString','$success','$category')";
+		//$sql = "INSERT INTO questions VALUES ('$idQuestion', '$name', '$repliesString','$success','$category')";
 
 		$sql = "UPDATE questions SET replies='$repliesString' WHERE id='$idQuestion'";
 
