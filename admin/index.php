@@ -756,7 +756,6 @@
 		}
 
 		function searchInfoFromCuestionary(id){
-			console.log("FASDF");
 			var parametros = {
 				"action": "searchInfoFromCuestionary",
 				"id": id
@@ -768,8 +767,8 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						//console.log(respuesta.name);
-						$("#newNameModificarCategoriasForm").val(respuesta.name);
+						console.log(resp.name);
+						$("#newNameModificarCategoriasForm").val(resp.name);
 					} 
 				},
 				error: function (xhr, status) {
