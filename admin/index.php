@@ -268,7 +268,7 @@
 		</div>
 	</header>
 
-	<!-- Footer  -->
+	<!-- Footer -->
 	<footer id="footer">
 		<p class="copyright">&copy; Sergio Sánchez Álvarez.</p>
 	</footer>
@@ -463,6 +463,37 @@
 				"name": name,
 				"category": category, 
 				"question": question 
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+					}
+				},
+				error: function (xhr, status) {
+                            console.log("Error al modificar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+		function modifyQuestion(id, name, category, reply1, reply2, reply3, reply4, successReply){
+
+
+			var parametros = {
+				"action": "modifyQuestion",
+				"id": id,
+				"name": name,
+				"category": category, 
+				"reply1": reply1,
+				"reply2": reply2,
+				"reply3": reply3,
+				"reply4": reply4,
+				"success": successReply
 			};
 
 			$.ajax({
