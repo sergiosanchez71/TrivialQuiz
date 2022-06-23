@@ -160,7 +160,7 @@ switch ($action) {
 			"replies" => $repliesNames,
 			"success" => $success,
 			"category" => $category,
-			"repliesString" => $repliesString
+			"idReplies" => $repliesString
 		);
 
 
