@@ -282,6 +282,10 @@
 	<script src="../assets/js/main.js"></script>
 	<script type="text/javascript">
 
+		$('input').click(function(e) {
+			e.stopPropagation()
+		})
+
 		$("#buttonCuestionaries").click(function(){
 			$("#gestiones").css("display","none");
 			$("#gestionarCuestionariosForm").css("display","block");
