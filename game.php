@@ -65,7 +65,7 @@
 
 
 		function playQuestions(id){
-			
+			searchInfoFromQuestion(id);
 		}
 
 		function searchInfoFromQuestion(id){
@@ -80,6 +80,8 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
+						console.log(resp);
+						/*
 						$("#newNameModificarPreguntasForm").val(resp.name);
 						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
 						for (var i = 1; i <= 4; i++) {
@@ -88,6 +90,7 @@
 							}
 							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
 						}
+						*/
 					} 
 				},
 				error: function (xhr, status) {
