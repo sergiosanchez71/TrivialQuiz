@@ -80,6 +80,7 @@ switch ($action) {
 
 		$sql = "SELECT Q.id as id, Q.name as name, Q.success as success, Q.category as category, R.id as idReplie, R.name as nameReplie FROM questions as Q, replies as R WHERE category=(SELECT category FROM questionnaires WHERE id='$id') and Q.id=R.question";
 
+		$questionsArray = array();
 		$result = mysqli_query($mysqli, $sql);
 
 		$counter = 1;
@@ -101,13 +102,18 @@ switch ($action) {
 			);
 
 			array_push($question, $replie);
+
+			if ($counter == 4) {
+				array_push($questionsArray, $question);
+				$counter = 1;
+			}
 			
 			$counter++;
 		
 		}
 
 
-		echo json_encode($question);
+		echo json_encode($questionsArray);
 
 	break;
 
