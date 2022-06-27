@@ -86,6 +86,10 @@
                     });
 		}
 
+		function jugar(){
+			alert("hola");
+		}
+
 	</script>
 
 </body>
