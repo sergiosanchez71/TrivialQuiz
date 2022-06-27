@@ -76,6 +76,24 @@ switch ($action) {
 
 	case 'searchQuestionsFromQuestionnaire':
 
+		$id = $_REQUEST['id'];
+
+		$sql = "SELECT * FROM questions WHERE category=(SELECT category FROM questionnaires id='$id')";
+
+		$questionnairesArray = array();
+		$result = mysqli_query($mysqli, $sql);
+
+		while($row = mysqli_fetch_assoc($result)){
+			$questionnaire = array(
+			   	"id" => $row['id'],
+			 	"name" => $row["name"]
+			);
+
+			array_push($questionnairesArray, $questionnaire);
+		}
+
+		echo json_encode($questionnairesArray);
+
 	break;
 
 	case 'modifyCuestionary':
