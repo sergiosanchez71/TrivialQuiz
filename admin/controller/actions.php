@@ -83,18 +83,28 @@ switch ($action) {
 		$questionsArray = array();
 		$result = mysqli_query($mysqli, $sql);
 
+		$counter = 1;
+
 		while($row = mysqli_fetch_assoc($result)){
 
-			$counter++;
+			if ($counter == 1) {
+				$question = array(
+				   	"id" => $row["id"],
+				 	"name" => $row["name"],
+				 	"success" => $row["success"],
+				 	"category" => $row["category"]
+				);
+			} 
 
-			$question = array(
-			   	"id" => $row["id"],
-			 	"name" => $row["name"],
-			 	"idReplie" => $row["idReplie"],
-			 	"nameReplie" => $row["nameReplie"],
-			 	"success" => $row["success"],
-			 	"category" => $row["category"]
-			);
+			while ($counter <= 4){
+				$replie = array(
+					"idReplie".$counter => $row["idReplie"],
+					"nameReplie".$counter => $row["nameReplie"]
+				);
+				array_push($question, $replie);
+			}
+
+			
 
 			array_push($questionsArray, $question);
 		}
