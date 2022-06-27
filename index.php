@@ -90,8 +90,8 @@
                     });
 		}
 
-		function jugar(){
-			alert("hola");
+		function jugar(id){
+			alert(id);
 		}
 
 	</script>
