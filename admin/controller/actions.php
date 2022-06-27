@@ -105,7 +105,7 @@ switch ($action) {
 
 			/*if ($counter == 4) {
 				array_push($questionsArray, $question);
-			}*/
+			}*/ //
 			
 			$counter++;
 		
