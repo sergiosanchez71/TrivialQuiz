@@ -66,7 +66,6 @@
 	<script src="assets/js/main.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			alert("hola"); //
 			searchPlayQuestionnaire();
 		});
 
