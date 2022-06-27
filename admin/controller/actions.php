@@ -65,7 +65,7 @@ switch ($action) {
 			} 
 		}
 
-		echo json_encode($questionnaires); //
+		echo json_encode($questionnaires);
 
 
 	break;
