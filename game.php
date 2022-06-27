@@ -78,7 +78,7 @@
 				url: "admin/controller/actions.php",
 				data: parametros,
 				success: function (respuesta) { 
-					if (respuesta) {
+					if (respuesta) {//
 						var resp = JSON.parse(respuesta);
 						console.log(resp);
 						/*
