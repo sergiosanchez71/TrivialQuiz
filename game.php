@@ -34,7 +34,7 @@
 				<p>Pregunta 1</p>
 				<select id="playQuestions">
 				</select>
-			</form>
+			</form> //
 			
 		</div>
 	</header>
