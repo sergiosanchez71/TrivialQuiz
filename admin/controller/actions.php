@@ -83,18 +83,18 @@ switch ($action) {
 		$questionsArray = array();
 		$result = mysqli_query($mysqli, $sql);
 
-		$createQuestion = false;
+		$counter = 1;
 
 		while($row = mysqli_fetch_assoc($result)){
 
-			if ($createQuestion == false) {
+			if ($counter == 1) {
 				$questionsArray = array(
 				   	"id" => $row["id"],
 				 	"name" => $row["name"],
 				 	"success" => $row["success"],
 				 	"category" => $row["category"]
 				);
-				$createQuestion = true;
+				$counter++;
 			} 
 
 			$replie = array(
