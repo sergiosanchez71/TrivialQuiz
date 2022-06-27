@@ -80,7 +80,7 @@
 				success: function (respuesta) { 
 					console.log(respuesta);
 					if (respuesta) {
-						var resp = JSON.parse(respuesta);
+						//var resp = JSON.parse(respuesta);
 						console.log(resp);
 						$("#playQuestionnaires").val(resp);
 					} 
