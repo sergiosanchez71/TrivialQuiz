@@ -63,8 +63,8 @@ switch ($action) {
 		$result = mysqli_query($mysqli, $sql);   
 		while($row = mysqli_fetch_assoc($result)){
 		    $questionnaire = array(
-		    	"id" => $row['id'];
-		    	"name" => $row["name"];
+		    	"id" => $row['id'],
+		    	"name" => $row["name"]
 		    );
 
 		    array_push($questionnairesArray, $questionnaire);
