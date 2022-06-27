@@ -83,7 +83,7 @@
 						var resp = JSON.parse(respuesta);
 						console.log(resp);
 						for (var i = resp.length - 1; i >= 0; i--) {
-						$("#playQuestionnaires").val("<option>"+resp[i]+"</option>");
+						$("#playQuestionnaires").val("<option>"+resp[i].name+"</option>");
 						}
 					} 
 				},
