@@ -73,6 +73,11 @@ switch ($action) {
 
 
 	break;
+
+	case 'searchQuestionsFromQuestionnaire':
+
+	break;
+
 	case 'modifyCuestionary':
 		$id = $_REQUEST['id'];
 		$name = $_REQUEST['name'];
