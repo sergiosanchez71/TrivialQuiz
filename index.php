@@ -91,7 +91,7 @@
 		}
 
 		function jugar(id){
-			alert(id);
+			alert(id); //
 		}
 
 	</script>
