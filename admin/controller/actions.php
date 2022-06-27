@@ -98,10 +98,10 @@ switch ($action) {
 			$question = array(
 			   	"id" => $row["id"],
 			 	"name" => $row["name"],
-			 	"idReplie" => $row["idReplie"],
-			 	"nameReplie" => $row["nameReplie"],
+			 	//"idReplie" => $row["idReplie"],
+			 	//"nameReplie" => $row["nameReplie"],
 			 	"success" => $row["success"],
-			 	"category" => $row["category"] //
+			 	"category" => $row["category"]
 			);
 
 			array_push($questionsArray, $question);
