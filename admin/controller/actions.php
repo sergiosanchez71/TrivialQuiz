@@ -69,7 +69,6 @@ switch ($action) {
 		    );
 
 		    array_push($questionnairesArray, $questionnaire);
-		    //echo json_encode($row);
 		}
 
 		echo json_encode($questionnairesArray);
