@@ -62,12 +62,12 @@ switch ($action) {
 
 		$result = mysqli_query($mysqli, $sql);   
 		while($row = mysqli_fetch_assoc($result)){
-		    /*$questionnaire = array(
+		    $questionnaire = array(
 		    	$id => $row['id'];
 		    	$name => $row["name"];
 		    )
-		    array_push($questionnaires, $questionnaire);*/
-		    echo $row['id']; //
+		    /*array_push($questionnaires, $questionnaire);*/
+		    echo $questionnaire;
 		}
 
 		echo json_encode($questionnaire);
