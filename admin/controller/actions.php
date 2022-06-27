@@ -80,19 +80,22 @@ switch ($action) {
 
 		$sql = "SELECT * FROM questions WHERE category=(SELECT category FROM questionnaires id='$id')";
 
-		$questionnairesArray = array();
+		$questionsArray = array();
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_assoc($result)){
-			$questionnaire = array(
-			   	"id" => $row['id'],
-			 	"name" => $row["name"]
+			$question = array(
+			   	"id" => $row["id"],
+			 	"name" => $row["name"],
+			 	"replies" => $row["replies"],
+			 	"success" => $row["success"],
+			 	"category" => $row["category"]
 			);
 
-			array_push($questionnairesArray, $questionnaire);
+			array_push($questionsArray, $question);
 		}
 
-		echo json_encode($questionnairesArray);
+		echo json_encode($questionsArray);
 
 	break;
 
