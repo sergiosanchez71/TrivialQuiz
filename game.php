@@ -34,9 +34,8 @@
 			<h1>Juego</h1>
 			<form id="questions">
 				<p>Pregunta 1</p>
-				<select id="playQuestionnaires">
+				<select id="playQuestions">
 				</select>
-				<a id="buttonPlay" class="button primary icon solid fa-comments-question">Jugar</a>	
 			</form>
 			
 		</div>
