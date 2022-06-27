@@ -70,7 +70,7 @@ switch ($action) {
 		    array_push($questionnairesNamesArray, $questionnaireName);
 		}
 
-		echo json_encode($questionnairesIdsArray, questionnairesNamesArray);
+		echo json_encode($questionnairesIdsArray, $questionnairesNamesArray); //
 
 
 	break;
