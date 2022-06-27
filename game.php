@@ -61,7 +61,7 @@
 	<script type="text/javascript">
 
 		$(document).ready(function(){
-			playQuestions(<?php ; ?>);
+			playQuestions(11);
 		});
 
 
