@@ -70,7 +70,7 @@ switch ($action) {
 		    echo json_encode($questionnaire);
 		}
 
-		echo json_encode($questionnaire);
+		echo json_encode($questionnaires);
 
 
 	break;
