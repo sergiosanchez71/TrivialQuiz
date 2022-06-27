@@ -61,18 +61,18 @@ switch ($action) {
 
 		$questionnairesArray = array();
 		$result = mysqli_query($mysqli, $sql);
-		$valid = false;
-
-		$sql2 = "SELECT sum(id) as value_sum FROM questions WHERE category=$row['category']";		
-		$result2 = mysqli_query($mysqli, $sql2);
-		while($row = mysqli_fetch_assoc($result2)){
-			if ($row['value_sum'] == $preguntas){
-				$valid = true;
-			}
-		}
 
 		while($row = mysqli_fetch_assoc($result)){
+			$valid = false;
 			$preguntas = $row['preguntas'];
+			$sql2 = "SELECT sum(id) as value_sum FROM questions WHERE category=$row['category']";
+			$result2 = mysqli_query($mysqli, $sql2);
+
+			while($row = mysqli_fetch_assoc($result2)){
+				if ($row['value_sum'] == $preguntas){
+					$valid = true;
+				}
+			}
 
 			if($valid){
 			    $questionnaire = array(
