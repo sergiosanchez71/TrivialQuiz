@@ -69,14 +69,19 @@ switch ($action) {
 			$result2 = mysqli_query($mysqli, $sql2);
 
 			while($row = mysqli_fetch_assoc($result2)){
-				if ()
+				if ($row['sum(id)'] == $preguntas){
+					$valid = true;
+				}
 			}
-		    $questionnaire = array(
-		    	"id" => $row['id'],
-		    	"name" => $row["name"]
-		    );
 
-		    array_push($questionnairesArray, $questionnaire);
+			if($valid){
+			    $questionnaire = array(
+			    	"id" => $row['id'],
+			    	"name" => $row["name"]
+			    );
+
+			    array_push($questionnairesArray, $questionnaire);
+			}
 		}
 
 		echo json_encode($questionnairesArray);
