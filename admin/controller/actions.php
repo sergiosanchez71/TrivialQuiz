@@ -64,7 +64,7 @@ switch ($action) {
 		while($row = mysqli_fetch_assoc($result)){
 		    $questionnaire = array(
 		    	$id => $row['id'];
-		    	$name = $row["name"];
+		    	$name => $row["name"];
 		    )
 		    array_push($questionnaires, $questionnaire);
 		}
