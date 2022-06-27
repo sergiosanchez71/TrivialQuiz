@@ -32,7 +32,7 @@
 				<p>¿A qué cuestionario te gustaría enfrentarte?</p>
 				<select id="playQuestionnaires">
 				</select>
-				<a class="button primary icon solid fa-comments-question">Jugar</a>	
+				<a onclick="jugar()" class="button primary icon solid fa-comments-question">Jugar</a>	
 			</form>
 			
 		</div>
