@@ -103,7 +103,9 @@ switch ($action) {
 			);
 			array_push($question, $replie);
 
-			array_push($questionsArray, $question);
+			if ($counter == 4) {
+				array_push($questionsArray, $question);
+			}
 			
 			$counter++;
 		
