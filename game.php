@@ -30,6 +30,7 @@
 		<div class="content">
 
 			<h1>Juego</h1>
+			<input type="text" id="idQuestionnaire" value="<?php echo $idQuestionnaire ?>">
 			<form id="questions">
 				<p>Pregunta 1</p>
 				<select id="playQuestions">
@@ -60,7 +61,7 @@
 	<script type="text/javascript">
 
 		$(document).ready(function(){
-			playQuestions(<?php echo $idQuestionnaire; ?>);
+			playQuestions(<?php ; ?>);
 		});
 
 
