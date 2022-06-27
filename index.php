@@ -86,7 +86,7 @@
                     });
 		}
 
-		function jugar(){
+		function jugar(){ //
 			alert("hola");
 		}
 
