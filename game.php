@@ -4,7 +4,7 @@
 
 	include("admin/controller/conexion.php");
 
-	$id = $_GET['id'];
+	$idCuestionario = $_GET['id'];
 
 	?>
 	<meta charset="utf-8">
