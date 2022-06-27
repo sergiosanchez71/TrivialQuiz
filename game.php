@@ -68,6 +68,29 @@
 			searchInfoFromQuestion(id);
 		}
 
+		function searchQuestionsFromQuestionnaire(id){
+			var parametros = {
+				"action": "searchQuestionsFromQuestionnaire",
+				"id": id
+			};
+
+			$.ajax({
+				url: "admin/controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						var resp = JSON.parse(respuesta);
+						console.log(resp);
+					} 
+				},
+				error: function (xhr, status) {
+                            console.log("Error al buscar las respuestas de la pregunta: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
 		function searchInfoFromQuestion(id){
 			var parametros = {
 				"action": "searchInfoFromQuestion",
@@ -78,7 +101,7 @@
 				url: "admin/controller/actions.php",
 				data: parametros,
 				success: function (respuesta) { 
-					if (respuesta) {//
+					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						console.log(resp);
 						/*
