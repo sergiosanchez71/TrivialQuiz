@@ -6,7 +6,7 @@
 
 	$idQuestionnaire = $_GET['id'];
 
-	echo $idQuestionnaire;
+	echo $idQuestionnaire; //
 
 	?>
 	<meta charset="utf-8">
