@@ -103,16 +103,16 @@ switch ($action) {
 
 			array_push($question, $replie);
 
-			if ($counter == 4) {
-				array_push($questionsArray, $question); //
-			}
+			/*if ($counter == 4) {
+				array_push($questionsArray, $question);
+			}*/
 			
 			$counter++;
 		
 		}
 
 
-		echo json_encode($questionsArray);
+		echo json_encode($question);
 
 	break;
 
