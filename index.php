@@ -86,7 +86,7 @@
 					} 
 				},
 				error: function (xhr, status) {
-                            console.log("Error al buscar las respuestas de la pregunta: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                            console.log("Error al buscar los cuestionarios jugables: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
