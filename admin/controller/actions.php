@@ -87,14 +87,13 @@ switch ($action) {
 
 		while($row = mysqli_fetch_assoc($result)){
 
-			if ($counter == 1) { //
+			if ($counter == 1) {
 				$questionsArray = array(
 				   	"id" => $row["id"],
 				 	"name" => $row["name"],
 				 	"success" => $row["success"],
 				 	"category" => $row["category"]
 				);
-				$counter++;
 			} 
 
 			$replie = array(
@@ -103,6 +102,7 @@ switch ($action) {
 			);
 
 			array_push($questionsArray, $replie);
+				$counter++;
 		
 		}
 
