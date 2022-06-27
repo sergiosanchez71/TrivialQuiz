@@ -60,11 +60,16 @@ switch ($action) {
 		//$sql = SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category;
 
 		$questionnairesArray = array();
-		$valid = false;
+		$result = mysqli_query($mysqli, $sql);
 
-		$result = mysqli_query($mysqli, $sql);   
 		while($row = mysqli_fetch_assoc($result)){
+			$preguntas = $row['preguntas'];
 			$sql2 = "SELECT sum(id) FROM questions WHERE category=$row['category']";
+			$result2 = mysqli_query($mysqli, $sql2);
+
+			while($row = mysqli_fetch_assoc($result2)){
+				if
+			}
 		    $questionnaire = array(
 		    	"id" => $row['id'],
 		    	"name" => $row["name"]
