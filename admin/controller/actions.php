@@ -55,14 +55,17 @@ switch ($action) {
 
 	break;
 	case 'searchPlayQuestionnaire':
-		$sql = "SELECT id, name FROM questionnaire WHERE questions=(SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category)";
+		//$sql = "SELECT id, name FROM questionnaire WHERE questions=(SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category)";
+		$sql = "SELECT id, name FROM questionnaire";
+
 		$result = mysqli_query($mysqli, $sql);   
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
-		    	$test[] = $row;
+		    	$questionnairesId = $row['id'];
 			} 
-			echo json_encode($test); //
 		}
+
+		echo json_encode($questionnairesId);
 
 
 	break;
