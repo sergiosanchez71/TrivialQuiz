@@ -68,8 +68,8 @@ switch ($action) {
 			$sql2 = "SELECT sum(id) as value_sum FROM questions WHERE category=$row['category']";
 			$result2 = mysqli_query($mysqli, $sql2);
 
-			while($row = mysqli_fetch_assoc($result2)){
-				if ($row['value_sum'] == $preguntas){
+			while($row2 = mysqli_fetch_assoc($result2)){
+				if ($row2['value_sum'] == $preguntas){
 					$valid = true;
 				}
 			}
