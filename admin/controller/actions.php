@@ -54,6 +54,19 @@ switch ($action) {
 
 
 	break;
+	case 'searchPlayQuestionnaire':
+		$id = $_REQUEST['id'];
+		$sql = "SELECT Q.id, Q.name FROM questionnaires AS Q,questions AS QU WHERE Q.id='$id' and Q.category=C.id";
+		$result = mysqli_query($mysqli, $sql);   
+		while($row = mysqli_fetch_assoc($result)){
+			if ($row) {
+		    	$test[] = $row;
+			} 
+			echo json_encode($test);
+		}
+
+
+	break;
 	case 'modifyCuestionary':
 		$id = $_REQUEST['id'];
 		$name = $_REQUEST['name'];
