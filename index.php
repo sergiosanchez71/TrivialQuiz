@@ -82,7 +82,7 @@
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						console.log(resp);
-						$("#playQuestionnaires").val("<option>"+resp+"</option>");
+						$("#playQuestionnaires").val("<option>"+resp+"</option>"); //
 					} 
 				},
 				error: function (xhr, status) {
