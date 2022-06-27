@@ -34,7 +34,7 @@
 				<p>Pregunta 1</p>
 				<select id="playQuestions">
 				</select>
-			</form> //
+			</form>
 			
 		</div>
 	</header>
@@ -64,7 +64,7 @@
 		});
 
 
-		function playQuestions(id){
+		function playQuestions(id){ //
 			alert(id);
 		}
 
