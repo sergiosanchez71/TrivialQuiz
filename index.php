@@ -4,13 +4,6 @@
 
 	include("admin/controller/conexion.php");
 
-		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
-	$questionnaires_sql = "SELECT * FROM questionnaires";
-	$questionnaires = $mysqli->query($questionnaires_sql);
-
-
-
-
 	?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
