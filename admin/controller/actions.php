@@ -63,12 +63,13 @@ switch ($action) {
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_assoc($result)){
+			$valid = false;
 			$preguntas = $row['preguntas'];
 			$sql2 = "SELECT sum(id) FROM questions WHERE category=$row['category']";
 			$result2 = mysqli_query($mysqli, $sql2);
 
 			while($row = mysqli_fetch_assoc($result2)){
-				if
+				if ()
 			}
 		    $questionnaire = array(
 		    	"id" => $row['id'],
