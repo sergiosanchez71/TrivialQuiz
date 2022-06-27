@@ -106,7 +106,7 @@ switch ($action) {
 		
 		}
 
-		array_push($questionsArray, $question);
+		array_push($questionsArray, $question); //
 
 		echo json_encode($questionsArray);
 
