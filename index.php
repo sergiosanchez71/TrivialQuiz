@@ -91,7 +91,8 @@
 		}
 
 		function jugar(id){
-			alert(id);//
+			alert(id);
+			document.location.href=game.php;
 		}
 
 	</script>
