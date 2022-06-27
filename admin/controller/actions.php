@@ -78,7 +78,7 @@ switch ($action) {
 
 		$id = $_REQUEST['id'];
 
-		$sql = "SELECT Q.id as id, Q.name as name, Q.success as success, Q.category, R.id as idReplie, R.name as nameReplie as category FROM questions as Q, replies as R WHERE category=(SELECT category FROM questionnaires WHERE id='$id') and Q.id=R.question";
+		$sql = "SELECT Q.id as id, Q.name as name, Q.success as success, Q.category as category, R.id as idReplie, R.name as nameReplie as category FROM questions as Q, replies as R WHERE category=(SELECT category FROM questionnaires WHERE id='$id') and Q.id=R.question";
 
 		$questionsArray = array();
 		$result = mysqli_query($mysqli, $sql);
@@ -101,7 +101,7 @@ switch ($action) {
 			 	"idReplie" => $row["idReplie"],
 			 	"nameReplie" => $row["nameReplie"],
 			 	"success" => $row["success"],
-			 	"category" => $row["category"] ////
+			 	"category" => $row["category"]
 			);
 
 			array_push($questionsArray, $question);
