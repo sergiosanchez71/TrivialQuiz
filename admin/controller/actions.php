@@ -64,7 +64,7 @@ switch ($action) {
 
 		while($row = mysqli_fetch_assoc($result)){
 			$valid = false;
-			$preguntas = $row['preguntas'];
+			$preguntas = $row['preguntas']; //
 			$sql2 = "SELECT sum(id) FROM questions WHERE category=$row['category']";
 			$result2 = mysqli_query($mysqli, $sql2);
 
