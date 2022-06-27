@@ -55,8 +55,7 @@ switch ($action) {
 
 	break;
 	case 'searchPlayQuestionnaire':
-		$id = $_REQUEST['id'];
-		$sql = "SELECT Q.id, Q.name FROM questionnaires AS Q,questions AS QU WHERE Q.id='$id' and Q.category=C.id";
+		$sql = "SELECT id, name FROM questionnaire WHERE questions=(SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category)";
 		$result = mysqli_query($mysqli, $sql);   
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
