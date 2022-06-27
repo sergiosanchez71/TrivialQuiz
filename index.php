@@ -2,11 +2,11 @@
 <head>
 	<?php
 
-		include("admin/controller/conexion.php");
+	include("admin/controller/conexion.php");
 
 		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
-		$questionnaires_sql = "SELECT * FROM questionnaires";
-		$questionnaires = $mysqli->query($questionnaires_sql);
+	$questionnaires_sql = "SELECT * FROM questionnaires";
+	$questionnaires = $mysqli->query($questionnaires_sql);
 
 
 
@@ -37,18 +37,7 @@
 			<h1>Bienvenido a Trivial Quiz</h1>
 			<form>
 				<p>¿A qué cuestionario te gustaría enfrentarte?</p>
-				<select id="questionnaires">
-						<?php
-
-						if ($questionnaires) {
-							foreach ($questionnaires as $questionary) {
-								echo "<option>";
-								echo $questionary['name'];
-								echo "</option>";
-							}
-						}
-
-						?>
+				<select id="playQuestionnaires">
 				</select>
 				<a class="button primary icon solid fa-comments-question">Jugar</a>	
 			</form>
@@ -75,6 +64,35 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		});
+
+		function searchPlayQuestionnaire(){
+			var parametros = {
+				"action": "searchPlayQuestionnaire",
+				"id": id
+			};
+
+			$.ajax({
+				url: "admin/controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						var resp = JSON.parse(respuesta);
+						$("#playQuestionnaires").val(resp);
+					} 
+				},
+				error: function (xhr, status) {
+                            console.log("Error al buscar las respuestas de la pregunta: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+	</script>
 
 </body>
 </html>
