@@ -58,18 +58,19 @@ switch ($action) {
 		//$sql = "SELECT id, name FROM questionnaires WHERE questions=(SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category)";
 		$sql = "SELECT id, name FROM questionnaires";
 
-		$questionnairesIdsArray = array();
-		$questionnairesNamesArray = array();
+		$questionnairesArray = array();
 
 		$result = mysqli_query($mysqli, $sql);   
 		while($row = mysqli_fetch_assoc($result)){
-		    $questionnaireId = $row['id'];
-		    $questionnaireName = $row['name'];
-		    array_push($questionnairesIdsArray, $questionnaireId);
-		    array_push($questionnairesNamesArray, $questionnaireName);
+		    $questionnaire = array(
+		    	"id" => $row['id'];
+		    	"name" => $row["name"];
+		    );
+
+		    array_push($questionnairesArray, $questionnaire);
 		}
 
-		echo json_encode($questionnairesIdsArray);
+		echo json_encode($questionnairesArray); //
 
 
 	break;
