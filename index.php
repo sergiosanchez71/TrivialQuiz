@@ -32,7 +32,7 @@
 				<p>¿A qué cuestionario te gustaría enfrentarte?</p>
 				<select id="playQuestionnaires">
 				</select>
-				<a onclick="jugar()" id="buttonPlay" class="button primary icon solid fa-comments-question">Jugar</a>	
+				<a id="buttonPlay" class="button primary icon solid fa-comments-question">Jugar</a>	
 			</form>
 			
 		</div>
@@ -60,6 +60,10 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			searchPlayQuestionnaire();
+		});
+
+		$("#buttonPlay").click(function(){
+			jugar($("#playQuestionnaires").val());
 		});
 
 		function searchPlayQuestionnaire(){
