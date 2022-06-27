@@ -69,7 +69,7 @@ switch ($action) {
 			$result2 = mysqli_query($mysqli, $sql2);
 
 			while($row2 = mysqli_fetch_assoc($result2)){
-				if ($row2['value_sum'] == $preguntas){
+				if ($row2['value_sum'] == $preguntas){ //
 					$valid = true;
 				}
 			}
