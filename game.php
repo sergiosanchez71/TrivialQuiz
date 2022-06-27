@@ -31,7 +31,7 @@
 	<header id="header">
 		<div class="content">
 
-			<h1>Bienvenido a Trivial Quiz</h1>
+			<h1>Juego</h1>
 			<form>
 				<p>¿A qué cuestionario te gustaría enfrentarte?</p>
 				<select id="playQuestionnaires">
@@ -40,7 +40,6 @@
 			</form>
 			
 		</div>
-		<div class="image phone"><div class="inner"><img src="img/quiz2.png" alt="" /></div></div>
 	</header>
 
 	<!-- Footer -->
