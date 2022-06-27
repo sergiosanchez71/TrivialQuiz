@@ -113,7 +113,7 @@ switch ($action) {
 		}
 
 
-		echo json_encode($questionsArray);
+		echo json_encode($questionsArray); //
 
 	break;
 
