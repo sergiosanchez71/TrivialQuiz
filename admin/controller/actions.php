@@ -78,18 +78,29 @@ switch ($action) {
 
 		$id = $_REQUEST['id'];
 
-		$sql = "SELECT * FROM questions WHERE category=(SELECT category FROM questionnaires WHERE id='$id')";
+		$sql = "SELECT * FROM questions as Q, replies as R WHERE category=(SELECT category FROM questionnaires WHERE id='$id') and Q.id=R.question";
 
 		$questionsArray = array();
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_assoc($result)){
+
+			/*$idReplies = explode(',', $row["replies"]);
+
+			$replies = array($reply1, $reply2, $reply3, $reply4);
+
+			for ($i=0; $i < 4 ; $i++) { 
+				$sql = "UPDATE replies SET name='$replies[$i]' WHERE id='$idReplies[$i]'";
+				mysqli_query($mysqli, $sql);
+			}*/
+
+
 			$question = array(
-			   	"id" => $row["id"],
-			 	"name" => $row["name"],
-			 	"replies" => $row["replies"],
-			 	"success" => $row["success"],
-			 	"category" => $row["category"]
+			   	"id" => $row["Q.id"],
+			 	"name" => $row["Q.name"],
+			 	"replies" => $row["Q.replies"],
+			 	"success" => $row["Q.success"],
+			 	"category" => $row["Q.category"]
 			);
 
 			array_push($questionsArray, $question);
