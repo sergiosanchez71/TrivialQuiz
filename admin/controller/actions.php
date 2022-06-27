@@ -88,7 +88,7 @@ switch ($action) {
 		while($row = mysqli_fetch_assoc($result)){
 
 			if ($counter == 1) {
-				$questionsArray = array(
+				$question = array(
 				   	"id" => $row["id"],
 				 	"name" => $row["name"],
 				 	"success" => $row["success"],
@@ -101,14 +101,18 @@ switch ($action) {
 				"nameReplie".$counter => $row["nameReplie"]
 			);
 
-			array_push($questionsArray, $replie);
+			array_push($question, $replie);
+
+			/*if ($counter == 4) {
+				array_push($questionsArray, $question);
+			}*/
 			
 			$counter++;
 		
 		}
 
 
-		echo json_encode($question); 
+		echo json_encode($question);
 
 	break;
 
