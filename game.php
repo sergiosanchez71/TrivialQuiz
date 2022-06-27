@@ -65,7 +65,7 @@
 
 
 		function playQuestions(id){
-			searchQuestionsFromQuestionnaire(id);
+			searchQuestionsFromQuestionnaire(id); 
 		}
 
 		function searchQuestionsFromQuestionnaire(id){
@@ -80,7 +80,7 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						console.log(resp); //
+						console.log(resp);
 					} 
 				},
 				error: function (xhr, status) {
