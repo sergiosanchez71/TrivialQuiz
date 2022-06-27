@@ -55,8 +55,8 @@ switch ($action) {
 
 	break;
 	case 'searchPlayQuestionnaire':
-		$sql = "SELECT id, name FROM questionnaires WHERE questions=(SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category)";
-		//$sql = "SELECT id, name FROM questionnaires";
+		//$sql = "SELECT id, name FROM questionnaires WHERE questions=(SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category)";
+		$sql = "SELECT * FROM questionnaires";
 		//$sql = SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category;
 
 		$questionnairesArray = array();
