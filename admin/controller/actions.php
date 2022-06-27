@@ -100,7 +100,7 @@ switch ($action) {
 			 	"name" => $row["name"],
 			 	"replies" => $row["Q.replies"],
 			 	"success" => $row["success"],
-			 	"category" => $row["category"] //
+			 	"category" => $row["category"] ////
 			);
 
 			array_push($questionsArray, $question);
