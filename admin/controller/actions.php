@@ -66,7 +66,9 @@ switch ($action) {
 		    	$id => $row['id'];
 		    	$name => $row["name"];
 		    );
-		    array_push($questionnairesArray, $questionnaire);
+		    array_push($questionnairesArray, 
+		    	$id => $row['id'];
+		    	$name => $row["name"];);
 		}
 
 		echo json_encode($questionnairesArray);
