@@ -78,7 +78,7 @@ switch ($action) {
 
 		$id = $_REQUEST['id'];
 
-		$sql = "SELECT * FROM questions WHERE category=(SELECT category FROM questionnaires id='$id')";
+		$sql = "SELECT * FROM questions WHERE category=(SELECT category FROM questionnaires WHERE id='$id')";
 
 		$questionsArray = array();
 		$result = mysqli_query($mysqli, $sql);
