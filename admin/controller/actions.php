@@ -65,7 +65,7 @@ switch ($action) {
 			} 
 		}
 
-		echo json_encode($questionnairesId);
+		echo json_encode($questionnairesId); //
 
 
 	break;
