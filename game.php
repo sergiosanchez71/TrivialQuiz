@@ -33,7 +33,7 @@
 
 			<h1>Juego</h1>
 			<form>
-				<p>¿A qué cuestionario te gustaría enfrentarte?</p>
+				<p>Pregunta 1</p>
 				<select id="playQuestionnaires">
 				</select>
 				<a id="buttonPlay" class="button primary icon solid fa-comments-question">Jugar</a>	
