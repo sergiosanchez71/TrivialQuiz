@@ -60,9 +60,9 @@ switch ($action) {
 
 		$result = mysqli_query($mysqli, $sql);   
 		while($row = mysqli_fetch_assoc($result)){
-			if ($row) {
-		    	$questionnaires = $row;
-			} 
+		    $id = $row["id"];
+		    $name = $row["name"];
+
 		}
 
 		echo json_encode($questionnaires);
