@@ -38,17 +38,17 @@
 			<form>
 				<p>¿A qué cuestionario te gustaría enfrentarte?</p>
 				<select>
-					<option>
 						<?php
 
 						if ($questionnaires) {
 							foreach ($questionnaires as $questionary) {
+								echo "<option>";
 								echo $questionary['name'];
+								echo "</option>"; //
 							}
 						}
 
 						?>
-					</option>
 				</select>
 				<a class="button primary icon solid fa-comments-question">Jugar</a>	
 			</form>

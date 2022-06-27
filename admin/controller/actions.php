@@ -81,6 +81,10 @@ switch ($action) {
 		$replies = array($_REQUEST['reply1'], $_REQUEST['reply2'], $_REQUEST['reply3'], $_REQUEST['reply4']);
 		$success = $_REQUEST['success'];
 
+		$sql = "INSERT INTO questions VALUES (null, '$name', null,'$success','$category')";
+
+		mysqli_query($mysqli, $sql);
+
 		//Habría que crear las respuestas también en su respectiva tabla
 
 		$idQuestionSQL = "SELECT MAX(id) as id FROM questions";
@@ -88,7 +92,7 @@ switch ($action) {
 		$result = mysqli_query($mysqli, $idQuestionSQL);  
 		while($row = mysqli_fetch_assoc($result)){
 			if ($row) {
-		    	$idQuestion = $row['id']+1;
+		    	$idQuestion = $row['id'];
 			} 
 		}
 
@@ -105,13 +109,15 @@ switch ($action) {
 			    	$replyId4 = $row['id'];
 				} 
 			}
-		//}
+		//}//
 
 		$repliesId = array($replyId4-3,$replyId4-2,$replyId4-1,$replyId4);
 
 		$repliesString = implode(',', $repliesId);
 
-		$sql = "INSERT INTO questions VALUES ('$idQuestion', '$name', '$repliesString','$success','$category')";
+		//$sql = "INSERT INTO questions VALUES ('$idQuestion', '$name', '$repliesString','$success','$category')";
+
+		$sql = "UPDATE questions SET replies='$repliesString' WHERE id='$idQuestion'";
 
 		if (mysqli_query($mysqli, $sql)) {
 		     echo "Pregunta creada correctamente";
@@ -142,33 +148,126 @@ switch ($action) {
 			}
 		}
 
-		$sql = "SELECT success, category FROM questions WHERE id='$id'";
+		$sql = "SELECT name, success, category FROM questions WHERE id='$id'";
 
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
+			    	$name = $row['name'];
 			    	$success = $row['success'];
 			    	$category = $row['category'];
 				} 
 			} 
 
-		$question = new stdClass();
-		$question = array(
+		$questionInfo = new stdClass();
+		$questionInfo = array(
+			"name" => $name,
 			"replies" => $repliesNames,
 			"success" => $success,
-			"category" => $category
+			"category" => $category,
+			"idReplies" => $repliesString
 		);
 
 
-		echo json_encode($question);
-
-
+		echo json_encode($questionInfo);
 
 	break;
 
+	case "modifyQuestion":
+		$id = $_REQUEST['id'];
+		$name = $_REQUEST['name'];
+		$category = $_REQUEST['category'];
+		$reply1 = $_REQUEST['reply1'];
+		$reply2 = $_REQUEST['reply2'];
+		$reply3 = $_REQUEST['reply3'];
+		$reply4 = $_REQUEST['reply4'];
+		$success = $_REQUEST['success'];
+
+
+		$idRepliesSQL = "SELECT replies FROM questions WHERE id='$id'";
+
+		$result = mysqli_query($mysqli, $idRepliesSQL);  
+
+		while($row = mysqli_fetch_assoc($result)){
+				if ($row) {
+			    	$repliesString = $row['replies'];
+				} 
+			}
+
+		$idReplies = explode(',', $repliesString);
+
+		$replies = array($reply1, $reply2, $reply3, $reply4);
+
+		for ($i=0; $i < 4 ; $i++) { 
+			$sql = "UPDATE replies SET name='$replies[$i]' WHERE id='$idReplies[$i]'";
+			mysqli_query($mysqli, $sql);
+		}
+
+		$sql = "UPDATE questions SET name='$name', category='$category', success='$success' WHERE id='$id'";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Pregunta modificada correctamente";
+		}
+	break;
+
+	case "deleteQuestion":
+		$id = $_REQUEST['id'];
+		$sql = "DELETE FROM questions WHERE id='$id'";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Pregunta eliminada correctamente";
+		}
+	break;
+
+	case "createCategory":
+		$name = $_REQUEST['name'];
+		$sql = "INSERT INTO categories VALUES (null, '$name')";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Categoría creada correctamente";
+		}
+	break;
+
+	case "searchInfoFromCategory":
+
+		$id = $_REQUEST['id'];
+		$idRepliesSQL = "SELECT name FROM categories WHERE id='$id'";
+
+		$result = mysqli_query($mysqli, $idRepliesSQL);  
+
+		while($row = mysqli_fetch_assoc($result)){
+				if ($row) {
+			    	$name = $row['name'];
+				} 
+			}
+
+		echo json_encode($name);
+	break;
+
+	case "modifyCategory":
+		$id = $_REQUEST['id'];
+		$name = $_REQUEST['name'];
+
+		$sql = "UPDATE categories SET name='$name' WHERE id='$id'";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Categoría modificada correctamente";
+		}
+
+	break;
+
+	case "deleteCategory":
+		$id = $_REQUEST['id'];
+		$sql = "DELETE FROM categories WHERE id='$id'";
+
+		if (mysqli_query($mysqli, $sql)) {
+		     echo "Categoría eliminada correctamente";
+		}
+	break;
+
 	default:
-			// code...
+			// cod
 	break;
 }
 

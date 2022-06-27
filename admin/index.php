@@ -91,7 +91,7 @@
 
 						?>
 					</select> </p>
-					<p>Preguntas <input type="number" id="questionCrearCuestionariosForm" min="5" max="100"></p>
+					<p>Preguntas <input type="text" id="questionCrearCuestionariosForm"></p>
 					<a id="createCuestionary" class="button primary icon solid fa-comments-question">Crear cuestionario</a>
 					<a id="buttonBackCreateForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
@@ -130,7 +130,7 @@
 
 						?>
 					</select> </p>
-					<p>Preguntas <input type="number" id="questionModificarCuestionariosForm" min="5" max="100"></p>
+					<p>Preguntas <input type="text" id="questionModificarCuestionariosForm"></p>
 					<a id="modifyCuestionary" class="button primary icon solid fa-comments-question">Modificar cuestionario</a>
 					<a id="buttonBackModifyForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
@@ -228,15 +228,18 @@
 
 						?>
 					</select> </p>
+					<p>Nuevo nombre <input type="text" id="newNameModificarPreguntasForm"></p>
 					<p>Categoría <select id="categoryModificarPreguntasForm">
 						<?php
 
 						if ($categories) {
 							foreach ($categories as $category) {
 								$id = $category['id'];
-								echo "<option value=$id>";
-								echo $category['name'];
-								echo "</option>";
+								if($id != 0){
+									echo "<option value=$id>";
+									echo $category['name'];
+									echo "</option>";
+								}
 							}
 						}
 
@@ -258,10 +261,98 @@
 						<label for="r4"> <input type="text" id="nameModifPreguntasResp4"></label>
 					</div>
 
-					<a id="createQuestion" class="button primary icon solid fa-comments-question">Crear pregunta</a>
-					<a id="buttonBackCreateQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
+					<a id="modifyQuestion" class="button primary icon solid fa-comments-question">Modificar pregunta</a>
+					<a id="buttonBackModifyQuestForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
+				<form id="borrarPreguntasForm" style="display: none;">
+					<p>Borrar una pregunta</p>
+					<p>Selecciona una pregunta <select id="nameBorrarPreguntasForm">
+						<?php
+
+						if ($questions) {
+							foreach ($questions as $question) {
+								$id = $question['id'];
+								echo "<option value=$id>";
+								echo $question['name'];
+								echo "</option>";
+							}
+						}
+
+
+						?>
+					</select></p>
+
+					<a id="deleteQuestionButton" class="button primary icon solid fa-comments-question">Borrar pregunta</a>
+					<a id="buttonBackDeleteQuestionForm" class="button primary icon solid fa-comments-question">Volver</a>
 				</form>
 				
+			</div>
+
+			<div id="gestionarCategorias">
+				<form id="gestionarCategoriasForm" style="display: none;">
+					<p>Gestionar categorías</p>
+					<a id="buttonCreateCategory" class="button primary icon solid fa-comments-question">Crear categoría</a>	
+					<a id="buttonModifyCategory" class="button primary icon solid fa-comments-question">Modificar categoría</a>
+					<a id="buttonDeleteCategory" class="button primary icon solid fa-comments-question">Borrar categoría</a>	
+					<a id="buttonBackCategoryGestionForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
+				<form id="crearCategoriaForm" style="display: none;">
+					<p>Crear una nueva categoría</p>
+					<p>Nombre <input type="text" id="nameCrearCategoriaForm"></p>
+					<a id="createCategory" class="button primary icon solid fa-comments-question">Crear categoría</a>
+					<a id="buttonBackCreateCategoryForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
+				<form id="modificarCategoriasForm" style="display: none;">
+					<p>Modificar categoría</p>
+					<p>Categoría <select id="nameModificarCategoriasForm">
+						<?php
+
+						if ($categories) {
+							foreach ($categories as $category) {
+								$id = $category['id'];
+								if($id != 0){
+									echo "<option value=$id>";
+									echo $category['name'];
+									echo "</option>";
+								}
+							}
+						}
+
+
+						?>
+					</select> </p>
+					<p>Nuevo nombre <input type="text" id="newNameModificarCategoriasForm"></p>
+					<a id="modifyCategoryButton" class="button primary icon solid fa-comments-question">Modificar categoría</a>
+					<a id="buttonBackModifyCategoryForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
+				<form id="borrarCategoriasForm" style="display: none;">
+					<p>Borrar una categoría</p>
+					<p>Categoría <select id="categoryBorrarCategoriasForm">
+						<?php
+
+						if ($categories) {
+							foreach ($categories as $category) {
+								$id = $category['id'];
+								if($id != 0){
+									echo "<option value=$id>";
+									echo $category['name'];
+									echo "</option>";
+								}
+							}
+						}
+
+
+						?>
+					</select> </p>
+
+					<a id="deleteCategoryButton" class="button primary icon solid fa-comments-question">Borrar categoría</a>
+					<a id="buttonBackDeleteCategoryForm" class="button primary icon solid fa-comments-question">Volver</a>
+				</form>
+
 			</div>
 
 		</div>
@@ -280,6 +371,10 @@
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
 	<script type="text/javascript">
+
+		$('input').click(function(e) {
+			e.stopPropagation();
+		})
 
 		$("#buttonCuestionaries").click(function(){
 			$("#gestiones").css("display","none");
@@ -315,7 +410,6 @@
 
 		$("#nameModificarCuestionariosForm").change(function(){
 			searchQuestionnaire($("#nameModificarCuestionariosForm").val());
-
 		});
 
 		$("#buttonBackModifyForm").click(function(){
@@ -376,6 +470,88 @@
 			searchInfoFromQuestion($("#questionModificarPreguntasForm").val()); //Buscar respuestas dado el ID de la pregunta a modificar al cambiar
 		});
 
+		$("#modifyQuestion").click(function(){
+			modifyQuestion($("#questionModificarPreguntasForm").val(), $("#newNameModificarPreguntasForm").val(), $("#categoryModificarPreguntasForm").val(), $("#nameModifPreguntasResp1").val(), $("#nameModifPreguntasResp2").val(), $("#nameModifPreguntasResp3").val(), $("#nameModifPreguntasResp4").val(), $('input[name=success]:checked', '#modificarPreguntasForm').val());
+		});
+
+		$("#buttonBackModifyQuestForm").click(function(){
+			$("#modificarPreguntasForm").css("display","none");
+			$("#gestionarPreguntasForm").css("display","block");
+		});
+
+		$("#buttonDeleteQuestion").click(function(){
+			$("#gestionarPreguntasForm").css("display","none");
+			$("#borrarPreguntasForm").css("display","block");
+		});
+
+		$("#deleteQuestionButton").click(function(){
+			deleteQuestion($("#nameBorrarPreguntasForm").val());
+		});
+
+		$("#buttonBackDeleteQuestionForm").click(function(){
+			$("#borrarPreguntasForm").css("display","none");
+			$("#gestionarPreguntasForm").css("display","block");
+		});
+
+		$("#buttonCategory").click(function(){
+			$("#gestiones").css("display","none");
+			$("#gestionarCategoriasForm").css("display","block");			
+		});
+
+		$("#buttonCreateCategory").click(function(){
+			$("#gestionarCategoriasForm").css("display","none");
+			$("#crearCategoriaForm").css("display","block");			
+		});
+
+		$("#createCategory").click(function(){
+			createCategory($("#nameCrearCategoriaForm").val());	
+		});
+
+		$("#buttonBackCreateCategoryForm").click(function(){
+			$("#crearCategoriaForm").css("display","none");
+			$("#gestionarCategoriasForm").css("display","block");
+		});
+
+		$("#buttonModifyCategory").click(function(){
+			$("#gestionarCategoriasForm").css("display","none");
+			$("#modificarCategoriasForm").css("display","block");
+			searchInfoFromCategory($("#nameModificarCategoriasForm").val());
+		});
+
+		$("#nameModificarCategoriasForm").change(function(){
+			searchInfoFromCategory($("#nameModificarCategoriasForm").val());
+		});
+
+		$("#modifyCategoryButton").click(function(){
+			modifyCategory($("#nameModificarCategoriasForm").val(), $("#newNameModificarCategoriasForm").val());
+		});
+
+		$("#buttonBackModifyCategoryForm").click(function(){
+			$("#modificarCategoriasForm").css("display","none");
+			$("#gestionarCategoriasForm").css("display","block");
+		});
+
+		$("#buttonDeleteCategory").click(function(){
+			$("#gestionarCategoriasForm").css("display","none");
+			$("#borrarCategoriasForm").css("display","block");
+		});
+
+		$("#deleteCategoryButton").click(function(){
+			deleteCategory($("#categoryBorrarCategoriasForm").val());
+		});
+
+		$("#buttonBackDeleteCategoryForm").click(function(){
+			$("#borrarCategoriasForm").css("display","none");
+			$("#gestionarCategoriasForm").css("display","block");
+		});
+
+		$("#buttonBackCategoryGestionForm").click(function(){
+			$("#gestionarCategoriasForm").css("display","none");
+			$("#gestiones").css("display","block");	
+		});
+
+
+
 
 		function createQuestion(name, category, reply1, reply2, reply3, reply4, successReply){
 
@@ -421,7 +597,7 @@
 				"action": "createCuestionary",
 				"name": name,
 				"category": category, 
-				"question": question 
+				"questions": question 
 			};
 
 			$.ajax({
@@ -440,6 +616,30 @@
                     });
 		}
 
+
+		function createCategory(name){
+
+			var parametros = {
+				"action": "createCategory",
+				"name": name
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+					}
+				},
+				error: function (xhr, status) {
+                            console.log("Error al crear categoría"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
 		function modifyCuestionary(id, name, category, question){
 			if (question < 5) {
 				question = 5;
@@ -452,7 +652,7 @@
 				"id": id,
 				"name": name,
 				"category": category, 
-				"question": question 
+				"questions": question
 			};
 
 			$.ajax({
@@ -465,6 +665,60 @@
 				},
 				error: function (xhr, status) {
                             console.log("Error al modificar el cuestionario"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+		function modifyQuestion(id, name, category, reply1, reply2, reply3, reply4, successReply){
+
+			var parametros = {
+				"action": "modifyQuestion",
+				"id": id,
+				"name": name,
+				"category": category, 
+				"reply1": reply1,
+				"reply2": reply2,
+				"reply3": reply3,
+				"reply4": reply4,
+				"success": successReply
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+					}
+				},
+				error: function (xhr, status) {
+                            console.log("Error al modificar la pregunta"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+		function modifyCategory(id, name){
+
+			var parametros = {
+				"action": "modifyCategory",
+				"id": id,
+				"name": name
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+					}
+				},
+				error: function (xhr, status) {
+                            console.log("Error al modificar la categoría"); //El mensaje que se muestra en el caso de que haya un error en la consulta
                         },
                         type: "POST",
                         dataType: "text"
@@ -494,6 +748,53 @@
                     });
 		}
 
+		function deleteQuestion(id){
+			var parametros = {
+				"action": "deleteQuestion",
+				"id": id
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+					}
+				},
+				error: function (xhr, status) {
+                            console.log("Error al borrar la pregunta"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+		function deleteCategory(id){
+			console.log(id);
+			var parametros = {
+				"action": "deleteCategory",
+				"id": id
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						console.log(respuesta);
+					}
+				},
+				error: function (xhr, status) {
+                            console.log("Error al borrar la categoría"); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+
+
 		function searchInfoFromQuestion(id){
 			var parametros = {
 				"action": "searchInfoFromQuestion",
@@ -505,8 +806,8 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
-						console.log(respuesta);
 						var resp = JSON.parse(respuesta);
+						$("#newNameModificarPreguntasForm").val(resp.name);
 						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
 						for (var i = 1; i <= 4; i++) {
 							if (i-1 == resp.success) {
@@ -514,6 +815,29 @@
 							}
 							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
 						}
+					} 
+				},
+				error: function (xhr, status) {
+                            console.log("Error al buscar las respuestas de la pregunta: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+		function searchInfoFromCategory(id){
+			var parametros = {
+				"action": "searchInfoFromCategory",
+				"id": id
+			};
+
+			$.ajax({
+				url: "controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						var resp = JSON.parse(respuesta);
+						$("#newNameModificarCategoriasForm").val(resp);
 					} 
 				},
 				error: function (xhr, status) {
@@ -534,12 +858,11 @@
 				url: "controller/actions.php",
 				data: parametros,
 				success: function (respuesta) { 
-					console.log(respuesta);
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						$("#newNameModificarCuestionariosForm").val(resp[0].questionnaire);
 						$("#modificarCuestionarioCategoriaActual").html(resp[0].name);
-						$("#questionModificarCuestionariosForm").val(resp[0].question);
+						$("#questionModificarCuestionariosForm").val(resp[0].questions);
 					} 
 				},
 				error: function (xhr, status) {
