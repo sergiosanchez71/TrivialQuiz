@@ -56,33 +56,9 @@ switch ($action) {
 	break;
 	case 'searchPlayQuestionnaire':
 		$sql = "SELECT id, name FROM questionnaires WHERE questions<=(SELECT COUNT(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category)";
-		//$sql = "SELECT * FROM questionnaires";
-		//$sql = SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category;
 
 		$questionnairesArray = array();
 		$result = mysqli_query($mysqli, $sql);
-
-		/*while($row = mysqli_fetch_assoc($result)){
-			$valid = false;
-			$preguntas = $row['preguntas'];
-			$sql2 = "SELECT sum(id) as value_sum FROM questions WHERE category=$row['category']";
-			$result2 = mysqli_query($mysqli, $sql2);
-
-			while($row2 = mysqli_fetch_assoc($result2)){
-				if ($row2['value_sum'] == $preguntas){
-					$valid = true;
-				}
-			}
-
-			if($valid){
-			    $questionnaire = array(
-			    	"id" => $row['id'],
-			    	"name" => $row["name"]
-			    );
-
-			    array_push($questionnairesArray, $questionnaire);
-			}
-		}*/
 
 		while($row = mysqli_fetch_assoc($result)){
 			$questionnaire = array(
