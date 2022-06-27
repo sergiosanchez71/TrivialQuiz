@@ -59,7 +59,7 @@ switch ($action) {
 		$sql = "SELECT * FROM questionnaires";
 		//$sql = SELECT SUM(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category;
 
-		$questionnairesArray = array();
+		$questionnairesArray = array(); //
 		$result = mysqli_query($mysqli, $sql);
 
 		/*while($row = mysqli_fetch_assoc($result)){
