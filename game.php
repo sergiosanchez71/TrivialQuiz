@@ -32,7 +32,7 @@
 		<div class="content">
 
 			<h1>Juego</h1>
-			<form>
+			<form id="questions">
 				<p>Pregunta 1</p>
 				<select id="playQuestionnaires">
 				</select>
