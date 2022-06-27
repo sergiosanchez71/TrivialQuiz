@@ -66,6 +66,11 @@
 		});
 
 
+		function playQuestions(id){
+			alert(id);
+		}
+
+
 	</script>
 
 </body>
