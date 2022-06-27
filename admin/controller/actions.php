@@ -64,8 +64,10 @@ switch ($action) {
 		$result = mysqli_query($mysqli, $sql);   
 		while($row = mysqli_fetch_assoc($result)){
 		    $questionnaireId = $row['id'];
+		    $questionnaireName = $row['name'];
 
-		    array_push($questionnairesIdsArray, $questionnaire);
+		    array_push($questionnairesIdsArray, $questionnaireId);
+		    array_push($questionnairesNamesArray, $questionnaireName);
 		}
 
 		echo json_encode($questionnairesArray);
