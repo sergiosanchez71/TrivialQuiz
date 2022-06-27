@@ -73,7 +73,6 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						console.log(resp);
 						for (var i = 0; i < resp.length; i++) {
 						$("#playQuestionnaires").append("<option id="+resp[i].id+">"+resp[i].name+"</option>");
 						}
