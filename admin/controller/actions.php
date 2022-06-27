@@ -67,10 +67,10 @@ switch ($action) {
 		    $questionnaireName = $row['name'];
 
 		    array_push($questionnairesIdsArray, $questionnaireId);
-		    ////array_push($questionnairesNamesArray, $questionnaireName);
+		    array_push($questionnairesNamesArray, $questionnaireName);
 		}
 
-		echo json_encode($questionnairesArray);
+		echo json_encode($questionnairesIdsArray, questionnairesNamesArray);
 
 
 	break;
