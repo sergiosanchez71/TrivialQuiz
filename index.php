@@ -66,7 +66,8 @@
 	<script src="assets/js/main.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			searchPlayQuestionnaire();//
+			alert("hola");
+			searchPlayQuestionnaire();
 		});
 
 		function searchPlayQuestionnaire(){
