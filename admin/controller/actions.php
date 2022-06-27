@@ -107,7 +107,7 @@ switch ($action) {
 				array_push($questionsArray, $question);
 			}*/
 			
-			$counter++;
+			$counter++; //
 		
 		}
 
