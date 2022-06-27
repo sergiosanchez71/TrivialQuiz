@@ -64,8 +64,38 @@
 		});
 
 
-		function playQuestions(id){ //
-			alert(id);
+		function playQuestions(id){
+			
+		}
+
+		function searchInfoFromQuestion(id){
+			var parametros = {
+				"action": "searchInfoFromQuestion",
+				"id": id
+			};
+
+			$.ajax({
+				url: "admin/controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta) {
+						var resp = JSON.parse(respuesta);
+						$("#newNameModificarPreguntasForm").val(resp.name);
+						$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
+						for (var i = 1; i <= 4; i++) {
+							if (i-1 == resp.success) {
+								$("#radioModifPreguntasResp"+i).prop("checked", true);
+							}
+							$("#nameModifPreguntasResp"+i).val(resp.replies[i-1]);
+						}
+					} 
+				},
+				error: function (xhr, status) {
+                            console.log("Error al buscar las respuestas de la pregunta: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
 		}
 
 
