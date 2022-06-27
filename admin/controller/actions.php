@@ -61,7 +61,7 @@ switch ($action) {
 			if ($row) {
 		    	$test[] = $row;
 			} 
-			echo json_encode($test);
+			echo json_encode($test); //
 		}
 
 
