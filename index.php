@@ -4,7 +4,7 @@
 
 		include("admin/controller/conexion.php");
 
-		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)"; //
+		//$sql = "INSERT INTO questionnaires('1','Cuestionario 2','10',NULL)";
 		$questionnaires_sql = "SELECT * FROM questionnaires";
 		$questionnaires = $mysqli->query($questionnaires_sql);
 
@@ -37,7 +37,7 @@
 			<h1>Bienvenido a Trivial Quiz</h1>
 			<form>
 				<p>¿A qué cuestionario te gustaría enfrentarte?</p>
-				<select>
+				<select id="questionnaires">
 						<?php
 
 						if ($questionnaires) {
