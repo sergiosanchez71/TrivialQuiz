@@ -62,7 +62,7 @@
 	<script type="text/javascript">
 
 		$(document).ready(function(){
-			
+			playQuestions(<?php echo $idQuestionnaire; ?>);
 		});
 
 
