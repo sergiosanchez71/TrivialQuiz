@@ -71,8 +71,7 @@
 
 		function searchPlayQuestionnaire(){
 			var parametros = {
-				"action": "searchPlayQuestionnaire",
-				"id": id
+				"action": "searchPlayQuestionnaire"
 			};
 
 			$.ajax({
