@@ -87,7 +87,7 @@ switch ($action) {
 
 		while($row = mysqli_fetch_assoc($result)){
 
-			if ($counter == 1) {
+			if ($counter == 1) { //
 				$questionsArray = array(
 				   	"id" => $row["id"],
 				 	"name" => $row["name"],
