@@ -100,6 +100,7 @@ switch ($action) {
 				"idReplie".$counter => $row["idReplie"],
 				"nameReplie".$counter => $row["nameReplie"]
 			);
+			
 			array_push($question, $replie);
 
 			if ($counter == 4) {
