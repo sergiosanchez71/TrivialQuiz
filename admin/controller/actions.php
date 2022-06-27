@@ -85,15 +85,7 @@ switch ($action) {
 
 		while($row = mysqli_fetch_assoc($result)){
 
-			/*$idReplies = explode(',', $row["replies"]);
-
-			$replies = array($reply1, $reply2, $reply3, $reply4);
-
-			for ($i=0; $i < 4 ; $i++) { 
-				$sql = "UPDATE replies SET name='$replies[$i]' WHERE id='$idReplies[$i]'";
-				mysqli_query($mysqli, $sql);
-			}*/
-
+			$counter++;
 
 			$question = array(
 			   	"id" => $row["id"],
@@ -101,7 +93,7 @@ switch ($action) {
 			 	"idReplie" => $row["idReplie"],
 			 	"nameReplie" => $row["nameReplie"],
 			 	"success" => $row["success"],
-			 	"category" => $row["category"] //
+			 	"category" => $row["category"]
 			);
 
 			array_push($questionsArray, $question);
