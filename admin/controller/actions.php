@@ -65,7 +65,7 @@ switch ($action) {
 		    $questionnaire = array(
 		    	$id => $row['id'];
 		    	$name => $row["name"];
-		    );
+		    );//
 		    array_push($questionnairesArray, $questionnaire);
 		}
 
