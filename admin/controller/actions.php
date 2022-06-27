@@ -102,12 +102,13 @@ switch ($action) {
 				"nameReplie".$counter => $row["nameReplie"]
 			);
 			array_push($question, $replie);
+
+			array_push($questionsArray, $question);
 			
 			$counter++;
 		
 		}
 
-		array_push($questionsArray, $question);
 
 		echo json_encode($questionsArray);
 
