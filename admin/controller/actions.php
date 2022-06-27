@@ -62,14 +62,14 @@ switch ($action) {
 		$questionnairesArray = array();
 		$result = mysqli_query($mysqli, $sql);
 
-		while($row = mysqli_fetch_assoc($result)){
+		/*while($row = mysqli_fetch_assoc($result)){
 			$valid = false;
 			$preguntas = $row['preguntas'];
 			$sql2 = "SELECT sum(id) as value_sum FROM questions WHERE category=$row['category']";
 			$result2 = mysqli_query($mysqli, $sql2);
 
 			while($row2 = mysqli_fetch_assoc($result2)){
-				if ($row2['value_sum'] == $preguntas){ //
+				if ($row2['value_sum'] == $preguntas){
 					$valid = true;
 				}
 			}
@@ -82,6 +82,15 @@ switch ($action) {
 
 			    array_push($questionnairesArray, $questionnaire);
 			}
+		}*/
+
+		while($row = mysqli_fetch_assoc($result)){
+			$questionnaire = array(
+			   	"id" => $row['id'],
+			 	"name" => $row["name"]
+			);
+
+			array_push($questionnairesArray, $questionnaire);
 		}
 
 		echo json_encode($questionnairesArray);
