@@ -102,7 +102,8 @@ switch ($action) {
 			);
 
 			array_push($questionsArray, $replie);
-				$counter++;
+			
+			$counter++;
 		
 		}
 
