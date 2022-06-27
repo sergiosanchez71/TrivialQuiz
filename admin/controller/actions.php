@@ -96,18 +96,17 @@ switch ($action) {
 				);
 			} 
 
-			while ($counter <= 4){
-				$replie = array(
-					"idReplie".$counter => $row["idReplie"],
-					"nameReplie".$counter => $row["nameReplie"]
-				);
-				array_push($question, $replie);
-			}
-
+			$replie = array(
+				"idReplie".$counter => $row["idReplie"],
+				"nameReplie".$counter => $row["nameReplie"]
+			);
+			array_push($question, $replie);
 			
-
-			array_push($questionsArray, $question);
+			$counter++;
+		
 		}
+
+		array_push($questionsArray, $question);
 
 		echo json_encode($questionsArray);
 
