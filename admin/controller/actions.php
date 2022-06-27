@@ -64,12 +64,12 @@ switch ($action) {
 
 		while($row = mysqli_fetch_assoc($result)){
 			$valid = false;
-			$preguntas = $row['preguntas']; //
-			$sql2 = "SELECT sum(id) FROM questions WHERE category=$row['category']";
+			$preguntas = $row['preguntas'];
+			$sql2 = "SELECT sum(id) as value_sum FROM questions WHERE category=$row['category']";
 			$result2 = mysqli_query($mysqli, $sql2);
 
 			while($row = mysqli_fetch_assoc($result2)){
-				if ($row['sum(id)'] == $preguntas){
+				if ($row['value_sum'] == $preguntas){
 					$valid = true;
 				}
 			}
