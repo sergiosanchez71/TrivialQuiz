@@ -78,7 +78,7 @@
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						for (var i = 0; i < resp.length; i++) {
-						$("#playQuestionnaires").append("<option id="+resp[i].id+">"+resp[i].name+"</option>");
+						$("#playQuestionnaires").append("<option value="+resp[i].id+">"+resp[i].name+"</option>");
 						}
 					} 
 				},
@@ -91,7 +91,7 @@
 		}
 
 		function jugar(id){
-			alert(id); //
+			alert(id);
 		}
 
 	</script>
