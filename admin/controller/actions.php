@@ -78,42 +78,23 @@ switch ($action) {
 
 		$id = $_REQUEST['id'];
 
-		$sql = "SELECT Q.id as id, Q.name as name, Q.success as success, Q.category as category, R.id as idReplie, R.name as nameReplie FROM questions as Q, replies as R WHERE category=(SELECT category FROM questionnaires WHERE id='$id') and Q.id=R.question";
-
-		$questionsArray = array();
+		$sql = "SELECT category FROM questionnaires WHERE id=$id";
 		$result = mysqli_query($mysqli, $sql);
 
-		$counter = 1;
-
 		while($row = mysqli_fetch_assoc($result)){
-
-			if ($counter == 1) {
-				$question = array(
-				   	"id" => $row["id"],
-				 	"name" => $row["name"],
-				 	"success" => $row["success"],
-				 	"category" => $row["category"]
-				);
-			} 
-
-			$replie = array(
-				"idReplie".$counter => $row["idReplie"],
-				"nameReplie".$counter => $row["nameReplie"]
-			);
-
-			array_push($question, $replie);
-
-			if ($counter == 4) {
-				array_push($questionsArray, $question);
-				$counter = 1;
-			}
-			
-			$counter++;
-		
+			$category = $row['category'];
 		}
 
+		$sql = "SELECT id FROM questions WHERE category=$category";
 
-		echo json_encode($questionsArray); //
+		$questionsArray = array();
+
+		$result = mysqli_query($mysqli, $sql);
+		while($row = mysqli_fetch_assoc($result)){
+			array_push($questionsArray,$row['id']);
+		}
+
+		echo json_encode($questionsArray);
 
 	break;
 
@@ -189,7 +170,7 @@ switch ($action) {
 	break;
 	case 'searchInfoFromQuestion':
 		$id = $_REQUEST['id'];
-		$idRepliesSQL = "SELECT replies FROM questions WHERE id='$id'";
+		$idRepliesSQL = "SELECT name, success, category, replies FROM questions WHERE id='$id'";
 
 		$result = mysqli_query($mysqli, $idRepliesSQL);  
 
@@ -201,8 +182,8 @@ switch ($action) {
 
 		$replies = explode(',', $repliesString);
 
-		for ($i=0; $i < 4 ; $i++) { 
-			$sql = "SELECT name FROM replies WHERE id='$replies[$i]'";
+		for ($i=0; $i < count($replies); $i++) {
+			$sql = "SELECT name FROM replies WHERE id=$replies[$i]";
 			$result = mysqli_query($mysqli, $sql);
 			while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
@@ -211,12 +192,13 @@ switch ($action) {
 			}
 		}
 
-		$sql = "SELECT name, success, category FROM questions WHERE id='$id'";
+		$sql = "SELECT * FROM questions WHERE id='$id'";
 
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_assoc($result)){
 				if ($row) {
+			    	$id = $row['id'];
 			    	$name = $row['name'];
 			    	$success = $row['success'];
 			    	$category = $row['category'];
@@ -225,6 +207,7 @@ switch ($action) {
 
 		$questionInfo = new stdClass();
 		$questionInfo = array(
+			"id" => $id,
 			"name" => $name,
 			"replies" => $repliesNames,
 			"success" => $success,
@@ -234,6 +217,7 @@ switch ($action) {
 
 
 		echo json_encode($questionInfo);
+
 
 	break;
 

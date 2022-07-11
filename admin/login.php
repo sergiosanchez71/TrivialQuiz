@@ -12,9 +12,11 @@
 	<?php 
 
 	session_start();
-	if ($_SESSION['admin'] == true) {
-		$_SESSION['admin'] = false;
-	} 
+	if (isset($_SESSION['admin'])) {
+		if ($_SESSION['admin'] == true) {
+			$_SESSION['admin'] = false;
+		} 
+	}
 
 	?>
 
