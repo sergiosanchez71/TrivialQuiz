@@ -4,7 +4,11 @@
 
 	include("admin/controller/conexion.php");
 
-	$idQuestionnaire = $_GET['id'];
+	if (isset($_GET['id'])) {
+		$idQuestionnaire = $_GET['id'];
+	} else {
+		header("Location: index.php");
+	}
 
 	?>
 	<meta charset="utf-8">
@@ -34,6 +38,29 @@
 			display: none;
 		}
 
+		.questions{
+			display: none;
+		}
+
+		#siguiente{
+			display: none;
+			float: left;
+			transition: 1s;
+		}
+
+		#siguiente{
+			display: none;
+			float: left;
+		}
+
+		#divFinal{
+			display: none;
+		}
+
+		.namePreguntasResp{
+			transition: background 1s;
+		}
+
 
 	</style>
 
@@ -50,25 +77,34 @@
 				<input style="margin-top: 10px;" type="button" id="buttonName" value="Jugar">
 			</form>
 
-			<form id="questions">
+			<form id="questions" class="questions">
 				<h1 id="titleCuestionario">Juego</h1>
 				<p id="question"></p>
 				<input type="text" id="idQuestion">
 				<input type="radio" name="success" id="r1" value="0" checked />
-				<label for="r1"> <input type="text" id="namePreguntasResp1" readonly></label><br>
+				<label for="r1"> <input type="text" class="namePreguntasResp" id="namePreguntasResp1" readonly></label><br>
 
 				<input type="radio" name="success" id="r2" value="1" />
-				<label for="r2"> <input type="text" id="namePreguntasResp2" readonly></label><br>
+				<label for="r2"> <input type="text" class="namePreguntasResp" id="namePreguntasResp2" readonly></label><br>
 
 				<input type="radio" name="success" id="r3" value="2" />
-				<label for="r3"> <input type="text" id="namePreguntasResp3" readonly></label><br>
+				<label for="r3"> <input type="text" class="namePreguntasResp" id="namePreguntasResp3" readonly></label><br>
 
 				<input type="radio" name="success" id="r4" value="3" />
-				<label for="r4"> <input type="text" id="namePreguntasResp4" readonly></label><br>
+				<label for="r4"> <input type="text" class="namePreguntasResp" id="namePreguntasResp4" readonly></label><br>
 
 				<input type="button" id="responder" value="Responder">
+				<input type="button" id="siguiente" value="Siguiente">
 
 			</form>
+
+			<div class="questions">
+				<p id="restantes"></p>
+			</div>
+
+			<div id="divFinal">
+				<p id="puntos"></p>
+			</div>
 			
 		</div>
 	</header>
@@ -94,6 +130,10 @@
 	<script type="text/javascript">
 
 		var player = null;
+		var respondida = false;
+		var puntos = 0;
+		var questions = [];
+		var preguntastotales = 0;
 
 		$(document).ready(function(){
 			playQuestions(<?php echo $idQuestionnaire; ?>);
@@ -103,7 +143,7 @@
 			if ($("#nameGame").val() != "") {
 				player = $("#nameGame").val();
 				$("#nameForm").hide();
-				$("#questions").css("display","block");
+				$(".questions").css("display","block");
 			}
 		});
 
@@ -112,12 +152,27 @@
 			comprobarRespuesta(respuesta, $("#idQuestion").val());
 		});
 
+		$("#siguiente").click(function(){
+			if (questions.length > 0) {
+				searchInfoFromQuestion(questions[0]);
+				$("#responder").css("display","block");
+				$("#siguiente").css("display","none");
+				respondida = false;
+				$(".namePreguntasResp").css("background","none");
+			} else {
+				$("#divFinal").css("display","block");
+				$(".questions").css("display","none");
+				//addToRanking(player, cuestionario); POR AQUI
+				$("#puntos").text("Has obtenido "+puntos+" puntos");
+			}
+		});
+
 
 		function playQuestions(id){
 			searchQuestionsFromQuestionnaire(id); 
 		}
 
-		function comprobarRespuesta(respuesta, id){ //SEGUIR POR AQUI
+		function addToRanking(seleccionado, id){ 
 			var parametros = {
 				"action": "searchInfoFromQuestion",
 				"id": id
@@ -127,20 +182,63 @@
 				url: "admin/controller/actions.php",
 				data: parametros,
 				success: function (respuesta) { 
-					if (respuesta) {
+					if (respuesta && !respondida) {
 						var resp = JSON.parse(respuesta);
-						console.log(resp);
-						$("#question").text(resp.name);
-						
-						//$("#newNameModificarPreguntasForm").val(resp.name);
-						//$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
-						for (var i = 1; i <= 4; i++) {
-							/*if (i-1 == resp.success) {
-								$("#radioModifPreguntasResp"+i).prop("checked", true);
-							}*/
-							$("#playReplies").val();
-							$("#namePreguntasResp"+i).val(resp.replies[i-1]);
+						var respSeleccionada = parseInt(seleccionado)+1;
+						var respCorrecta = parseInt(resp.success)+1;
+						if (seleccionado == resp.success) {
+							$("#namePreguntasResp"+respSeleccionada).css("background","green");
+							respondida = true;
+							puntos++;
+						} else {
+							$("#namePreguntasResp"+respSeleccionada).css("background","red");
+							$("#namePreguntasResp"+respCorrecta).css("background","green");
+							respondida = true;
 						}
+						$("#responder").css("display","none");
+						if (questions.length < 1) {
+							$("#siguiente").val("Finalizar");	
+						}
+						$("#siguiente").css("display","block");	
+						
+					} 
+				},
+				error: function (xhr, status) {
+                            console.log("Error al buscar las respuestas de la pregunta: "+xhr+status); //El mensaje que se muestra en el caso de que haya un error en la consulta
+                        },
+                        type: "POST",
+                        dataType: "text"
+                    });
+		}
+
+		function comprobarRespuesta(seleccionado, id){ 
+			var parametros = {
+				"action": "searchInfoFromQuestion",
+				"id": id
+			};
+
+			$.ajax({
+				url: "admin/controller/actions.php",
+				data: parametros,
+				success: function (respuesta) { 
+					if (respuesta && !respondida) {
+						var resp = JSON.parse(respuesta);
+						var respSeleccionada = parseInt(seleccionado)+1;
+						var respCorrecta = parseInt(resp.success)+1;
+						if (seleccionado == resp.success) {
+							$("#namePreguntasResp"+respSeleccionada).css("background","green");
+							respondida = true;
+							puntos++;
+						} else {
+							$("#namePreguntasResp"+respSeleccionada).css("background","red");
+							$("#namePreguntasResp"+respCorrecta).css("background","green");
+							respondida = true;
+						}
+						$("#responder").css("display","none");
+						if (questions.length < 1) {
+							$("#siguiente").val("Finalizar");	
+						}
+						$("#siguiente").css("display","block");	
 						
 					} 
 				},
@@ -165,9 +263,11 @@
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
 						$("#titleCuestionario").val(id);
-						for (var i = 0; i < resp.length; i++) {
-							searchInfoFromQuestion(resp[i]);
+						for (var i = resp.length - 1; i >= 0; i--) {
+							questions.push(resp[i]);
 						}
+						searchInfoFromQuestion(questions[0]);
+						preguntastotales = resp.length;
 					} 
 				},
 				error: function (xhr, status) {
@@ -190,19 +290,15 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						console.log(resp);
 						$("#idQuestion").val(resp.id);
 						$("#question").text(resp.name);
 						
-						//$("#newNameModificarPreguntasForm").val(resp.name);
-						//$("#categoryModificarPreguntasForm option[value="+resp.category+"]").attr("selected",true);
 						for (var i = 1; i <= 4; i++) {
-							/*if (i-1 == resp.success) {
-								$("#radioModifPreguntasResp"+i).prop("checked", true);
-							}*/
-							$("#playReplies").val()
+							$("#playReplies").val();
 							$("#namePreguntasResp"+i).val(resp.replies[i-1]);
 						}
+						questions.shift();
+						$("#restantes").text(preguntastotales-questions.length+"/"+preguntastotales+" restantes");
 						
 					} 
 				},
