@@ -65,6 +65,14 @@
 			transition: background 1s;
 		}
 
+		table{
+			width: 100%;
+		}
+
+		table th{
+			text-align: center;
+		}
+
 		label .namePreguntasResp{			
 			width: 800px;
 		}
@@ -182,6 +190,17 @@
 			</div>
 
 			<div id="divFinal">
+				<table id="finalTable">
+					<thead>
+						<tr>
+							<th>Jugador</th>
+							<th>Puntuación</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+						
+					</tbody>
+				</table>
 				<p id="puntos"></p>
 			</div>
 			
@@ -256,7 +275,7 @@
 			} else {
 				$("#divFinal").css("display","block");
 				$(".questions").css("display","none");
-				//addToRanking(player, cuestionario); POR AQUI
+				addToRanking(player, "<?php echo $_GET['id']; ?>", puntos);
 				$("#puntos").text("Has obtenido "+puntos+" puntos");
 			}
 		});
@@ -266,34 +285,30 @@
 			searchQuestionsFromQuestionnaire(id); 
 		}
 
-		function addToRanking(seleccionado, id){ 
+		function addToRanking(player, questionnaire, points){ 
 			var parametros = {
-				"action": "searchInfoFromQuestion",
-				"id": id
+				"action": "addToRanking",
+				"idPlayer": player,
+				"idQuest": questionnaire,
+				"points": points
 			};
 
 			$.ajax({
 				url: "admin/controller/actions.php",
 				data: parametros,
 				success: function (respuesta) { 
-					if (respuesta && !respondida) {
+					if (respuesta) {
 						var resp = JSON.parse(respuesta);
-						var respSeleccionada = parseInt(seleccionado)+1;
-						var respCorrecta = parseInt(resp.success)+1;
-						if (seleccionado == resp.success) {
-							$("#namePreguntasResp"+respSeleccionada).css("background","green");
-							respondida = true;
-							puntos++;
-						} else {
-							$("#namePreguntasResp"+respSeleccionada).css("background","red");
-							$("#namePreguntasResp"+respCorrecta).css("background","green");
-							respondida = true;
+
+						for (var i = 0; i < resp.length; i++) {
+							var table = document.getElementById("tbody");
+							var row = table.insertRow(0);
+							if (resp[i].name == player && resp[i].score == puntos) {
+								row.innerHTML = "<td><strong>"+resp[i].name+"</strong></td><td><strong>"+resp[i].score+"</strong></td>";
+							} else {
+								row.innerHTML = "<td>"+resp[i].name+"</td><td>"+resp[i].score+"</td>";
+							}
 						}
-						$("#responder").css("display","none");
-						if (questions.length < 1) {
-							$("#siguiente").val("Finalizar");	
-						}
-						$("#siguiente").css("display","block");	
 						
 					} 
 				},
