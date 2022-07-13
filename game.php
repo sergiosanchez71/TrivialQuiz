@@ -162,6 +162,7 @@
 				<h1>Introduce tu nombre</h1>
 				<input type="text" id="nameGame" onkeypress="pulsar(event)">
 				<input style="margin-top: 10px;" type="button" id="buttonName" value="Jugar">
+				<input style="margin-top: 10px;" type="button" id="buttonReturn" value="Volver">
 			</form>
 
 			<form id="questions" class="questions">
@@ -236,6 +237,10 @@
 
 		$(document).ready(function(){
 			playQuestions(<?php echo $idQuestionnaire; ?>);
+		});
+
+		$("#buttonReturn").click(function(){
+			location.replace("http://sergiosanchez.site/projects/trivialquiz/index.php");
 		});
 
 		function pulsar(e) {
