@@ -89,6 +89,14 @@
 				width: 600px;
 			}
 
+			input{
+				min-width: 100%;
+			}
+
+			.gameButtons{
+				margin-left: 38px;
+			}
+
 		}
 
 		@media (max-width: 700px){
@@ -124,12 +132,11 @@
 			label .namePreguntasResp{			
 				width: 300px;
 			}
-
 		}
-		}
+	}
 
 
-	</style>
+</style>
 
 </head>
 <body class="is-preload">
@@ -160,8 +167,8 @@
 				<input type="radio" name="success" id="r4" value="3" />
 				<label for="r4"> <input type="text" class="namePreguntasResp" id="namePreguntasResp4" readonly></label><br>
 
-				<input type="button" id="responder" value="Responder">
-				<input type="button" id="siguiente" value="Siguiente">
+				<input class="gameButtons" type="button" id="responder" value="Responder">
+				<input class="gameButtons" type="button" id="siguiente" value="Siguiente">
 
 			</form>
 
