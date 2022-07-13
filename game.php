@@ -36,6 +36,10 @@
 		#questions, #idQuestion{
 			text-align: left;
 			display: none;
+			min-width: 800px;
+			max-width: 800px;
+			min-height: 600px;
+			max-height: 600px;
 		}
 
 		.questions{
@@ -61,6 +65,56 @@
 			transition: background 1s;
 		}
 
+		label .namePreguntasResp{			
+			width: 800px;
+		}
+
+		@media (max-width: 1700px){
+
+			#titleCuestionario{
+				display: block;
+			}
+
+		}
+
+		@media (max-width: 900px){
+			#questions, #idQuestion{
+				min-width: 600px;
+				max-width: 600px;
+				min-height: 400px;
+				max-height: 400px;
+			}
+
+			label .namePreguntasResp{			
+				width: 600px;
+			}
+
+		}
+
+		@media (max-width: 700px){
+			#questions, #idQuestion{
+				min-width: 400px;
+				max-width: 400px;
+			}
+
+			label .namePreguntasResp{			
+				width: 400px;
+			}
+
+		}
+
+		@media (max-width: 470px){
+			#questions, #idQuestion{
+				min-width: 350px;
+				max-width: 350px;
+			}
+
+			label .namePreguntasResp{			
+				width: 350px;
+			}
+
+		}
+
 
 	</style>
 
@@ -73,7 +127,7 @@
 
 			<form id="nameForm">
 				<h1>Introduce tu nombre</h1>
-				<input type="text" id="nameGame">
+				<input type="text" id="nameGame" onkeypress="pulsar(event)">
 				<input style="margin-top: 10px;" type="button" id="buttonName" value="Jugar">
 			</form>
 
@@ -127,6 +181,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script type="text/javascript">
 
 		var player = null;
@@ -139,12 +194,26 @@
 			playQuestions(<?php echo $idQuestionnaire; ?>);
 		});
 
-		$("#buttonName").click(function(){
+		function pulsar(e) {
+			if (e.keyCode === 13 && !e.shiftKey) {
+				e.preventDefault();
+				enterGame();
+			}
+		}
+
+		function enterGame(){
+
 			if ($("#nameGame").val() != "") {
 				player = $("#nameGame").val();
 				$("#nameForm").hide();
 				$(".questions").css("display","block");
+			} else {
+				swal("Alerta","No puedes dejar el nombre vacío","error");
 			}
+		}
+
+		$("#buttonName").click(function(){
+			enterGame();
 		});
 
 		$("#responder").click(function(){
@@ -262,6 +331,7 @@
 				success: function (respuesta) { 
 					if (respuesta) {
 						var resp = JSON.parse(respuesta);
+						console.log(respuesta);
 						$("#titleCuestionario").val(id);
 						for (var i = resp.length - 1; i >= 0; i--) {
 							questions.push(resp[i]);

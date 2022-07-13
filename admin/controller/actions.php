@@ -55,7 +55,7 @@ switch ($action) {
 
 	break;
 	case 'searchPlayQuestionnaire':
-		$sql = "SELECT id, name FROM questionnaires WHERE questions<=(SELECT COUNT(QU.id) FROM questions as QU, questionnaires as Q WHERE Q.category=QU.category)";
+		$sql = "SELECT id, name FROM questionnaires as Q WHERE questions<=(SELECT COUNT(QU.id) FROM questions as QU WHERE Q.category=QU.category)";
 
 		$questionnairesArray = array();
 		$result = mysqli_query($mysqli, $sql);
@@ -78,14 +78,15 @@ switch ($action) {
 
 		$id = $_REQUEST['id'];
 
-		$sql = "SELECT category FROM questionnaires WHERE id=$id";
+		$sql = "SELECT questions,category FROM questionnaires WHERE id=$id";
 		$result = mysqli_query($mysqli, $sql);
 
 		while($row = mysqli_fetch_assoc($result)){
 			$category = $row['category'];
+			$questions = $row['questions'];
 		}
 
-		$sql = "SELECT id FROM questions WHERE category=$category";
+		$sql = "SELECT id FROM questions WHERE category=$category ORDER BY rand() LIMIT $questions";
 
 		$questionsArray = array();
 
