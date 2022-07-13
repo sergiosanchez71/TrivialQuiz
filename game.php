@@ -132,6 +132,11 @@
 			label .namePreguntasResp{			
 				width: 300px;
 			}
+
+
+			input{
+				min-width: 85%;
+			}
 		}
 	}
 
