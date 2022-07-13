@@ -115,6 +115,30 @@
 
 		}
 
+		@media (max-width: 400px){
+			#questions, #idQuestion{
+				min-width: 300px;
+				max-width: 300px;
+			}
+
+			label .namePreguntasResp{			
+				width: 300px;
+			}
+
+		}
+
+		@media (max-width: 300px){
+			#questions, #idQuestion{
+				min-width: 200px;
+				max-width: 200px;
+			}
+
+			label .namePreguntasResp{			
+				width: 200px;
+			}
+
+		}
+
 
 	</style>
 
