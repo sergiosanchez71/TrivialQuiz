@@ -370,6 +370,7 @@
 	<script src="../assets/js/breakpoints.min.js"></script>
 	<script src="../assets/js/util.js"></script>
 	<script src="../assets/js/main.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script type="text/javascript">
 
 		$('input').click(function(e) {
@@ -537,6 +538,7 @@
 		});
 
 		$("#deleteCategoryButton").click(function(){
+			swal("Alerta","¿Seguro que quieres borrar esta categoría?","confirm");
 			deleteCategory($("#categoryBorrarCategoriasForm").val());
 		});
 
