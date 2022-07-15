@@ -2,10 +2,14 @@
 
 require '../../../conf/define.php';
 
-$servername = SERVERNAME;
-$username = USER;
-$password = PASS;
-$database = DATABASE;
+try{
+    $servername = SERVERNAME;
+    $username = USER;
+    $password = PASS;
+    $database = DATABASE;
+} catch (Exception $e) {
+    echo 'Excepción capturada: ',  $e->getMessage(), "\n";
+}
 
 $mysqli = new mysqli($servername, $username, $password, $database);
 
