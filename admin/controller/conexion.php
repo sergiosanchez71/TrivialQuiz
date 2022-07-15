@@ -2,10 +2,10 @@
 
 require '../../conf/define.php';
 
-    $servername = SERVERNAME;
-    $username = USER;
-    $password = PASS;
-    $database = DATABASE;
+$servername = SERVERNAME;
+$username = USER;
+$password = PASS;
+$database = DATABASE;
 
 
 $mysqli = new mysqli($servername, $username, $password, $database);
