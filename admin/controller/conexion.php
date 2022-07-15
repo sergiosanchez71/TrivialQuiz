@@ -1,9 +1,11 @@
 <?php
 
-$servername = "localhost";
-$username = "u196455503_admin";
-$password = "=e8Gl[oA6p";
-$database = "u196455503_TrivialQuiz";
+require '../../conf/define.php';
+
+$servername = SERVERNAME;
+$username = USER;
+$password = PASS;
+$database = DATABASE;
 
 $mysqli = new mysqli($servername, $username, $password, $database);
 
