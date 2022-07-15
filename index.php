@@ -12,6 +12,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBS0LVRB54"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-RBS0LVRB54');
+	</script>
 
 	<style type="text/css">
 		a{
