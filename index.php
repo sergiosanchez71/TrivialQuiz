@@ -84,6 +84,7 @@
 				data: parametros,
 				success: function (respuesta) { 
 					if (respuesta) {
+						console.log(respuesta);
 						var resp = JSON.parse(respuesta);
 						for (var i = 0; i < resp.length; i++) {
 						$("#playQuestionnaires").append("<option value="+resp[i].id+">"+resp[i].name+"</option>");
