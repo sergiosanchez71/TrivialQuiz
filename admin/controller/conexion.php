@@ -2,7 +2,7 @@
 
 include '../../conf/define.php';
 
-$servername = SERVERNAME;
+$servername = 'localhost';
 $username = USER;
 $password = PASS;
 $database = DATABASE;
