@@ -1,6 +1,6 @@
 <?php
 
-require '../../conf/define.php';
+include '../../conf/define.php';
 
 $servername = SERVERNAME;
 $username = USER;
