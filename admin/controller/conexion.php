@@ -14,7 +14,7 @@ if ($mysqli->connect_errno) {
     echo "Fallo al conectar a MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
-$ip = gethostbyname('www.google.com');
+$ip = gethostbyname('http://sergiosanchez.site');
 echo $ip;
 
 return $mysqli;
