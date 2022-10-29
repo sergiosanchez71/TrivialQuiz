@@ -6,7 +6,7 @@
 
 	session_start();
 	if (!$_SESSION['admin']) {
-		header('Location: http://sergiosanchez.site/projects/trivialquiz/admin/login.php');
+		header('Location: https://sergiosanchez.site/projects/trivialquiz/admin/login.php');
 	}
 
 
@@ -81,7 +81,6 @@
 
 						if ($categories) {
 							foreach ($categories as $category) {
-								$id = $category['id'];
 								echo $id;
 								echo "<option value=$id>";
 								echo $category['name'];
