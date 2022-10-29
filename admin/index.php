@@ -12,6 +12,7 @@
 
 	$categories_sql = "SELECT * FROM categories";
 	$categories = $mysqli->query($categories_sql);
+	echo $categories;
 
 
 	$questions_sql = "SELECT * FROM questions";
