@@ -2,6 +2,7 @@
 <head>
 	<?php
 
+    include '../conf/define.php';
 	include("controller/conexion.php");
 
 	session_start();
